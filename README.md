@@ -46,8 +46,31 @@ Developer: Kristian Colville
 * [Acknowledgments](#acknowledgments)
 
 ## Project Goals
+
+The project's goal was to develop an Asian-style restaurant/takeaway eCommerce website that takes advantage of UI/UX design concepts, offers users services to meet their demands, is fully operational, and has a distinct business model.
+
 ### User Goals
+
+* Create an account on FineChop and personalize a profile
+* Add meals to a basket for purchase
+* Order food for delivery or for dining in
+* Quickly order a meal and have multiple options
+* Keep up to date with offers and deals
+* Have the ability to provide feedback or reviews
+* Ability to repeat orders
+* Buy vouchers or gifts
+* Book tables and seating for groups
+
 ### Site Owners Goals
+
+* Create an Asian-style eCommerce restaurant website that has the look and presentation of an experienced brand
+* Allow users to use CRUD functionality where ever possible to keep people engaged in a meaningful and interactive way
+* Provide users with the ability to purchase meals for delivery or for in house dining
+* Provide clear navigation for users to easily follow and get to their final destination
+* Build a responsive and accessible website for a wide audience
+* Build the website with the Asian culture in mind that shows admiration and respect
+* Effectively use digital marketing for email & social media
+* Show users a clear well defined business and keep simplicity wherever possible
 
 [Back to Top](#table-of-contents)
 
