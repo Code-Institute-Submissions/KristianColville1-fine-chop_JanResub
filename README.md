@@ -51,6 +51,7 @@ The project's goal was to develop an Asian-style restaurant/takeaway eCommerce w
 
 ### User Goals
 
+* Quick login options
 * Create an account on FineChop and personalize a profile
 * Add meals to a basket for purchase
 * Order food for delivery or for dining in
