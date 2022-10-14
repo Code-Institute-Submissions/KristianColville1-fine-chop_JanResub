@@ -110,12 +110,13 @@ Another goal for the project was to show a love for Asian cuisine and develop a 
 * The user can predict actions and outcomes successfully because of the UI/UX design
 * Avoid distracting colors and patterns, decorate with simplicity and provide appealing imagery
 * As eCommerce relies heavily on users purchasing products and services it is important that the SEO is perfectly implemented
+* Effectively build with user roles in mind and abstract issues for designing the website
 
 ### User Stories
 
 User roles:
 
-    New User, Returning User, Restaurant Owner, Executive Chef, Site Owner, Developer
+    New User, Returning User, Restaurant Owner, Executive Chef, Receptionist, Delivery Driver, Site Owner, Developer
 
 #### New User
 
@@ -126,6 +127,8 @@ User roles:
 |||
 |||
 
+<br>
+
 #### Returning User
 
 | Issue ID | User Story |
@@ -134,6 +137,8 @@ User roles:
 |||
 |||
 |||
+
+<br>
 
 #### Restaurant Owner
 
@@ -144,6 +149,8 @@ User roles:
 |||
 |||
 
+<br>
+
 #### Executive Chef
 
 | Issue ID | User Story |
@@ -152,6 +159,30 @@ User roles:
 |||
 |||
 |||
+
+<br>
+
+#### Receptionist
+
+| Issue ID | User Story |
+|---|---|
+|||
+|||
+|||
+|||
+
+<br>
+
+#### Delivery Driver
+
+| Issue ID | User Story |
+|---|---|
+|||
+|||
+|||
+|||
+
+<br>
 
 #### Site Owner
 
@@ -162,6 +193,8 @@ User roles:
 |||
 |||
 
+<br>
+
 #### Developer
 
 | Issue ID | User Story |
@@ -170,6 +203,7 @@ User roles:
 |||
 |||
 |||
+
 
 [Back to Top](#table-of-contents)
 
