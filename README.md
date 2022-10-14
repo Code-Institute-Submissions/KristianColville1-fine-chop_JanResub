@@ -113,6 +113,64 @@ Another goal for the project was to show a love for Asian cuisine and develop a 
 
 ### User Stories
 
+User roles:
+
+    New User, Returning User, Restaurant Owner, Executive Chef, Site Owner, Developer
+
+#### New User
+
+| Issue ID | User Story |
+|---|---|
+|||
+|||
+|||
+|||
+
+#### Returning User
+
+| Issue ID | User Story |
+|---|---|
+|||
+|||
+|||
+|||
+
+#### Restaurant Owner
+
+| Issue ID | User Story |
+|---|---|
+|||
+|||
+|||
+|||
+
+#### Executive Chef
+
+| Issue ID | User Story |
+|---|---|
+|||
+|||
+|||
+|||
+
+#### Site Owner
+
+| Issue ID | User Story |
+|---|---|
+|||
+|||
+|||
+|||
+
+#### Developer
+
+| Issue ID | User Story |
+|---|---|
+|||
+|||
+|||
+|||
+
 [Back to Top](#table-of-contents)
 
 ## Business Model
