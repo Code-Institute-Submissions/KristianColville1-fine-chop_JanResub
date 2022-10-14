@@ -47,7 +47,9 @@ Developer: Kristian Colville
 
 ## Project Goals
 
-The project's goal was to develop an Asian-style restaurant/takeaway eCommerce website that takes advantage of UI/UX design concepts, offers users services to meet their demands, is fully operational, and has a distinct business model.
+The project's main goal was to develop an Asian-style restaurant/takeaway eCommerce website that takes advantage of UI/UX design concepts, offers users services to meet their demands, is fully operational, and has a distinct business model.
+
+Another goal for the project was to show a love for Asian cuisine and develop a website that gives a big shout-out to businesses that cater in Ireland.
 
 ### User Goals
 
