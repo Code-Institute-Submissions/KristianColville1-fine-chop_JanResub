@@ -116,7 +116,9 @@ Another goal for the project was to show a love for Asian cuisine and develop a 
 
 User roles:
 
-    New User, Returning User, Restaurant Owner, Executive Chef, Receptionist, Delivery Driver, Site Owner, Developer
+    New User, Returning User, Restaurant Owner,
+     Executive Chef, Receptionist, Delivery Driver,
+      Site Owner, Developer
 
 #### New User
 
