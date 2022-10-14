@@ -17,26 +17,24 @@ Developer: Kristian Colville
     * [Target Audience](#target-audience)
     * [User Requirements and Expectations](#user-requirements-and-expectations)
     * [User Stories](#user-stories)
-* [Business Model](#business-model)
-    * [Goals](#goals)
-    * [Persona Summaries](#persona-summaries)
-    * [Strategy](#strategy)
-* [Web Marketing](#web-marketing)
 * [Design](#design)
     * [Color Scheme](#color-scheme)
     * [Typography](#typography)
     * [Structure](#structure)
         * [Wireframes](#wireframes)
-* [Technologies & Tools](#technologies--tools)
+* [Business Model](#business-model)
+    * [Goals](#goals)
+    * [Persona Summaries](#persona-summaries)
+    * [Strategy](#strategy)
+* [Web Marketing](#web-marketing)
 * [Agile Methodology](#agile-methodology)
 * [Information Architecture](#information-architecture)
     * [Database](#database)
     * [Data Modeling](#data-modeling)
 * [Features](#features)
-* [Future Features to Consider](#future-features-to-consider)
-* [Validation](#validation)
 * [Testing](#testing)
 * [Bugs](#bugs)
+* [Technologies & Tools](#technologies--tools)
 * [Development & Deployment](#deployment--deployment)
     * [Version Control](#version-control)
     * [Cloning this Repository](#cloning-this-repository)
@@ -209,14 +207,6 @@ User roles:
 
 [Back to Top](#table-of-contents)
 
-## Business Model
-### Goals
-### Persona Summaries
-### Strategy
-
-[Back to Top](#table-of-contents)
-
-## Web Marketing
 ## Design
 ### Color Scheme
 ### Typography
@@ -225,7 +215,14 @@ User roles:
 
 [Back to Top](#table-of-contents)
 
-## Technologies & Tools
+## Business Model
+### Goals
+### Persona Summaries
+### Strategy
+
+[Back to Top](#table-of-contents)
+
+## Web Marketing
 
 [Back to Top](#table-of-contents)
 
@@ -241,17 +238,12 @@ User roles:
 
 ## Features
 
-[Back to Top](#table-of-contents)
-
-## Future Features to Consider
-
-[Back to Top](#table-of-contents)
-
-## Validation
+All the features documentation can be found [here](/FEATURES.md)
 
 [Back to Top](#table-of-contents)
 
 ## Testing
+All the Testing documentation can be found [here](/TESTING.md)
 
 [Back to Top](#table-of-contents)
 
@@ -259,6 +251,9 @@ User roles:
 
 [Back to Top](#table-of-contents)
 
+## Technologies & Tools
+
+[Back to Top](#table-of-contents)
 ## Development & Deployment
 ### Version Control
 ### Cloning this Repository
