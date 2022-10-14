@@ -79,7 +79,38 @@ Another goal for the project was to show a love for Asian cuisine and develop a 
 
 ## User Experience
 ### Target Audience
+
+* Any user that is interested in Asian cuisine
+* Users who would like to order a delivery meal
+* Users interested in booking tables for a dine in experience
+* Users familiar with the Asian culture and the types of services offered in the restaurant industry
+* People who enjoy the services provided by an experienced brand
+* Users that would like to share their experiences and leave feedback/reviews
+* Users with an interest in purchasing delicious food
+
 ### User Requirements and Expectations
+
+* Simplicity throughout the website for clear navigation with the goal of completing an order
+* Information is structured in an organized and easy-to-follow manner
+* The CRUD functionality works as expected with feedback provided for each appropriate response
+* The simplicity is perfectly implemented with no unnecessary complexity diminishing the user experience
+* The design should look authentic & respectful with a care to avoid making an artificial imitation of an Asian-style restaurant
+* The website needs to address a wide audience and so should provide ease of accessibility for visually impaired users
+* This eCommerce site needs to be built with a mobile first design and a good level of responsive design
+* The content should be minimal and avoid long keyword phrases for mobile users
+* The website should take multiple user interactions into account
+* Bring engagement from digital marketing and provide systems and accounts to build the brand
+* Show users a consistent design across all channels of engagement
+* Calls to action should be built and implemented with care
+* Any and all personal information is securely stored and protected
+* The website should be built with genuine love for the food and not bring about a plastic experience
+* Provide multiple options for engagement and successfully implement methods strategies for the business model
+* The business model and intentions of the website are clear to the user
+* When building for eCommerce a huge amount of UI/UX design has been thoughtfully implemented for common practices
+* The user can predict actions and outcomes successfully because of the UI/UX design
+* Avoid distracting colors and patterns, decorate with simplicity and provide appealing imagery
+* As eCommerce relies heavily on users purchasing products and services it is important that the SEO is perfectly implemented
+
 ### User Stories
 
 [Back to Top](#table-of-contents)
