@@ -98,3 +98,15 @@ nav {
 /* end ham menu */
 
 /* -------------------------------------------------------Media Queries */
+
+@media only screen and (max-width: 412px){
+  .navbar-brand {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 363px) {
+  .navbar-brand {
+    width: 200px;
+  }
+}
