@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 :root {
   --rose-ebony: #63474dff;
   --rebecca-purple: #73409dff;
@@ -6,3 +8,93 @@
   --yellow-orange-color-wheel: #fe9b29ff;
   --madder-lake: #c1403aff;
 }
+
+html,
+body {
+  max-width: 100%;
+  overflow: visible;
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*----------------------------------------------------------- Nav */
+
+nav {
+  background-color: var(--rebecca-purple);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}
+
+.navbar-brand {
+  height: 100px;
+  width: 300px;
+  background: url('/static/img/design/brand-logo.png') no-repeat center center;
+  background-size: contain;
+}
+
+/* ham menu */
+
+.navbar-toggler {
+  width: 65px;
+  height: 65px;
+  border: 2px outset var(--new-york-pink);
+  position: relative;
+}
+
+.ham {
+  width: 65px;
+  height: 65px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.center-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: white;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
+
+.navbar-nav .nav-link a {
+  color: white;
+  font-size: 20px;
+}
+/* end ham menu */
+
+/* -------------------------------------------------------Media Queries */
