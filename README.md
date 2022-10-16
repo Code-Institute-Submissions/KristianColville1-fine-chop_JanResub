@@ -24,7 +24,7 @@ Developer: Kristian Colville
         * [Wireframes](#wireframes)
 * [Business Model](#business-model)
     * [Goals](#goals)
-    * [Persona Summaries](#persona-summaries)
+    * [Target Audience](#target-audience)
     * [Strategy](#strategy)
 * [Web Marketing](#web-marketing)
 * [Agile Methodology](#agile-methodology)
@@ -72,6 +72,8 @@ Another goal for the project was to show a love for Asian cuisine and develop a 
 * Build the website with the Asian culture in mind that shows admiration and respect
 * Effectively use digital marketing for email & social media
 * Show users a clear well defined business and keep simplicity wherever possible
+* Provide staff of the restaurant methods of improved productivity for the eCommerce web app
+* Build a website that provides ways of improved data analytics to help with the business goals
 
 [Back to Top](#table-of-contents)
 
@@ -114,7 +116,7 @@ Another goal for the project was to show a love for Asian cuisine and develop a 
 
 User roles:
 
-    New User, Returning User, Restaurant Owner,
+    New User, Returning User, Customer,
      Executive Chef, Receptionist, Delivery Driver,
       Site Owner, Developer
 
@@ -140,7 +142,7 @@ User roles:
 
 <br>
 
-#### Restaurant Owner
+#### Customer
 
 | Issue ID | User Story |
 |---|---|
@@ -216,9 +218,38 @@ User roles:
 [Back to Top](#table-of-contents)
 
 ## Business Model
+
+The business model for FineChop is B2C, the target audience for selling products and services is for customers only. The sole focus is on individual transactions and catering for the individual. The business model aims at providing individuals with an excellent option for a takeaway/dine-in experience.
+
 ### Goals
-### Persona Summaries
-### Strategy
+
+- Provide excellent customer satisfaction
+- Provide a UI/UX design for the website that helps customers perform actions
+- Create a lively atmosphere for people and show excellent all round service
+- Bring flavour to life and showcase delicious meals
+- Bring the website to life and make it as inviting as possible
+- Provide staff with improved productivity methods to increase sales and performance
+- Improve wait times
+- Market the business effectively across all channels
+
+### Target Audience
+
+The **FineChop** web app is aimed at targeting a wide audience and being well rounded for all demographics to achieve their goals. Everyone has a favorite go to meal they might get in an Asian-style restaurant. The restaurant aims at providing everyone with the best possible service. The age criteria that we aim to provide services to would be at least 18 and older. Customers of **FineChop** need a good user experience so providing them with the ability to find products and services they are looking for is essential. **FineChop** aim to offer the best service available in the food industry and strive to make wait times low & food perfect whether thats in house or takeaway. 
+
+### Strategy Trade-Off
+
+The restaurant business is highly competitive and the strategy trade-off for **FineChop** is to design and build an application capable of improving performance so it needs to be as user friendly as possible.
+
+* Consistent design
+* Simple navigation
+* Intuitive interface
+* Ease of accessibility
+* Full access for ordering without account
+* Quick and simple purchase
+* Optimized for mobile users
+* Simple pricing system
+* Excellent SEO
+* Improved productivity for essential staff members
 
 [Back to Top](#table-of-contents)
 
