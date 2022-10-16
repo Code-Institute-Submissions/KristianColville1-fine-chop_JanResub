@@ -35,7 +35,7 @@ Developer: Kristian Colville
 * [Testing](#testing)
 * [Bugs](#bugs)
 * [Technologies & Tools](#technologies--tools)
-* [Development & Deployment](#deployment--deployment)
+* [Development & Deployment](#development--deployment)
     * [Version Control](#version-control)
     * [Cloning this Repository](#cloning-this-repository)
     * [Heroku](#heroku)
