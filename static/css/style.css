@@ -127,6 +127,7 @@ footer a,
 .footer-links a {
     color: white;
     font-weight: 400;
+    font-size: 20px;
 }
 
 .footer-links a i {
@@ -145,6 +146,41 @@ footer .footer-links ul li:hover a {
     border-color: black;
     transition: all 0.2s ease-in-out;
 }
+
+footer h4 {
+    text-indent: 20px;
+    color: var(--yellow-orange-color-wheel);
+    text-shadow: 1px 2px 1px var(--rose-ebony);
+}
+
+input.subscription {
+    height: 35px;
+    border-radius: 8px;
+    border: 2px inset var(--new-york-pink);
+    background-color: var(--rebecca-purple);
+    color: white;
+}
+
+input.subscription::placeholder {
+    color: var(--yellow-orange-color-wheel);
+}
+
+input.subscription ~ button {
+    color: black !important;
+    background-color: var(--yellow-orange-color-wheel);
+    height: 35px;
+    border-radius: 8px;
+    border: 2px outset var(--yellow-orange-color-wheel);
+}
+
+input.subscription~button:active {
+    margin-top: 10px !important;
+    color: var(--yellow-orange-color-wheel) !important;
+    background-color: black;
+    border: 2px inset var(--yellow-orange-color-wheel);
+    transition: all 0.2s ease-in-out
+}
+
 
 /* -------------------------------------------------------Media Queries */
 
