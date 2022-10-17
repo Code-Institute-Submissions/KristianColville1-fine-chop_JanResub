@@ -107,6 +107,9 @@ footer {
     border-top: 2px inset var(--rebecca-purple);
 }
 
+.footer-logo {
+    width: 250px;
+}
 footer ul {
     list-style-type: none;
 }
@@ -183,6 +186,22 @@ input.subscription~button:active {
 
 
 /* -------------------------------------------------------Media Queries */
+@media only screen and (max-width: 575px){
+
+    .footer-logo,
+    footer p,
+    input.subscription,
+    input.subscription~button {
+        min-width: 100%;
+    }
+
+    ul.social-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
 
 @media only screen and (max-width: 412px) {
     .navbar-brand {
