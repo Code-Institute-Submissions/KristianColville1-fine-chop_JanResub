@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-
 :root {
     --rose-ebony: #63474dff;
     --rebecca-purple: #73409dff;
@@ -7,6 +5,8 @@
     --mellow-apricot: #ffbf7dff;
     --yellow-orange-color-wheel: #fe9b29ff;
     --madder-lake: #c1403aff;
+    --onyx: #353935;
+    --matte-black: #28282B;
 }
 
 html,
@@ -17,11 +17,14 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+a {
+    cursor: pointer;
+}
+
 /*----------------------------------------------------------- Nav */
 
-nav {
-    background-color: var(--rebecca-purple);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+header {
+    border-top: 4px outset var(--new-york-pink);
 }
 
 .navbar-brand {
@@ -31,8 +34,23 @@ nav {
     background-size: contain;
 }
 
-/* ham menu */
+div.navbar-collapse {
+    justify-content: right;
+}
 
+.navbar-nav .nav-link a {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    text-shadow: 1px 1px 1px var(--matte-black);
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color: var(--yellow-orange-color-wheel);
+}
+
+/* ham menu */
 .navbar-toggler {
     width: 65px;
     height: 65px;
@@ -92,23 +110,44 @@ nav {
     stroke-dashoffset: -138px;
 }
 
-.navbar-nav .nav-link a {
-    color: white;
-    font-size: 20px;
-}
 
 /* end ham menu */
+
+
+/* -------------------------------------------------------Home */
+
+
+.home-landing,
+.home-overlay {
+    height: 100vh;
+    width: 100%;
+}
+
+.home-landing {
+    position: relative;
+    overflow: clip !important;
+}
+
+.home-overlay {
+    position: absolute;
+    background-color: var(--onyx);
+    opacity: 0.5;
+}
+
+.home-img-container img {
+    width: 100%;
+}
 
 /* -------------------------------------------------------Footer */
 
 footer {
-    background-color: var(--rebecca-purple);
+    background-color: var(--matte-black);
     color: white;
-    border-top: 2px inset var(--rebecca-purple);
+    border-top: 3px inset var(--madder-lake);
 }
 
 .footer-logo {
-    width: 250px;
+    width: 350px;
 }
 footer ul {
     list-style-type: none;
@@ -145,22 +184,21 @@ footer a,
 footer ul li a:hover,
 footer .footer-links ul li:hover,
 footer .footer-links ul li:hover a {
-    color: black;
-    border-color: black;
+    color: var(--new-york-pink);
+    border-color: var(--new-york-pink);
     transition: all 0.2s ease-in-out;
 }
 
 footer h4 {
     text-indent: 20px;
-    color: var(--yellow-orange-color-wheel);
-    text-shadow: 1px 2px 1px var(--rose-ebony);
+    color: var(--mellow-apricot);
 }
 
 input.subscription {
     height: 35px;
     border-radius: 8px;
-    border: 2px inset var(--new-york-pink);
-    background-color: var(--rebecca-purple);
+    border: 2px inset white;
+    background-color: var(--matte-black);
     color: white;
 }
 
@@ -184,6 +222,10 @@ input.subscription~button:active {
     transition: all 0.2s ease-in-out
 }
 
+.copyright:hover {
+    color: var(--new-york-pink);
+    cursor: pointer;
+}
 
 /* -------------------------------------------------------Media Queries */
 @media only screen and (max-width: 575px){

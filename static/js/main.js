@@ -1,9 +1,19 @@
+$(document).ready(function(){
+    /**
+     * home images fade effect
+     */
+})
+
+/**
+ * Adds the navigation menu to the html document by
+ * appending the nav element.
+ */
 var nav = $("nav");
 var navHTML = `
-<a class="navbar-brand" href="#"></a>
+
 <div class="btn navbar-toggler" data="hamburger-menu" type="button" data-toggle="collapse"
     data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-    aria-label="Toggle navigation">
+    aria-label="Click to view drop down menu" role="navigation">
     <div class="center-svg">
         <svg class="ham hamRotate ham1" viewBox="0 0 100 100" onclick="this.classList.toggle('active')">
         <path
@@ -15,23 +25,22 @@ var navHTML = `
         <path
               class="line bottom"
               d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
-      </svg></div>
+      </svg>
     </div>
+</div>
 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <ul class="navbar-nav">
-        <li class="nav-link">
+        <li class="nav-link"><a>About Us</a>
         </li>
-        <li class="nav-link">
+        <li class="nav-link"><a>Menu</a>
         </li>
-        <li class="nav-link">
+        <li class="nav-link"><a>Order online</a>
         </li>
-        <li class="nav-link">
-        </li>
-        <li class="nav-link">
+        <li class="nav-link"><a>Reservations</a>
         </li>
         <li class="nav-link">
         </li>
     </ul>
 </div>
 `;
-nav.html(navHTML);
+nav.append(navHTML);
