@@ -1,8 +1,8 @@
-$(document).ready(function(){
-    /**
-     * home images fade effect
-     */
-})
+$(document).ready(function () {
+  /**
+   * home images fade effect
+   */
+});
 
 /**
  * Adds the navigation menu to the html document by
@@ -34,13 +34,31 @@ var navHTML = `
         </li>
         <li class="nav-link"><a>Menu</a>
         </li>
-        <li class="nav-link"><a>Order online</a>
+        <li class="nav-link"><a>Book a table</a>
         </li>
-        <li class="nav-link"><a>Reservations</a>
+        <li class="nav-link"><a class="orange-btn" >Order online</a>
         </li>
-        <li class="nav-link">
+        <li class="nav-link"><a>login</a>
+        </li>
+    </ul>
+    <ul class="mx-auto navbar-nav nav-social d-sm-flex flex-row">
+        <li class="nav-link"><a><i class="fa-brands fa-facebook-f"></i></a>
+        </li>
+        <li class="nav-link"><a><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li class="nav-link"><a><i class="fa-brands fa-twitter"></i></a>
         </li>
     </ul>
 </div>
 `;
 nav.append(navHTML);
+
+$(window).on("scroll", function () {
+  let navWrapper = nav.parent();
+  if (this.window.scrollY > 50) {
+    navWrapper.addClass("nav-bg");
+  }
+  if (this.window.scrollY < 50) {
+    navWrapper.removeClass("nav-bg");
+  }
+});
