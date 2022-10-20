@@ -53,16 +53,17 @@ div.navbar-collapse {
 .navbar-nav .nav-link a {
     color: white;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
     text-shadow: 1px 1px 1px var(--matte-black);
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 .nav-social li {
     width: 40px;
     height: 40px;
     margin-right: 5px;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 50%;
 
     position: relative;
@@ -80,9 +81,15 @@ div.navbar-collapse {
 .nav-social li a:hover,
 .nav-social li:hover,
 .nav-social li:hover a {
-    color: var(--new-york-pink);
-    border-color: var(--new-york-pink);
+    color: var(--yellow-orange-color-wheel);
+    border-color: var(--yellow-orange-color-wheel);
     transition: all 0.2s ease-in-out;
+}
+
+.tooltip-inner {
+    background-color: var(--new-york-pink);
+    margin-top: 10px;
+    text-shadow: 1px 1px 1px var(--matte-black);
 }
 
 /* ham menu */
@@ -92,6 +99,7 @@ div.navbar-collapse {
     border: 2px outset var(--new-york-pink);
     border-radius: 8px;
     position: relative;
+    margin-right: 10px;
 }
 
 .ham {
@@ -266,9 +274,10 @@ input.subscription~button:active {
 }
 
 /* -------------------------------------------------------Media Queries */
-
-@media only screen and (max-width: 1195px){
-
+@media only screen and (max-width: 991px) {
+    .navbar .nav-link {
+        margin-left: 10px;
+    }
 }
 
 @media only screen and (max-width: 575px){
@@ -290,6 +299,9 @@ input.subscription~button:active {
 
 @media only screen and (max-width: 412px) {
     .navbar-brand {
+        width: 250px;
+    }
+    .footer-logo {
         width: 250px;
     }
 }

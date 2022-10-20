@@ -7,22 +7,27 @@
             <img src="{% static 'img/design/brand-logo.webp' %}" alt="FineChop brand logo" class="footer-logo">
             <div class="footer-links my-4">
                 <ul class="col-12 social-links">
-                    <li class="mx-2">
-                        <a href="#" class="text-decoration-none mx-2" target="_blank" rel="noopener" aria-label="Click here to go to our Facebook page"><i
-                                class="
+                    <li class="mx-1">
+                        <a href="#" class="text-decoration-none mx-2" target="_blank" rel="noopener"
+                            aria-label="Click here to go to our Facebook page"><i class="
                 fa-brands fa-facebook-f"></i></a></li>
-                    <li class="mx-2">
+                    <li class="mx-1">
                         <a href="#" class="text-decoration-none mx-2" target="_blank" rel="noopener"
-                            aria-label="Click here to go to our Instagram page"><i
-                                class="
+                            aria-label="Click here to go to our Instagram page"><i class="
                 fa-brands fa-instagram"></i></a></li>
-                    <li class="mx-2">
+                    <li class="mx-1">
                         <a href="#" class="text-decoration-none mx-2" target="_blank" rel="noopener"
-                            aria-label="Click here to go to our Twitter page"><i
-                                class="fa-brands fa-twitter"></i></a></li>
+                            aria-label="Click here to go to our Twitter page"><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li class="mx-1">
+                        <a href="tel://0209126583" class="text-decoration-none mx-2" target="_blank" rel="noopener"
+                            aria-label="Click here to give us a call"><i class="fa-solid fa-phone"></i></a>
+                    </li>
                 </ul>
+
             </div>
-            <p class="text-justify"><strong>FineChop</strong> has the pleasure of serving popular and authentic Asian dishes. We aim to bring
+            <p class="text-justify"><strong>FineChop</strong> has the pleasure of serving popular and authentic Asian
+                dishes. We aim to bring
                 you the best meals whether you order online or dine in.</p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-4 support-icons">
@@ -40,7 +45,7 @@
                 <li><a class="text-decoration-none" href="mailto://" target="_blank" rel="noopener"
                         aria-label="Click here to call FineChop"><i class="fa-solid fa-location-dot mr-2"></i>
                         Location</a>
-                        </li>
+                </li>
             </ul>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-4">
@@ -65,16 +70,18 @@
             </ul>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-4">
-            <p class="w-75 text-center"><i class="fa-regular fa-envelope mr-2"></i> Stay up to date on the latest from <strong>FineChop</strong></p>
+            <p class="w-75 text-center"><i class="fa-regular fa-envelope mr-2"></i> Stay up to date on the latest from
+                <strong>FineChop</strong></p>
             <form action="">
                 {% csrf_token %}
-                <label for="email" hidden><a class="sr-only sr-only-focusable" href="#content">Enter your email below to subscribe to our news letter</a></label>
-                <input class="subscription text-center w-75" type="email" id="email" name="email" placeholder="Enter your e-mail address">
+                <label for="email" hidden><a class="sr-only sr-only-focusable" href="#content">Enter your email below to
+                        subscribe to our news letter</a></label>
+                <input class="subscription text-center w-75" type="email" id="email" name="email"
+                    placeholder="Enter your e-mail address" required>
                 <button class="btn text-white mt-2 w-75 shadow">Subscribe</button>
             </form>
             <p class="w-75 text-center mt-5">&copy; Created by <strong><a class="text-decoration-none copyright"
-                        href="https://github.com/KristianColville1"
-                        target="_blank" rel="noopener" aria-label="Click here to view Kristian Colville GitHub
+                        href="https://github.com/KristianColville1" target="_blank" rel="noopener" aria-label="Click here to view Kristian Colville GitHub
                         profile">Kristian Colville <i class="fa-brands fa-github"></i></a>
                 </strong></p>
         </div>

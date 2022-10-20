@@ -1,4 +1,11 @@
 $(document).ready(function () {
+
+    var tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
   /**
    * home images fade effect
    */
@@ -11,8 +18,8 @@ $(document).ready(function () {
 var nav = $("nav");
 var navHTML = `
 
-<div class="btn navbar-toggler" data="hamburger-menu" type="button" data-toggle="collapse"
-    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+<div class="btn navbar-toggler" data="hamburger-menu" type="button" data-bs-toggle="collapse"
+    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
     aria-label="Click to view drop down menu" role="navigation">
     <div class="center-svg">
         <svg class="ham hamRotate ham1" viewBox="0 0 100 100" onclick="this.classList.toggle('active')">
@@ -29,24 +36,34 @@ var navHTML = `
     </div>
 </div>
 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <ul class="navbar-nav">
-        <li class="nav-link"><a>About Us</a>
+    <ul class="mx-sm-1 mx-auto navbar-nav">
+        <li class="nav-link "><a>About</a>
         </li>
         <li class="nav-link"><a>Menu</a>
         </li>
-        <li class="nav-link"><a>Book a table</a>
+        <li class="nav-link"><a>Reserve</a>
         </li>
-        <li class="nav-link"><a class="orange-btn" >Order online</a>
+        <li class="nav-link"><a>Order</a>
         </li>
         <li class="nav-link"><a>login</a>
         </li>
     </ul>
     <ul class="mx-auto navbar-nav nav-social d-sm-flex flex-row">
-        <li class="nav-link"><a><i class="fa-brands fa-facebook-f"></i></a>
+        <li class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Facebook"><a href="#" class="text-decoration-none" target="_blank" rel="noopener" aria-label="Click here to go to our Facebook page"><i
+                                class="
+                fa-brands fa-facebook-f"></i></a>
         </li>
-        <li class="nav-link"><a><i class="fa-brands fa-instagram"></i></a>
+        <li class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"><a href="#" class="text-decoration-none" target="_blank" rel="noopener"
+                            aria-label="Click here to go to our Instagram page"><i
+                                class="
+                fa-brands fa-instagram"></i></a>
         </li>
-        <li class="nav-link"><a><i class="fa-brands fa-twitter"></i></a>
+        <li class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Twitter"><a href="#" class="text-decoration-none" target="_blank" rel="noopener"
+                            aria-label="Click here to go to our Twitter page"><i
+                                class="fa-brands fa-twitter"></i></a>
+        </li>
+        <li class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Call Now"><a href="tel://0209126583" class="text-decoration-none" target="_blank" rel="noopener"
+                            aria-label="Click here to give us a call"><i class="fa-solid fa-phone"></i></a>
         </li>
     </ul>
 </div>
