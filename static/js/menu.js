@@ -1,9 +1,11 @@
 $(document).ready(function () {
-  /**
-   * Dropdowns.
-   * Slides dropdown menu's for nice & smooth effect.
-   * Improves the UI and makes the website more cohesive.
-   */
+    /**
+     * Dropdowns.
+     * Slides dropdown menu's for nice & smooth effect.
+     * Improves the UI and makes the website more cohesive.
+     */
+
+    // if the user clicks a dropdown then do this
     $(".dropdown-toggle").on("click", function (e) {
         e.preventDefault();
         let menu = $(this).next()
@@ -14,7 +16,15 @@ $(document).ready(function () {
             $(menu).slideDown();
             $(menu).addClass("menu-activated");
         }
-        });
+    });
+
+    // if the mouse leaves the dropdown then do this
+    $(".dropdown-menu").on("mouseleave", function (e) {
+        e.preventDefault();
+        let menu = $(this)
+        $(menu).slideUp();
+        $(menu).removeClass("menu-activated")
+    });
 });
 
 /**
@@ -56,7 +66,7 @@ var navHTML = `
           <a class="dropdown-toggle" href="#" role="button" id="account-dropdown" data-toggle="dropdown" aria-expanded="false">
             Account
           </a>
-          <ul class="dropdown-menu" aria-labelledby="account-dropdown">
+          <ul class="dropdown-menu shadow" aria-labelledby="account-dropdown">
             <li><a class="dropdown-item" href="#">Sign In</a></li>
             <li><a class="dropdown-item" href="#">Sign up</a></li>
           </ul>
