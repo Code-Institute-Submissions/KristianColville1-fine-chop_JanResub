@@ -6,14 +6,14 @@ $(document).ready(function () {
      */
 
     // if the user clicks a dropdown then do this
-    $(".dropdown-toggle").on("click", function (e) {
+    $(".dropdown-toggle").on("mouseenter", function (e) {
         e.preventDefault();
         let menu = $(this).next()
         if($(menu).hasClass("menu-activated")){
-            $(menu).slideUp();
+            $(menu).slideUp('slow');
             $(menu).removeClass("menu-activated");
         } else {
-            $(menu).slideDown();
+            $(menu).slideDown('fast');
             $(menu).addClass("menu-activated");
         }
     });
@@ -57,20 +57,29 @@ var navHTML = `
         </li>
         <li class="nav-link"><a>Menu</a>
         </li>
-        <li class="nav-link"><a>Reserve</a>
+        <li class="nav-link">
+          <div class="dropdown">
+            <a class="dropdown-toggle" href="#" role="button" id="account-dropdown" data-toggle="dropdown" aria-expanded="false">
+              Reserve
+            </a>
+            <ul class="dropdown-menu shadow" aria-labelledby="account-dropdown">
+              <li><a class="dropdown-item" href="#">Book a Table</a></li>
+              <li><a class="dropdown-item" href="#">Buy Gift Card</a></li>
+            </ul>
+          </div>
         </li>
         <li class="nav-link"><a>Order</a>
         </li>
         <li class="nav-link">
-        <div class="dropdown">
-          <a class="dropdown-toggle" href="#" role="button" id="account-dropdown" data-toggle="dropdown" aria-expanded="false">
-            Account
-          </a>
-          <ul class="dropdown-menu shadow" aria-labelledby="account-dropdown">
-            <li><a class="dropdown-item" href="#">Sign In</a></li>
-            <li><a class="dropdown-item" href="#">Sign up</a></li>
-          </ul>
-        </div>
+          <div class="dropdown">
+            <a class="dropdown-toggle" href="#" role="button" id="account-dropdown" data-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu shadow" aria-labelledby="account-dropdown">
+              <li><a class="dropdown-item" href="#">Sign In</a></li>
+              <li><a class="dropdown-item" href="#">Sign up</a></li>
+            </ul>
+          </div>
         </li>
     </ul>
     <ul class="mx-auto navbar-nav nav-social d-sm-flex flex-row">
