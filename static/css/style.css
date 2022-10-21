@@ -92,6 +92,10 @@ div.navbar-collapse {
     text-shadow: 1px 1px 1px var(--matte-black);
 }
 
+.dropdown-menu {
+    background-color: var(--matte-black) !important;
+}
+
 /* ham menu */
 .navbar-toggler {
     width: 65px;
