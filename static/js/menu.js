@@ -5,6 +5,7 @@ $(document).ready(function () {
    * Improves the UI and makes the website more cohesive.
    */
     $(".dropdown-toggle").on("click", function (e) {
+        e.preventDefault();
         let menu = $(this).next()
         if($(menu).hasClass("menu-activated")){
             $(menu).slideUp();
