@@ -280,6 +280,13 @@ All the Testing documentation can be found [here](/TESTING.md)
 
 ## Bugs
 
+| Issue ID | Expected Behaviour | Behaviour reported | Bug Fix |
+|---|---|---|---|
+|[#7](https://github.com/KristianColville1/fine-chop/issues/8)|When the dropdown menu is clicked it slides a menu downwards to display the menu for the user|Dropdown menu slides up and down but the page also scrolls up to the top. Bad user experience| Added preventDefault to jquery event for sliding dropdown menu's and reevaluated using a general purpose event, fixed issue and created general purpose click event for dropdown menu's|
+|||||
+|||||
+|||||
+
 [Back to Top](#table-of-contents)
 
 ## Technologies & Tools
