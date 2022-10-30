@@ -70,20 +70,20 @@ var navHTML = `
             <a class="dropdown-toggle" href="#" role="button" id="account-dropdown" data-toggle="dropdown" aria-expanded="false">
               Reserve
             </a>
-            <ul class="dropdown-menu shadow" aria-labelledby="account-dropdown">
+            <ul class="dropdown-menu shadow mt-2" aria-labelledby="account-dropdown">
               <li><a class="dropdown-item" href="#">Book a Table</a></li>
               <li><a class="dropdown-item" href="#">Buy Gift Card</a></li>
             </ul>
           </div>
         </li>
-        <li class="nav-link"><a>Order</a>
+        <li class="nav-link bg-orange shadow"><a href="#">Order</a>
         </li>
         <li class="nav-link">
           <div class="dropdown">
             <a class="dropdown-toggle" href="#" role="button" id="account-dropdown" data-toggle="dropdown" aria-expanded="false">
               Account
             </a>
-            <ul class="dropdown-menu shadow" aria-labelledby="account-dropdown">
+            <ul class="dropdown-menu shadow mt-2" aria-labelledby="account-dropdown">
               <li><a class="dropdown-item" href="#">Sign In</a></li>
               <li><a class="dropdown-item" href="#">Sign up</a></li>
             </ul>

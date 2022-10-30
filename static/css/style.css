@@ -46,10 +46,6 @@ nav {
     background-size: contain;
 }
 
-div.navbar-collapse {
-    justify-content: right;
-}
-
 .navbar-nav .nav-link a {
     color: white;
     font-size: 18px;
@@ -94,6 +90,31 @@ div.navbar-collapse {
 
 .dropdown-menu {
     background-color: var(--matte-black) !important;
+    border-radius: 8px;
+}
+
+.dropdown-menu li a {
+    text-transform: lowercase !important;
+    text-transform: capitalize !important;
+}
+
+.bg-orange {
+    background-color: var(--yellow-orange-color-wheel);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.bg-orange:hover {
+    background-color: var(--matte-black);
+}
+
+.bg-orange a {
+    padding: 0px 25px;
+}
+
+.bg-orange:hover,
+.bg-orange:hover a {
+    color: var(--yellow-orange-color-wheel);
 }
 
 /* ham menu */
