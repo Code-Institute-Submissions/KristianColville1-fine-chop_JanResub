@@ -7,15 +7,15 @@
 {% endblock head_title %}
 {% block content %}
 <div class="container">
-    <div class="row mt-4">
-        <div class="col-sm-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3 text-center">
+    <div class="row my-4">
+        <div class="col-sm-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3">
                 <h1 class="text-center">{% trans "Sign In" %}</h1>
                 <hr/>
-                <p>
+                <p class="text-center">
                     {% blocktrans %}If you have not created an account yet, then please
         <a href="{{ signup_url }}" class="text-primary">sign up</a> first.{% endblocktrans %}
                 </p>
-                <form class="login" method="post" action="{% url 'account_login' %}">
+                <form class="login allauth-form-inner-content" method="post" action="{% url 'account_login' %}">
                     {% csrf_token %}
                     {{ form|crispy }}
                     {% if redirect_field_value %}

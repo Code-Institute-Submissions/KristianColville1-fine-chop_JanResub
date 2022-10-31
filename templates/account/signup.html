@@ -7,14 +7,14 @@
 {% block content %}
 <div class="container">
     <div class="row mt-4">
-        <div class="col-sm-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3 text-center">
+        <div class="col-sm-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3">
                 <h1 class="text-center">{% trans "Sign Up" %}</h1>
                 <hr/>
-                <p>
+                <p class="text-center">
                     {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
           in</a>.{% endblocktrans %}
                 </p>
-                <form class="signup"
+                <form class="signup allauth-form-inner-content"
                       id="signup_form"
                       method="post"
                       action="{% url 'account_signup' %}">

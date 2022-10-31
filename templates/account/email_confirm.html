@@ -5,23 +5,24 @@
     {% trans "Confirm E-mail Address" %}
 {% endblock head_title %}
 {% block content %}
-    <div class="container">
-        <div class="row mt-4">
-            <div class="col-sm-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3 text-center">
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-sm-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3 form-wrapper">
                 <h1>{% trans "Confirm E-mail Address" %}</h1>
                 {% if confirmation %}
                     {% user_display confirmation.email_address.user as user_display %}
-                    <p>
+                    <p class="text-center">
                         {% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}
                     </p>
                     <form method="post"
-                          action="{% url 'account_confirm_email' confirmation.key %}">
+                          action="{% url 'account_confirm_email' confirmation.key %}"
+                          class="allauth-form-inner-content">
                         {% csrf_token %}
                         <button type="submit">{% trans "Confirm" %}</button>
                     </form>
                 {% else %}
                     {% url 'account_email' as email_url %}
-                    <p>
+                    <p class="text-center">
                         {% blocktrans %}This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new e-mail confirmation request</a>.{% endblocktrans %}
                     </p>
                 {% endif %}
