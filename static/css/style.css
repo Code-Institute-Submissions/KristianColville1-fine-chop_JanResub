@@ -326,7 +326,7 @@ h1 {
 /* ------------ Forms */
 
 .allauth-form-inner-content label:not([for='id_remember']) {
-    display: none; /* Removes labels from allauth forms /*
+    display: none; /* Removes labels from allauth forms */
 }
 
 /* -------------------------------------------------------Media Queries */

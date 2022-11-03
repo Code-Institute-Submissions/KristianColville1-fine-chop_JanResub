@@ -28,7 +28,4 @@
       "editor.defaultFormatter": "ms-python.python"
    },
    "python.formatting.provider": "yapf",
-   "[django-html]": {
-      "editor.defaultFormatter": "monosans.djlint"
-   }
 }
