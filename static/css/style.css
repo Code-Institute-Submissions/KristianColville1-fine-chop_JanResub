@@ -310,23 +310,33 @@ h1 {
     color: var(--yellow-orange-color-wheel)
 }
 
-/* ----------- Buttons */
-.btn-outline-primary {
-    color: var(--yellow-orange-color-wheel);
-    border-color: var(--matte-black);
-}
-
-.btn-outline-primary:hover,
-.btn-outline-primary:active {
-    background-color: var(--yellow-orange-color-wheel);
-    color: black;
-    transition: all 0.2s ease-in-out;
-}
-
 /* ------------ Forms */
+
+/* Allauth */
+
+.allauth-bg {
+    background-color: var(--mellow-apricot);
+}
+
+.allauth-container {
+    color: white;
+    background-color: var(--matte-black);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border: 1px solid var(--yellow-orange-color-wheel);
+}
+
+.allauth-container hr {
+    color: white;
+}
 
 .allauth-form-inner-content label:not([for='id_remember']) {
     display: none; /* Removes labels from allauth forms */
+}
+
+.allauth-form-inner-content input {
+    background-color: var(--mellow-apricot);
+    /* Removes labels from allauth forms */
 }
 
 /* -------------------------------------------------------Media Queries */

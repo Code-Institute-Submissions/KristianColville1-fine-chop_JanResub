@@ -283,7 +283,7 @@ All the Testing documentation can be found [here](/TESTING.md)
 | Issue ID | Expected Behaviour | Behaviour reported | Bug Fix |
 |---|---|---|---|
 |[#8](https://github.com/KristianColville1/fine-chop/issues/8)|When the dropdown menu is clicked it slides a menu downwards to display the menu for the user|Dropdown menu slides up and down but the page also scrolls up to the top. Bad user experience| Added preventDefault to jquery event for sliding dropdown menu's and reevaluated using a general purpose event, fixed issue and created general purpose click event for dropdown menu's|
-|||||
+|[#9](https://github.com/KristianColville1/fine-chop/issues/9)]|DjLint was expected to help conform to code standards and best practices|It works locally but when deploying on Heroku the extended pip packages are effecting the deployment running successfully| Even after uninstalling djlint the dependencies it brought with it still affected the project. I deleted the virtual environment and created a new one with my requirements.txt before I installed djlint|
 |||||
 |||||
 
