@@ -125,17 +125,16 @@ nav {
 
 /* ham menu */
 .navbar-toggler {
-    width: 65px;
-    height: 65px;
-    border: 2px outset var(--new-york-pink);
-    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    border: 1px outset var(--new-york-pink);
     position: relative;
     margin-right: 10px;
 }
 
 .ham {
-    width: 65px;
-    height: 65px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     transition: transform 400ms;
@@ -163,7 +162,7 @@ nav {
 .line {
     fill: none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: white;
+    stroke: var(--new-york-pink);
     stroke-width: 5;
     stroke-linecap: round;
 }
