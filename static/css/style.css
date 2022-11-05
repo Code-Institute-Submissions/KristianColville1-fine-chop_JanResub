@@ -271,34 +271,6 @@ footer h4 {
     color: var(--mellow-apricot);
 }
 
-input.subscription {
-    height: 35px;
-    border-radius: 8px;
-    border: 2px inset white;
-    background-color: var(--matte-black);
-    color: white;
-}
-
-input.subscription::placeholder {
-    color: var(--yellow-orange-color-wheel);
-}
-
-input.subscription ~ button {
-    color: black !important;
-    background-color: var(--yellow-orange-color-wheel);
-    height: 35px;
-    border-radius: 8px;
-    border: 2px outset var(--yellow-orange-color-wheel);
-}
-
-input.subscription~button:active {
-    margin-top: 10px !important;
-    color: var(--yellow-orange-color-wheel) !important;
-    background-color: black;
-    border: 2px inset var(--yellow-orange-color-wheel);
-    transition: all 0.2s ease-in-out
-}
-
 .copyright:hover {
     color: var(--new-york-pink);
     cursor: pointer;
