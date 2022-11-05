@@ -5,13 +5,13 @@
     {% trans "Signup" %}
 {% endblock head_title %}
 {% block content %}
-<div class="container-fluid mt-5 min-vh-100">
-    <div class="row my-4">
-        <div class="col-sm-12 col-md-8 col-lg-4 offset-md-2 offset-lg-4 allauth-container pt-3 my-5">
+<div class="container-fluid min-vh-100">
+    <div class="row mt-5 allauth-container-wrapper">
+        <div class="col-sm-12 col-md-8 col-lg-4 offset-md-2 offset-lg-4 allauth-container pt-3 mt-5">
                 <h1 class="text-center">{% trans "Sign Up" %}</h1>
                 <hr/>
                 <p class="text-center">
-                    {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
+                    {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" class="text-info" aria-label="Go to sign in page">sign
           in</a>.{% endblocktrans %}
                 </p>
                 <form class="signup allauth-form-inner-content"
@@ -25,7 +25,7 @@
                                name="{{ redirect_field_name }}"
                                value="{{ redirect_field_value }}"/>
                     {% endif %}
-                    <button class="btn w-100 btn-outline-primary text-uppercase my-2" type="submit">{% trans "Sign Up" %}</button>
+                    <button class="btn w-100 btn-primary text-uppercase my-2" type="submit">{% trans "Sign Up" %}</button>
                 </form>
             </div>
         </div>

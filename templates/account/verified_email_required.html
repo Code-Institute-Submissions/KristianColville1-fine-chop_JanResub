@@ -4,9 +4,9 @@
     {% trans "Verify Your E-mail Address" %}
 {% endblock head_title %}
 {% block content %}
-<div class="container-fluid mt-5 min-vh-100">
-    <div class="row my-4">
-        <div class="col-sm-12 col-md-8 col-lg-4 offset-md-2 offset-lg-4 allauth-container pt-3 my-5">
+<div class="container-fluid min-vh-100">
+    <div class="row mt-5 allauth-container-wrapper">
+        <div class="col-sm-12 col-md-8 col-lg-4 offset-md-2 offset-lg-4 allauth-container pt-3 mt-5">
                 <h1 class="text-center">{% trans "Verify Your E-mail Address" %}</h1>
                 <hr/>
                 {% url 'account_email' as email_url %}
@@ -22,7 +22,7 @@
                 contact us if you do not receive it within a few minutes.{% endblocktrans %}
                 </p>
                 <p class="text-center">
-                    {% blocktrans %}<strong>Note:</strong> you can still <a href="{{ email_url }}">change your e-mail
+                    {% blocktrans %}<strong>Note:</strong> you can still <a href="{{ email_url }}" class="text-info" aria-label="click here to change your email address">change your e-mail
                     address</a>.{% endblocktrans %}
                 </p>
             </div>

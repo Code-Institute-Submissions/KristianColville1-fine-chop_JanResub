@@ -6,14 +6,14 @@
     {% trans "Sign In" %}
 {% endblock head_title %}
 {% block content %}
-<div class="container-fluid mt-5 min-vh-100">
-    <div class="row my-4">
-        <div class="col-sm-12 col-md-8 col-lg-4 offset-md-2 offset-lg-4 allauth-container pt-3 my-5">
+<div class="container-fluid min-vh-100">
+    <div class="row mt-5 allauth-container-wrapper">
+        <div class="col-sm-12 col-md-8 col-lg-4 offset-md-2 offset-lg-4 allauth-container pt-3 mt-5">
                 <h1 class="text-center">{% trans "Sign In" %}</h1>
                 <hr/>
                 <p class="text-center">
                     {% blocktrans %}If you have not created an account yet, then please
-        <a href="{{ signup_url }}" class="text-primary">sign up</a> first.{% endblocktrans %}
+        <a href="{{ signup_url }}" class="text-info">sign up</a> first.{% endblocktrans %}
                 </p>
                 <form class="login allauth-form-inner-content" method="post" action="{% url 'account_login' %}">
                     {% csrf_token %}
@@ -25,9 +25,9 @@
                                    value="{{ redirect_field_value }}"/>
                         </div>
                     {% endif %}
-                    <a class="btn text-primary  my-2"
+                    <a class="btn text-info my-2"
                        href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-                    <button class="btn w-100 btn-outline-primary text-uppercase my-2" type="submit">{% trans "Sign In" %}</button>
+                    <button class="btn w-100 btn-primary text-uppercase my-2" type="submit">{% trans "Sign In" %}</button>
                 </form>
             </div>
         </div>
