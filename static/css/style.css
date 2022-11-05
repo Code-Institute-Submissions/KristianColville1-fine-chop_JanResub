@@ -127,7 +127,7 @@ nav {
 .navbar-toggler {
     width: 40px;
     height: 40px;
-    border: 1px outset var(--new-york-pink);
+    border: 1px outset var(--yellow-orange-color-wheel);
     position: relative;
     margin-right: 10px;
 }
@@ -162,7 +162,7 @@ nav {
 .line {
     fill: none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: var(--new-york-pink);
+    stroke: var(--mellow-apricot);
     stroke-width: 5;
     stroke-linecap: round;
 }
@@ -285,6 +285,11 @@ h1 {
 /* ------------ Forms */
 
 /* Allauth */
+
+.allauth-container-wrapper {
+    position: relative;
+    top: 10vh;
+}
 
 .allauth-container {
     color: white;
