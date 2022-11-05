@@ -35,3 +35,12 @@ $(document).ready(function () {
     });
 });
 
+let navWrapper = $('.nav-wrapper');
+window.addEventListener("scroll", function () {
+    if (this.window.scrollY > 90) {
+        navWrapper.addClass('nav-bg');
+    }
+    if (this.window.scrollY < 90) {
+        navWrapper.removeClass('nav-bg');
+    }
+});
