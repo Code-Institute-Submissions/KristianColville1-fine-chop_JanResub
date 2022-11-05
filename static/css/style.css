@@ -15,6 +15,7 @@ body {
     overflow: visible;
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
+    background-color: var(--matte-black);
 }
 
 a {
@@ -32,7 +33,7 @@ header {
 }
 
 nav {
-    max-width: 1600px;
+    max-width: 1500px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -41,6 +42,7 @@ nav {
 .nav-bg {
     background-color: var(--matte-black);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    transition: all 0.2s ease-in-out;
 }
 
 .navbar-brand {
@@ -93,7 +95,7 @@ nav {
 }
 
 .dropdown-menu {
-    background-color: var(--matte-black) !important;
+    background-color: whitesmoke;
     border-radius: 8px;
 }
 
@@ -306,7 +308,7 @@ input.subscription~button:active {
 
 /* ----------- Headings */
 h1 {
-    color: var(--yellow-orange-color-wheel)
+    color: var(--mellow-apricot)
 }
 
 /* ------------ Forms */
@@ -318,7 +320,7 @@ h1 {
     background-color: var(--matte-black);
     border-radius: 8px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    border: 1px solid var(--yellow-orange-color-wheel);
+    border: 2px outset var(--mellow-apricot);
 }
 
 .allauth-container hr {
