@@ -34,9 +34,9 @@
 
 <body class="d-flex flex-column min-vh-100">
     <header class="container-fluid g-0 nav-container">
-        <div class="nav-wrapper fixed-top">
+        <div class="nav-wrapper fixed-top g-0">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand mx-auto" href="{% url 'home' %}" aria-label="Click here to go to the home page"></a>
+                <a class="navbar-brand mx-2" href="{% url 'home' %}" aria-label="Click here to go to the home page"></a>
                 <div class="btn navbar-toggler" data="hamburger-menu" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Click to view drop down menu" role="navigation">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <ul class="mx-sm-1 mx-auto navbar-nav">
+                    <ul class="mx-sm-1 mx-auto navbar-nav ">
                         <li class="nav-link">
                             <a>About</a>
                         </li>
@@ -79,11 +79,11 @@
                         </li>
                         <li class="nav-link">
                             <div class="dropdown">
-                                <a class="dropdown-toggle" href="#" role="button" id="account-dropdown"
+                                <a class="dropdown-toggle" href="#" role="button" id="login-dropdown"
                                     data-toggle="dropdown" aria-expanded="false">
                                     Account
                                 </a>
-                                <ul class="dropdown-menu shadow mt-2" aria-labelledby="account-dropdown">
+                                <ul class="dropdown-menu shadow mt-2" aria-labelledby="login-dropdown">
                                     {% if user.is_authenticated %}
                                         <li>
                                             <a class="dropdown-item"
