@@ -100,41 +100,34 @@ nav {
 }
 
 .dropdown-menu li a {
+    color: black !important;
     text-transform: lowercase !important;
     text-transform: capitalize !important;
+    text-shadow: none !important;
+}
+
+.dropdown-menu li:hover a {
+    background-color: var(--mellow-apricot);
 }
 
 .bg-orange {
+    text-align: center;
     background-color: var(--yellow-orange-color-wheel);
-    border-radius: 8px;
     cursor: pointer;
-}
-
-.bg-orange:hover {
-    background-color: var(--matte-black);
-}
-
-.bg-orange a {
-    padding: 0px 25px;
-}
-
-.bg-orange:hover,
-.bg-orange:hover a {
-    color: var(--yellow-orange-color-wheel);
 }
 
 /* ham menu */
 .navbar-toggler {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border: 1px outset var(--yellow-orange-color-wheel);
     position: relative;
     margin-right: 10px;
 }
 
 .ham {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     transition: transform 400ms;
@@ -162,7 +155,7 @@ nav {
 .line {
     fill: none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: var(--mellow-apricot);
+    stroke: var(--new-york-pink);
     stroke-width: 5;
     stroke-linecap: round;
 }
