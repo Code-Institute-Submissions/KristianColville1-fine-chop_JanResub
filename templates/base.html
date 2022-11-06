@@ -58,10 +58,26 @@
                         </li>
                         {% else %}
                         <li class="nav-link">
-                            <a>About</a>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" id="about-dropdown"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    About
+                                </a>
+                                <ul class="dropdown-menu shadow mt-2" aria-labelledby="about-dropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="#">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Contact Us</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Careers</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-link">
-                            <a>Menu</a>
+                            <a>Browse Menu</a>
                         </li>
                         <li class="nav-link">
                             <div class="dropdown">
@@ -79,9 +95,6 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-link">
-                            <a href="#">Order</a>
-                        </li>
                         {% endif %}
                         <li class="nav-link">
                             <div class="dropdown">
@@ -91,8 +104,7 @@
                                 </a>
                                 <ul class="dropdown-menu shadow mt-2" aria-labelledby="login-dropdown">
                                     <li>
-                                        <a class="dropdown-item" href="">Contact
-                                            Us</a>
+                                        
                                     </li>
                                     {% if user.is_authenticated %}
                                     <li>
