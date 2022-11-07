@@ -26,7 +26,8 @@ from django.utils.timezone import now
 from .admin_forms import (SubmissionAdminForm, SubscriptionAdminForm,
                           ImportForm, ConfirmForm, ArticleFormSet)
 from .admin_utils import ExtendibleModelAdminMixin, make_subscription
-from .compat import get_context, reverse
+from django.urls import reverse
+from .compat import get_context
 from .settings import newsletter_settings
 
 logger = logging.getLogger(__name__)

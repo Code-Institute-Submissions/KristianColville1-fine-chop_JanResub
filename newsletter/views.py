@@ -16,7 +16,7 @@ from django.utils.decorators import method_decorator
 from django.utils.translation import ugettext, ugettext_lazy as _
 from django.utils import timezone
 from django.forms.models import modelformset_factory
-from .compat import reverse
+from django.urls import reverse
 from .models import Newsletter, Subscription, Submission
 from .forms import (SubscribeRequestForm, UserUpdateForm, UpdateRequestForm,
                     UnsubscribeRequestForm, UpdateForm)
@@ -35,7 +35,7 @@ def is_authenticated(user):
 class NewsletterViewBase(object):
     """ Base class for newsletter views. """
     queryset = Newsletter.on_site.filter(visible=True)
-    allow_empty = False
+    allow_empty = True
     slug_url_kwarg = 'newsletter_slug'
 
 

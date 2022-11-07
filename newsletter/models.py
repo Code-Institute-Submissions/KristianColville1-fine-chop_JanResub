@@ -2,7 +2,6 @@ import logging
 import time
 from six import python_2_unicode_compatible
 import django
-
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.contrib.sites.managers import CurrentSiteManager
@@ -13,11 +12,10 @@ from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext
 from django.utils.timezone import now
-
 from sorl.thumbnail import ImageField
 from distutils.version import LooseVersion
-
-from .compat import get_context, reverse
+from django.urls import reverse
+from .compat import get_context
 from .utils import (make_activation_code, get_default_sites, ACTIONS)
 
 logger = logging.getLogger(__name__)
@@ -225,7 +223,6 @@ class Subscription(models.Model):
     def save(self, *args, **kwargs):
         """
         Perform some basic validation and state maintenance of Subscription.
-        TODO: Move this code to a more suitable place (i.e. `clean()`) and
         cleanup the code. Refer to comment below and
         https://docs.djangoproject.com/en/dev/ref/models/instances/#django.db.models.Model.clean
         """
