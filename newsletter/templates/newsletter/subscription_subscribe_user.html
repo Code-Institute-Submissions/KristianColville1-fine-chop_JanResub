@@ -1,10 +1,10 @@
-{% extends "newsletter/common.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
 {% block title %}{% trans "Newsletter subscribe" %}{% endblock title %}
 
-{% block body %}
+{% block content %}
 <h1>{% trans "Newsletter subscribe" %} {{ newsletter.title }}</h1>
 
 <p>Welcome, {{ user }}!</p>
@@ -22,4 +22,4 @@
     <p><input id="id_submit" name="submit" value="{% trans "Subscribe" %}" type="submit" /></p>
 </form>
 {% endif %}
-{% endblock body %}
+{% endblock content %}

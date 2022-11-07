@@ -1,10 +1,10 @@
-{% extends "newsletter/common.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
 {% block title %}{% trans "Newsletter detail" %}{% endblock title %}
 
-{% block body %}
+{% block content %}
 <table>
     <tr>
         <th>{% trans "Newsletter" %} {{ object.title }}</th>

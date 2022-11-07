@@ -1,10 +1,10 @@
-{% extends "newsletter/common.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
 {% block title %}{% trans "Newsletter archive" %}{% endblock title %}
 
-{% block body %}
+{% block content %}
 <table>
     <tr>
         <th>{% trans "Newsletter archive" %} {{ newsletter.title }}</th>
@@ -18,4 +18,4 @@
         <td><a href="../">{% trans "Back to list" %}</a></td>
     </tr>
 </table>
-{% endblock body %}
+{% endblock content %}

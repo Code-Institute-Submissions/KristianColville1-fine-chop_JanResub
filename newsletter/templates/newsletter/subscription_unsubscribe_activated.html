@@ -1,11 +1,11 @@
-{% extends "newsletter/common.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
 {% block title %}{% trans "Newsletter" %} {{ newsletter.title }} {{ action }} {% trans "activate" %}{% endblock title %}
 
-{% block body %}
+{% block content %}
     <h1>{% trans "Newsletter" %} {{ newsletter.title }} {{ action }} {% trans "activate" %}</h1>
 
     <p>{% trans "You have successfully been unsubscribed." %}</p>
-{% endblock body %}
+{% endblock content %}

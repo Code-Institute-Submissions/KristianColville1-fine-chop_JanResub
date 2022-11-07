@@ -1,10 +1,10 @@
-{% extends "newsletter/common.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
 {% block title %}{% trans "Newsletter list" %}{% endblock title %}
 
-{% block body %}
+{% block content %}
 {% if user.is_authenticated %}
 <form method="POST" action="">
   {% csrf_token %}
@@ -38,4 +38,4 @@
     {% endfor %}
 </table>
 {% endif %}
-{% endblock body %}
+{% endblock content %}
