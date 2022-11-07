@@ -55,9 +55,8 @@ class Settings(object):
 
         else:
             # Default behaviour
-            raise AttributeError(
-                'No setting or default available for \'%s\'' % attr
-            )
+            raise AttributeError('No setting or default available for \'%s\'' %
+                                 attr)
 
 
 class NewsletterSettings(Settings):
@@ -81,9 +80,8 @@ class NewsletterSettings(Settings):
     @property
     def RICHTEXT_WIDGET(self):
         # Import and set the richtext field
-        NEWSLETTER_RICHTEXT_WIDGET = getattr(
-            django_settings, "NEWSLETTER_RICHTEXT_WIDGET", ""
-        )
+        NEWSLETTER_RICHTEXT_WIDGET = getattr(django_settings,
+                                             "NEWSLETTER_RICHTEXT_WIDGET", "")
 
         if NEWSLETTER_RICHTEXT_WIDGET:
             try:
@@ -95,11 +93,10 @@ class NewsletterSettings(Settings):
                 # (e.g. user sets setting to an integer)
                 raise ImproperlyConfigured(
                     "Error while importing setting "
-                    "NEWSLETTER_RICHTEXT_WIDGET %r: %s" % (
-                        NEWSLETTER_RICHTEXT_WIDGET, e
-                    )
-                )
+                    "NEWSLETTER_RICHTEXT_WIDGET %r: %s" %
+                    (NEWSLETTER_RICHTEXT_WIDGET, e))
 
         return None
+
 
 newsletter_settings = NewsletterSettings()

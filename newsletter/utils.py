@@ -2,12 +2,10 @@
 
 import logging
 
-
 from django.contrib.sites.models import Site
 from django.utils.crypto import get_random_string
 
 logger = logging.getLogger(__name__)
-
 
 # Possible actions that user can perform
 ACTIONS = ('subscribe', 'unsubscribe', 'update')
@@ -35,8 +33,7 @@ class Singleton(type):
 
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:
-            cls._instances[cls] = super(Singleton, cls).__call__(
-                *args, **kwargs
-            )
+            cls._instances[cls] = super(Singleton,
+                                        cls).__call__(*args, **kwargs)
 
         return cls._instances[cls]

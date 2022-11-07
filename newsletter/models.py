@@ -17,11 +17,8 @@ from django.utils.timezone import now
 from sorl.thumbnail import ImageField
 from distutils.version import LooseVersion
 
-
 from .compat import get_context, reverse
-from .utils import (
-    make_activation_code, get_default_sites, ACTIONS
-)
+from .utils import (make_activation_code, get_default_sites, ACTIONS)
 
 logger = logging.getLogger(__name__)
 
@@ -32,26 +29,24 @@ AUTH_USER_MODEL = getattr(settings, 'AUTH_USER_MODEL', 'auth.User')
 class Newsletter(models.Model):
     site = models.ManyToManyField(Site, default=get_default_sites)
 
-    title = models.CharField(
-        max_length=200, verbose_name=_('newsletter title')
-    )
+    title = models.CharField(max_length=200,
+                             verbose_name=_('newsletter title'))
     slug = models.SlugField(db_index=True, unique=True)
 
-    email = models.EmailField(
-        verbose_name=_('e-mail'), help_text=_('Sender e-mail')
-    )
-    sender = models.CharField(
-        max_length=200, verbose_name=_('sender'), help_text=_('Sender name')
-    )
+    email = models.EmailField(verbose_name=_('e-mail'),
+                              help_text=_('Sender e-mail'))
+    sender = models.CharField(max_length=200,
+                              verbose_name=_('sender'),
+                              help_text=_('Sender name'))
 
-    visible = models.BooleanField(
-        default=True, verbose_name=_('visible'), db_index=True
-    )
+    visible = models.BooleanField(default=True,
+                                  verbose_name=_('visible'),
+                                  db_index=True)
 
     send_html = models.BooleanField(
-        default=True, verbose_name=_('send html'),
-        help_text=_('Whether or not to send HTML versions of e-mails.')
-    )
+        default=True,
+        verbose_name=_('send html'),
+        help_text=_('Whether or not to send HTML versions of e-mails.'))
 
     objects = models.Manager()
 
@@ -68,10 +63,7 @@ class Newsletter(models.Model):
         assert action in ACTIONS + ('message', ), 'Unknown action: %s' % action
 
         # Common substitutions for filenames
-        tpl_subst = {
-            'action': action,
-            'newsletter': self.slug
-        }
+        tpl_subst = {'action': action, 'newsletter': self.slug}
 
         # Common root path for all the templates
         tpl_root = 'newsletter/message/'
@@ -105,19 +97,24 @@ class Newsletter(models.Model):
         verbose_name_plural = _('newsletters')
 
     def get_absolute_url(self):
-        return reverse('newsletter_detail', kwargs={'newsletter_slug': self.slug})
+        return reverse('newsletter_detail',
+                       kwargs={'newsletter_slug': self.slug})
 
     def subscribe_url(self):
-        return reverse('newsletter_subscribe_request', kwargs={'newsletter_slug': self.slug})
+        return reverse('newsletter_subscribe_request',
+                       kwargs={'newsletter_slug': self.slug})
 
     def unsubscribe_url(self):
-        return reverse('newsletter_unsubscribe_request', kwargs={'newsletter_slug': self.slug})
+        return reverse('newsletter_unsubscribe_request',
+                       kwargs={'newsletter_slug': self.slug})
 
     def update_url(self):
-        return reverse('newsletter_update_request', kwargs={'newsletter_slug': self.slug})
+        return reverse('newsletter_update_request',
+                       kwargs={'newsletter_slug': self.slug})
 
     def archive_url(self):
-        return reverse('newsletter_archive', kwargs={'newsletter_slug': self.slug})
+        return reverse('newsletter_archive',
+                       kwargs={'newsletter_slug': self.slug})
 
     def get_sender(self):
         return get_address(self.sender, self.email)
@@ -137,15 +134,18 @@ class Newsletter(models.Model):
 
 @python_2_unicode_compatible
 class Subscription(models.Model):
-    user = models.ForeignKey(
-        AUTH_USER_MODEL, blank=True, null=True, verbose_name=_('user'),
-        on_delete=models.CASCADE
-    )
+    user = models.ForeignKey(AUTH_USER_MODEL,
+                             blank=True,
+                             null=True,
+                             verbose_name=_('user'),
+                             on_delete=models.CASCADE)
 
-    name_field = models.CharField(
-        db_column='name', max_length=30, blank=True, null=True,
-        verbose_name=_('name'), help_text=_('optional')
-    )
+    name_field = models.CharField(db_column='name',
+                                  max_length=30,
+                                  blank=True,
+                                  null=True,
+                                  verbose_name=_('name'),
+                                  help_text=_('optional'))
 
     def get_name(self):
         if self.user:
@@ -155,12 +155,14 @@ class Subscription(models.Model):
     def set_name(self, name):
         if not self.user:
             self.name_field = name
+
     name = property(get_name, set_name)
 
-    email_field = models.EmailField(
-        db_column='email', verbose_name=_('e-mail'), db_index=True,
-        blank=True, null=True
-    )
+    email_field = models.EmailField(db_column='email',
+                                    verbose_name=_('e-mail'),
+                                    db_index=True,
+                                    blank=True,
+                                    null=True)
 
     def get_email(self):
         if self.user:
@@ -170,6 +172,7 @@ class Subscription(models.Model):
     def set_email(self, email):
         if not self.user:
             self.email_field = email
+
     email = property(get_email, set_email)
 
     def update(self, action):
@@ -188,12 +191,10 @@ class Subscription(models.Model):
             self.unsubscribed = True
 
         logger.debug(
-            _(u'Updated subscription %(subscription)s to %(action)s.'),
-            {
+            _(u'Updated subscription %(subscription)s to %(action)s.'), {
                 'subscription': self,
                 'action': action
-            }
-        )
+            })
 
         # This triggers the subscribe() and/or unsubscribe() methods, taking
         # care of stuff like maintaining the (un)subscribe date.
@@ -243,7 +244,7 @@ class Subscription(models.Model):
         # replaced by a method property.
 
         if self.pk:
-            assert(Subscription.objects.filter(pk=self.pk).count() == 1)
+            assert (Subscription.objects.filter(pk=self.pk).count() == 1)
 
             subscription = Subscription.objects.get(pk=self.pk)
             old_subscribed = subscription.subscribed
@@ -251,8 +252,8 @@ class Subscription(models.Model):
 
             # If we are subscribed now and we used not to be so, subscribe.
             # If we user to be unsubscribed but are not so anymore, subscribe.
-            if ((self.subscribed and not old_subscribed) or
-               (old_unsubscribed and not self.unsubscribed)):
+            if ((self.subscribed and not old_subscribed)
+                    or (old_unsubscribed and not self.unsubscribed)):
                 self._subscribe()
 
                 assert not self.unsubscribed
@@ -261,8 +262,8 @@ class Subscription(models.Model):
             # If we are unsubcribed now and we used not to be so, unsubscribe.
             # If we used to be subscribed but are not subscribed anymore,
             # unsubscribe.
-            elif ((self.unsubscribed and not old_unsubscribed) or
-                  (old_subscribed and not self.subscribed)):
+            elif ((self.unsubscribed and not old_unsubscribed)
+                  or (old_subscribed and not self.subscribed)):
                 self._unsubscribe()
 
                 assert not self.subscribed
@@ -277,31 +278,30 @@ class Subscription(models.Model):
 
     ip = models.GenericIPAddressField(_("IP address"), blank=True, null=True)
 
-    newsletter = models.ForeignKey(
-        Newsletter, verbose_name=_('newsletter'), on_delete=models.CASCADE
-    )
+    newsletter = models.ForeignKey(Newsletter,
+                                   verbose_name=_('newsletter'),
+                                   on_delete=models.CASCADE)
 
     create_date = models.DateTimeField(editable=False, default=now)
 
-    activation_code = models.CharField(
-        verbose_name=_('activation code'), max_length=40,
-        default=make_activation_code
-    )
+    activation_code = models.CharField(verbose_name=_('activation code'),
+                                       max_length=40,
+                                       default=make_activation_code)
 
-    subscribed = models.BooleanField(
-        default=False, verbose_name=_('subscribed'), db_index=True
-    )
-    subscribe_date = models.DateTimeField(
-        verbose_name=_("subscribe date"), null=True, blank=True
-    )
+    subscribed = models.BooleanField(default=False,
+                                     verbose_name=_('subscribed'),
+                                     db_index=True)
+    subscribe_date = models.DateTimeField(verbose_name=_("subscribe date"),
+                                          null=True,
+                                          blank=True)
 
     # This should be a pseudo-field, I reckon.
-    unsubscribed = models.BooleanField(
-        default=False, verbose_name=_('unsubscribed'), db_index=True
-    )
-    unsubscribe_date = models.DateTimeField(
-        verbose_name=_("unsubscribe date"), null=True, blank=True
-    )
+    unsubscribed = models.BooleanField(default=False,
+                                       verbose_name=_('unsubscribed'),
+                                       db_index=True)
+    unsubscribe_date = models.DateTimeField(verbose_name=_("unsubscribe date"),
+                                            null=True,
+                                            blank=True)
 
     def __str__(self):
         if self.name:
@@ -346,17 +346,16 @@ class Subscription(models.Model):
         text = text_template.render(unescaped_context)
 
         message = EmailMultiAlternatives(
-            subject, text,
+            subject,
+            text,
             from_email=self.newsletter.get_sender(),
-            to=[self.email]
-        )
+            to=[self.email])
 
         if html_template:
             escaped_context = get_context(variable_dict)
 
-            message.attach_alternative(
-                html_template.render(escaped_context), "text/html"
-            )
+            message.attach_alternative(html_template.render(escaped_context),
+                                       "text/html")
 
         message.send()
 
@@ -366,32 +365,34 @@ class Subscription(models.Model):
                 'action_code': self.activation_code,
                 'action': action,
                 'subscriber': self
-            }
-        )
+            })
 
     def subscribe_activate_url(self):
-        return reverse('newsletter_update_activate', kwargs={
-            'newsletter_slug': self.newsletter.slug,
-            'email': self.email,
-            'action': 'subscribe',
-            'activation_code': self.activation_code
-        })
+        return reverse('newsletter_update_activate',
+                       kwargs={
+                           'newsletter_slug': self.newsletter.slug,
+                           'email': self.email,
+                           'action': 'subscribe',
+                           'activation_code': self.activation_code
+                       })
 
     def unsubscribe_activate_url(self):
-        return reverse('newsletter_update_activate', kwargs={
-            'newsletter_slug': self.newsletter.slug,
-            'email': self.email,
-            'action': 'unsubscribe',
-            'activation_code': self.activation_code
-        })
+        return reverse('newsletter_update_activate',
+                       kwargs={
+                           'newsletter_slug': self.newsletter.slug,
+                           'email': self.email,
+                           'action': 'unsubscribe',
+                           'activation_code': self.activation_code
+                       })
 
     def update_activate_url(self):
-        return reverse('newsletter_update_activate', kwargs={
-            'newsletter_slug': self.newsletter.slug,
-            'email': self.email,
-            'action': 'update',
-            'activation_code': self.activation_code
-        })
+        return reverse('newsletter_update_activate',
+                       kwargs={
+                           'newsletter_slug': self.newsletter.slug,
+                           'email': self.email,
+                           'action': 'update',
+                           'activation_code': self.activation_code
+                       })
 
 
 @python_2_unicode_compatible
@@ -400,34 +401,31 @@ class Article(models.Model):
     An Article within a Message which will be send through a Submission.
     """
 
-    sortorder = models.PositiveIntegerField(
-        help_text=_('Sort order determines the order in which articles are '
-                    'concatenated in a post.'),
-        verbose_name=_('sort order'), blank=True
-    )
+    sortorder = models.PositiveIntegerField(help_text=_(
+        'Sort order determines the order in which articles are '
+        'concatenated in a post.'),
+                                            verbose_name=_('sort order'),
+                                            blank=True)
 
     title = models.CharField(max_length=200, verbose_name=_('title'))
     text = models.TextField(verbose_name=_('text'))
 
-    url = models.URLField(
-        verbose_name=_('link'), blank=True, null=True
-    )
+    url = models.URLField(verbose_name=_('link'), blank=True, null=True)
 
     # Make this a foreign key for added elegance
-    image = ImageField(
-        upload_to='newsletter/images/%Y/%m/%d', blank=True, null=True,
-        verbose_name=_('image')
-    )
+    image = ImageField(upload_to='newsletter/images/%Y/%m/%d',
+                       blank=True,
+                       null=True,
+                       verbose_name=_('image'))
 
     # Message this article is associated with
-    # TODO: Refactor post to message (post is legacy notation).
-    post = models.ForeignKey(
-        'Message', verbose_name=_('message'), related_name='articles',
-        on_delete=models.CASCADE
-    )
+    post = models.ForeignKey('Message',
+                             verbose_name=_('message'),
+                             related_name='articles',
+                             on_delete=models.CASCADE)
 
     class Meta:
-        ordering = ('sortorder',)
+        ordering = ('sortorder', )
         verbose_name = _('article')
         verbose_name_plural = _('articles')
         unique_together = ('post', 'sortorder')
@@ -447,6 +445,7 @@ class Article(models.Model):
 def get_default_newsletter():
     return Newsletter.get_default()
 
+
 @python_2_unicode_compatible
 class Message(models.Model):
     """ Message as sent through a Submission. """
@@ -454,16 +453,17 @@ class Message(models.Model):
     title = models.CharField(max_length=200, verbose_name=_('title'))
     slug = models.SlugField(verbose_name=_('slug'))
 
-    newsletter = models.ForeignKey(
-        Newsletter, verbose_name=_('newsletter'), on_delete=models.CASCADE, default=get_default_newsletter
-    )
+    newsletter = models.ForeignKey(Newsletter,
+                                   verbose_name=_('newsletter'),
+                                   on_delete=models.CASCADE,
+                                   default=get_default_newsletter)
 
-    date_create = models.DateTimeField(
-        verbose_name=_('created'), auto_now_add=True, editable=False
-    )
-    date_modify = models.DateTimeField(
-        verbose_name=_('modified'), auto_now=True, editable=False
-    )
+    date_create = models.DateTimeField(verbose_name=_('created'),
+                                       auto_now_add=True,
+                                       editable=False)
+    date_modify = models.DateTimeField(verbose_name=_('modified'),
+                                       auto_now=True,
+                                       editable=False)
 
     class Meta:
         verbose_name = _('message')
@@ -484,8 +484,7 @@ class Message(models.Model):
         """ Get next available sortorder for Article. """
 
         next_order = self.articles.aggregate(
-            models.Max('sortorder')
-        )['sortorder__max']
+            models.Max('sortorder'))['sortorder__max']
 
         if next_order:
             return next_order + 10
@@ -524,6 +523,7 @@ class Submission(models.Model):
     to a list of Subscribers. This is where actual queueing and submission
     happen.
     """
+
     class Meta:
         verbose_name = _('submission')
         verbose_name_plural = _('submissions')
@@ -537,20 +537,20 @@ class Submission(models.Model):
     @cached_property
     def extra_headers(self):
         return {
-            'List-Unsubscribe': 'http://%s%s' % (
-                Site.objects.get_current().domain,
-                reverse('newsletter_unsubscribe_request',
-                        args=[self.message.newsletter.slug])
-            ),
+            'List-Unsubscribe':
+            'http://%s%s' % (Site.objects.get_current().domain,
+                             reverse('newsletter_unsubscribe_request',
+                                     args=[self.message.newsletter.slug])),
         }
 
     def submit(self):
         subscriptions = self.subscriptions.filter(subscribed=True)
 
-        logger.info(
-            ugettext(u"Submitting %(submission)s to %(count)d people"),
-            {'submission': self, 'count': subscriptions.count()}
-        )
+        logger.info(ugettext(u"Submitting %(submission)s to %(count)d people"),
+                    {
+                        'submission': self,
+                        'count': subscriptions.count()
+                    })
 
         assert self.publish_date < now(), \
             'Something smells fishy; submission time in future.'
@@ -562,7 +562,8 @@ class Submission(models.Model):
             for idx, subscription in enumerate(subscriptions, start=1):
                 if hasattr(settings, 'NEWSLETTER_EMAIL_DELAY'):
                     time.sleep(settings.NEWSLETTER_EMAIL_DELAY)
-                if hasattr(settings, 'NEWSLETTER_BATCH_SIZE') and settings.NEWSLETTER_BATCH_SIZE > 0:
+                if hasattr(settings, 'NEWSLETTER_BATCH_SIZE'
+                           ) and settings.NEWSLETTER_BATCH_SIZE > 0:
                     if idx % settings.NEWSLETTER_BATCH_SIZE == 0:
                         time.sleep(settings.NEWSLETTER_BATCH_DELAY)
                 self.send_message(subscription)
@@ -591,7 +592,8 @@ class Submission(models.Model):
         text = self.message.text_template.render(unescaped_context)
 
         message = EmailMultiAlternatives(
-            subject, text,
+            subject,
+            text,
             from_email=self.newsletter.get_sender(),
             to=[subscription.get_recipient()],
             headers=self.extra_headers,
@@ -602,32 +604,27 @@ class Submission(models.Model):
 
             message.attach_alternative(
                 self.message.html_template.render(escaped_context),
-                "text/html"
-            )
+                "text/html")
 
         try:
-            logger.debug(
-                ugettext(u'Submitting message to: %s.'),
-                subscription
-            )
+            logger.debug(ugettext(u'Submitting message to: %s.'), subscription)
 
             message.send()
 
         except Exception as e:
-            # TODO: Test coverage for this branch.
             logger.error(
                 ugettext(u'Message %(subscription)s failed '
-                         u'with error: %(error)s'),
-                {'subscription': subscription,
-                 'error': e}
-            )
+                         u'with error: %(error)s'), {
+                             'subscription': subscription,
+                             'error': e
+                         })
 
     @classmethod
     def submit_queue(cls):
-        todo = cls.objects.filter(
-            prepared=True, sent=False, sending=False,
-            publish_date__lt=now()
-        )
+        todo = cls.objects.filter(prepared=True,
+                                  sent=False,
+                                  sending=False,
+                                  publish_date__lt=now())
 
         for submission in todo:
             submission.submit()
@@ -640,7 +637,8 @@ class Submission(models.Model):
         submission.newsletter = message.newsletter
         submission.save()
         try:
-            submission.subscriptions.set(message.newsletter.get_subscriptions())
+            submission.subscriptions.set(
+                message.newsletter.get_subscriptions())
         except AttributeError:  # Django < 1.10
             submission.subscriptions = message.newsletter.get_subscriptions()
         return submission
@@ -653,60 +651,61 @@ class Submission(models.Model):
 
         return super(Submission, self).save()
 
-
-
     def get_absolute_url(self):
         assert self.newsletter.slug
         assert self.message.slug
 
-        return reverse(
-            'newsletter_archive_detail', kwargs={
-                'newsletter_slug': self.newsletter.slug,
-                'year': self.publish_date.year,
-                'month': self.publish_date.month,
-                'day': self.publish_date.day,
-                'slug': self.message.slug
-            }
-        )
+        return reverse('newsletter_archive_detail',
+                       kwargs={
+                           'newsletter_slug': self.newsletter.slug,
+                           'year': self.publish_date.year,
+                           'month': self.publish_date.month,
+                           'day': self.publish_date.day,
+                           'slug': self.message.slug
+                       })
 
-    newsletter = models.ForeignKey(
-        Newsletter, verbose_name=_('newsletter'), editable=False,
-        on_delete=models.CASCADE
-    )
-    message = models.ForeignKey(
-        Message, verbose_name=_('message'), editable=True, null=False,
-        on_delete=models.CASCADE
-    )
+    newsletter = models.ForeignKey(Newsletter,
+                                   verbose_name=_('newsletter'),
+                                   editable=False,
+                                   on_delete=models.CASCADE)
+    message = models.ForeignKey(Message,
+                                verbose_name=_('message'),
+                                editable=True,
+                                null=False,
+                                on_delete=models.CASCADE)
 
     subscriptions = models.ManyToManyField(
         'Subscription',
         help_text=_('If you select none, the system will automatically find '
                     'the subscribers for you.'),
-        blank=True, db_index=True, verbose_name=_('recipients'),
-        limit_choices_to={'subscribed': True}
-    )
+        blank=True,
+        db_index=True,
+        verbose_name=_('recipients'),
+        limit_choices_to={'subscribed': True})
 
-    publish_date = models.DateTimeField(
-        verbose_name=_('publication date'), blank=True, null=True,
-        default=now, db_index=True
-    )
-    publish = models.BooleanField(
-        default=True, verbose_name=_('publish'),
-        help_text=_('Publish in archive.'), db_index=True
-    )
+    publish_date = models.DateTimeField(verbose_name=_('publication date'),
+                                        blank=True,
+                                        null=True,
+                                        default=now,
+                                        db_index=True)
+    publish = models.BooleanField(default=True,
+                                  verbose_name=_('publish'),
+                                  help_text=_('Publish in archive.'),
+                                  db_index=True)
 
-    prepared = models.BooleanField(
-        default=False, verbose_name=_('prepared'),
-        db_index=True, editable=False
-    )
-    sent = models.BooleanField(
-        default=False, verbose_name=_('sent'),
-        db_index=True, editable=False
-    )
-    sending = models.BooleanField(
-        default=False, verbose_name=_('sending'),
-        db_index=True, editable=False
-    )
+    prepared = models.BooleanField(default=False,
+                                   verbose_name=_('prepared'),
+                                   db_index=True,
+                                   editable=False)
+    sent = models.BooleanField(default=False,
+                               verbose_name=_('sent'),
+                               db_index=True,
+                               editable=False)
+    sending = models.BooleanField(default=False,
+                                  verbose_name=_('sending'),
+                                  db_index=True,
+                                  editable=False)
+
 
 def get_address(name, email):
     # Converting name to ascii for compatibility with django < 1.9.

@@ -8,6 +8,7 @@ except ImportError:  # Django < 1.10
 if get_version() < '1.10':
     from django.template import Context
 
+
 def get_context(dictionary, **kwargs):
     """Takes a dict and returns the correct object for template rendering."""
     if get_version() < '1.10':

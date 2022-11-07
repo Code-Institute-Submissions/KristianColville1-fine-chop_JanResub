@@ -1,50 +1,35 @@
 import logging
-
 import datetime
 import socket
-
 from smtplib import SMTPException
-
 from django.core.exceptions import ValidationError, ImproperlyConfigured
 from django.conf import settings
-
 from django.template.response import SimpleTemplateResponse
-
 from django.shortcuts import get_object_or_404, redirect
 from django.http import Http404
-
-from django.views.generic import (
-    ListView, DetailView,
-    ArchiveIndexView, DateDetailView,
-    TemplateView, FormView
-)
-
+from django.views.generic import (ListView, DetailView, ArchiveIndexView,
+                                  DateDetailView, TemplateView, FormView)
 from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.contrib.auth.decorators import login_required
-
 from django.utils.decorators import method_decorator
 from django.utils.translation import ugettext, ugettext_lazy as _
 from django.utils import timezone
-
 from django.forms.models import modelformset_factory
-
 from .compat import reverse
 from .models import Newsletter, Subscription, Submission
-from .forms import (
-    SubscribeRequestForm, UserUpdateForm, UpdateRequestForm,
-    UnsubscribeRequestForm, UpdateForm
-)
+from .forms import (SubscribeRequestForm, UserUpdateForm, UpdateRequestForm,
+                    UnsubscribeRequestForm, UpdateForm)
 from .settings import newsletter_settings
 from .utils import ACTIONS
-
 
 logger = logging.getLogger(__name__)
 
 
 def is_authenticated(user):
     # Compat method for Django < 1.10
-    return user.is_authenticated if isinstance(user.is_authenticated, bool) else user.is_authenticated()
+    return user.is_authenticated if isinstance(
+        user.is_authenticated, bool) else user.is_authenticated()
 
 
 class NewsletterViewBase(object):
@@ -89,21 +74,17 @@ class NewsletterListView(NewsletterViewBase, ListView):
         request = self.request
         user = request.user
 
-        SubscriptionFormSet = modelformset_factory(
-            Subscription, form=UserUpdateForm, extra=0
-        )
+        SubscriptionFormSet = modelformset_factory(Subscription,
+                                                   form=UserUpdateForm,
+                                                   extra=0)
 
         # Before rendering the formset, subscription objects should
         # already exist.
         for n in newsletters:
-            Subscription.objects.get_or_create(
-                newsletter=n, user=user
-            )
+            Subscription.objects.get_or_create(newsletter=n, user=user)
 
         # Get all subscriptions for use in the formset
-        qs = Subscription.objects.filter(
-            newsletter__in=newsletters, user=user
-        )
+        qs = Subscription.objects.filter(newsletter__in=newsletters, user=user)
 
         if request.method == 'POST':
             try:
@@ -115,20 +96,17 @@ class NewsletterListView(NewsletterViewBase, ListView):
                 # Everything's allright, let's save
                 formset.save()
 
-                messages.info(
-                    request,
-                    ugettext("Your changes have been saved.")
-                )
+                messages.info(request,
+                              ugettext("Your changes have been saved."))
 
             except ValidationError:
                 # Invalid form posted. As there is no way for a user to
                 # enter data - invalid forms should be ignored from the UI.
 
                 # However, we log them for debugging purposes.
-                logger.warning(
-                    'Invalid form post received',
-                    exc_info=True, extra={'request': request}
-                )
+                logger.warning('Invalid form post received',
+                               exc_info=True,
+                               extra={'request': request})
 
                 # Present a pristine form
                 formset = SubscriptionFormSet(queryset=qs)
@@ -171,14 +149,13 @@ class NewsletterMixin(ProcessUrlDataMixin):
 
         super(NewsletterMixin, self).process_url_data(*args, **kwargs)
 
-        newsletter_queryset = kwargs.get(
-            'newsletter_queryset',
-            Newsletter.on_site.all()
-        )
+        newsletter_queryset = kwargs.get('newsletter_queryset',
+                                         Newsletter.on_site.all())
         newsletter_slug = kwargs['newsletter_slug']
 
         self.newsletter = get_object_or_404(
-            newsletter_queryset, slug=newsletter_slug,
+            newsletter_queryset,
+            slug=newsletter_slug,
         )
 
     def get_form_kwargs(self):
@@ -227,10 +204,8 @@ class ActionMixin(ProcessUrlDataMixin):
         if self.template_name is None:
             raise ImproperlyConfigured(
                 '%(class_name)s should define template_name, '
-                'or implement get_template_names()' % {
-                    'class_name': self.__class__.__name__
-                }
-            )
+                'or implement get_template_names()' %
+                {'class_name': self.__class__.__name__})
 
         else:
             try:
@@ -242,8 +217,7 @@ class ActionMixin(ProcessUrlDataMixin):
                     'by action name %(wrong_key)s given instead.' % {
                         'class_name': self.__class__.__name__,
                         'wrong_key': e,
-                    }
-                )
+                    })
 
 
 class ActionTemplateView(NewsletterMixin, ActionMixin, TemplateView):
@@ -263,13 +237,11 @@ class ActionFormView(NewsletterMixin, ActionMixin, FormView):
         and associated with this view newsletter and action.
         """
 
-        return reverse(
-            viewname,
-            kwargs={
-                'newsletter_slug': self.newsletter.slug,
-                'action': self.action
-            }
-        )
+        return reverse(viewname,
+                       kwargs={
+                           'newsletter_slug': self.newsletter.slug,
+                           'action': self.action
+                       })
 
 
 class ActionUserView(ActionTemplateView):
@@ -297,8 +269,7 @@ class SubscribeUserView(ActionUserView):
     def get(self, request, *args, **kwargs):
         already_subscribed = False
         instance = Subscription.objects.get_or_create(
-            newsletter=self.newsletter, user=request.user
-        )[0]
+            newsletter=self.newsletter, user=request.user)[0]
 
         if instance.subscribed:
             already_subscribed = True
@@ -308,22 +279,17 @@ class SubscribeUserView(ActionUserView):
 
             messages.success(
                 request,
-                _('You have been subscribed to %s.') % self.newsletter
-            )
+                _('You have been subscribed to %s.') % self.newsletter)
 
-            logger.debug(
-                _('User %(rs)s subscribed to %(my_newsletter)s.'),
-                {
-                    "rs": request.user,
-                    "my_newsletter": self.newsletter
-                }
-            )
+            logger.debug(_('User %(rs)s subscribed to %(my_newsletter)s.'), {
+                "rs": request.user,
+                "my_newsletter": self.newsletter
+            })
 
         if already_subscribed:
             messages.info(
                 request,
-                _('You are already subscribed to %s.') % self.newsletter
-            )
+                _('You are already subscribed to %s.') % self.newsletter)
 
         return super(SubscribeUserView, self).get(request, *args, **kwargs)
 
@@ -335,9 +301,8 @@ class UnsubscribeUserView(ActionUserView):
         not_subscribed = False
 
         try:
-            instance = Subscription.objects.get(
-                newsletter=self.newsletter, user=request.user
-            )
+            instance = Subscription.objects.get(newsletter=self.newsletter,
+                                                user=request.user)
 
             if not instance.subscribed:
                 not_subscribed = True
@@ -347,25 +312,20 @@ class UnsubscribeUserView(ActionUserView):
 
                 messages.success(
                     request,
-                    _('You have been unsubscribed from %s.') % self.newsletter
-                )
+                    _('You have been unsubscribed from %s.') % self.newsletter)
 
                 logger.debug(
-                    _('User %(rs)s unsubscribed from %(my_newsletter)s.'),
-                    {
+                    _('User %(rs)s unsubscribed from %(my_newsletter)s.'), {
                         "rs": request.user,
                         "my_newsletter": self.newsletter
-                    }
-                )
+                    })
 
         except Subscription.DoesNotExist:
             not_subscribed = True
 
         if not_subscribed:
-            messages.info(
-                request,
-                _('You are not subscribed to %s.') % self.newsletter
-            )
+            messages.info(request,
+                          _('You are not subscribed to %s.') % self.newsletter)
 
         return super(UnsubscribeUserView, self).get(request, *args, **kwargs)
 
@@ -401,8 +361,7 @@ class ActionRequestView(ActionFormView):
         self.subscription.update(self.action)
 
         return redirect(
-            self.get_url_from_viewname('newsletter_action_activated')
-        )
+            self.get_url_from_viewname('newsletter_action_activated'))
 
     def get_success_url(self):
         return self.get_url_from_viewname('newsletter_activation_email_sent')
@@ -410,10 +369,8 @@ class ActionRequestView(ActionFormView):
     def form_valid(self, form):
         self.subscription = self.get_subscription(form)
 
-        if not getattr(
-                newsletter_settings,
-                'CONFIRM_EMAIL_%s' % self.action.upper()
-        ):
+        if not getattr(newsletter_settings,
+                       'CONFIRM_EMAIL_%s' % self.action.upper()):
             # Confirmation email for this action was switched off in settings.
             return self.no_email_confirm(form)
 
@@ -421,10 +378,8 @@ class ActionRequestView(ActionFormView):
             self.subscription.send_activation_email(action=self.action)
 
         except (SMTPException, socket.error) as e:
-            logger.exception(
-                'Error %s while submitting email to %s.',
-                e, self.subscription.email
-            )
+            logger.exception('Error %s while submitting email to %s.', e,
+                             self.subscription.email)
             self.error = True
 
             # Although form was valid there was error while sending email,
@@ -456,9 +411,8 @@ class SubscribeRequestView(ActionRequestView):
             kwargs['confirm'] = self.confirm
             return SubscribeUserView.as_view()(request, *args, **kwargs)
 
-        return super(SubscribeRequestView, self).dispatch(
-            request, *args, **kwargs
-        )
+        return super(SubscribeRequestView,
+                     self).dispatch(request, *args, **kwargs)
 
 
 class UnsubscribeRequestView(ActionRequestView):
@@ -471,9 +425,8 @@ class UnsubscribeRequestView(ActionRequestView):
             kwargs['confirm'] = self.confirm
             return UnsubscribeUserView.as_view()(request, *args, **kwargs)
 
-        return super(UnsubscribeRequestView, self).dispatch(
-            request, *args, **kwargs
-        )
+        return super(UnsubscribeRequestView,
+                     self).dispatch(request, *args, **kwargs)
 
 
 class UpdateRequestView(ActionRequestView):
@@ -499,9 +452,9 @@ class UpdateSubscriptionView(ActionFormView):
         super(UpdateSubscriptionView, self).process_url_data(*args, **kwargs)
 
         self.subscription = get_object_or_404(
-            Subscription, newsletter=self.newsletter,
-            email_field__exact=kwargs['email']
-        )
+            Subscription,
+            newsletter=self.newsletter,
+            email_field__exact=kwargs['email'])
         # activation_code is optional kwarg which defaults to None
         self.activation_code = kwargs.get('activation_code')
 
@@ -549,8 +502,8 @@ class SubmissionViewBase(NewsletterMixin):
         """ Use only visible newsletters. """
 
         kwargs['newsletter_queryset'] = NewsletterListView().get_queryset()
-        return super(
-            SubmissionViewBase, self).process_url_data(*args, **kwargs)
+        return super(SubmissionViewBase,
+                     self).process_url_data(*args, **kwargs)
 
     def get_queryset(self):
         """ Filter out submissions for current newsletter. """
@@ -581,6 +534,7 @@ class SubmissionArchiveIndexView(SubmissionViewBase, ArchiveIndexView):
 
 
 class SubmissionArchiveDetailView(SubmissionViewBase, DateDetailView):
+
     def get_context_data(self, **kwargs):
         """
         Make sure the actual message is available.
@@ -607,10 +561,10 @@ class SubmissionArchiveDetailView(SubmissionViewBase, DateDetailView):
 
         # No HTML -> no party!
         if not html_template:
-            raise Http404(ugettext(
-                'No HTML template associated with the newsletter this '
-                'message belongs to.'
-            ))
+            raise Http404(
+                ugettext(
+                    'No HTML template associated with the newsletter this '
+                    'message belongs to.'))
 
         return html_template
 
@@ -620,8 +574,6 @@ class SubmissionArchiveDetailView(SubmissionViewBase, DateDetailView):
         any context. Use a SimpleTemplateResponse as a RequestContext should
         not be used.
         """
-        return SimpleTemplateResponse(
-            template=self.get_template(),
-            context=context,
-            **response_kwargs
-        )
+        return SimpleTemplateResponse(template=self.get_template(),
+                                      context=context,
+                                      **response_kwargs)

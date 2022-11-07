@@ -9,7 +9,6 @@ from django.utils.translation import ugettext as _
 from .models import Subscription, Newsletter, Submission
 from .addressimport.parsers import parse_csv, parse_vcard, parse_ldif
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -17,9 +16,8 @@ class ImportForm(forms.Form):
 
     def clean(self):
         # If there are validation errors earlier on, don't bother.
-        if not ('address_file' in self.cleaned_data and
-                'ignore_errors' in self.cleaned_data and
-                'newsletter' in self.cleaned_data):
+        if not ('address_file' in self.cleaned_data and 'ignore_errors'
+                in self.cleaned_data and 'newsletter' in self.cleaned_data):
             return self.cleaned_data
             # TESTME: Should an error be raised here or not?
             # raise forms.ValidationError(_("No file has been specified."))
@@ -39,21 +37,20 @@ class ImportForm(forms.Form):
                          'application/csv', 'application/excel',
                          'application/vnd.msexcel', 'text/anytext')
         if content_type not in allowed_types:
-            raise forms.ValidationError(_(
-                "File type '%s' was not recognized.") % content_type)
+            raise forms.ValidationError(
+                _("File type '%s' was not recognized.") % content_type)
 
         ext = myvalue.name.rsplit('.', 1)[-1].lower()
         if ext == 'vcf':
-            self.addresses = parse_vcard(
-                myvalue.file, newsletter, ignore_errors)
+            self.addresses = parse_vcard(myvalue.file, newsletter,
+                                         ignore_errors)
 
         elif ext == 'ldif':
-            self.addresses = parse_ldif(
-                myvalue.file, newsletter, ignore_errors)
+            self.addresses = parse_ldif(myvalue.file, newsletter,
+                                        ignore_errors)
 
         elif ext == 'csv':
-            self.addresses = parse_csv(
-                myvalue.file, newsletter, ignore_errors)
+            self.addresses = parse_csv(myvalue.file, newsletter, ignore_errors)
 
         else:
             raise forms.ValidationError(
@@ -68,14 +65,13 @@ class ImportForm(forms.Form):
     def get_addresses(self):
         return getattr(self, 'addresses', {})
 
-    newsletter = forms.ModelChoiceField(
-        label=_("Newsletter"),
-        queryset=Newsletter.objects.all(),
-        initial=Newsletter.get_default)
+    newsletter = forms.ModelChoiceField(label=_("Newsletter"),
+                                        queryset=Newsletter.objects.all(),
+                                        initial=Newsletter.get_default)
     address_file = forms.FileField(label=_("Address file"))
-    ignore_errors = forms.BooleanField(
-        label=_("Ignore non-fatal errors"),
-        initial=False, required=False)
+    ignore_errors = forms.BooleanField(label=_("Ignore non-fatal errors"),
+                                       initial=False,
+                                       required=False)
 
 
 class ConfirmForm(forms.Form):
@@ -87,9 +83,9 @@ class ConfirmForm(forms.Form):
             raise forms.ValidationError(
                 _("You should confirm in order to continue."))
 
-    confirm = forms.BooleanField(
-        label=_("Confirm import"),
-        initial=True, widget=forms.HiddenInput)
+    confirm = forms.BooleanField(label=_("Confirm import"),
+                                 initial=True,
+                                 widget=forms.HiddenInput)
 
 
 class SubscriptionAdminForm(forms.ModelForm):
@@ -98,15 +94,10 @@ class SubscriptionAdminForm(forms.ModelForm):
         model = Subscription
         fields = '__all__'
         widgets = {
-            'subscribed': widgets.AdminRadioSelect(
-                choices=[
-                    (True, _('Subscribed')),
-                    (False, _('Unsubscribed'))
-                ],
-                attrs={
-                    'class': options.get_ul_class(options.HORIZONTAL)
-                }
-            )
+            'subscribed':
+            widgets.AdminRadioSelect(
+                choices=[(True, _('Subscribed')), (False, _('Unsubscribed'))],
+                attrs={'class': options.get_ul_class(options.HORIZONTAL)})
         }
 
     def __init__(self, *args, **kwargs):
@@ -117,28 +108,27 @@ class SubscriptionAdminForm(forms.ModelForm):
     def clean_email_field(self):
         data = self.cleaned_data['email_field']
         if self.cleaned_data['user'] and data:
-            raise forms.ValidationError(_(
-                'If a user has been selected this field '
-                'should remain empty.'))
+            raise forms.ValidationError(
+                _('If a user has been selected this field '
+                  'should remain empty.'))
         return data
 
     def clean_name_field(self):
         data = self.cleaned_data['name_field']
         if self.cleaned_data['user'] and data:
-            raise forms.ValidationError(_(
-                'If a user has been selected '
-                'this field should remain empty.'))
+            raise forms.ValidationError(
+                _('If a user has been selected '
+                  'this field should remain empty.'))
         return data
 
     def clean(self):
         cleaned_data = super(SubscriptionAdminForm, self).clean()
-        if not (cleaned_data.get('user', None) or
-                cleaned_data.get('email_field', None)):
+        if not (cleaned_data.get('user', None)
+                or cleaned_data.get('email_field', None)):
 
-            raise forms.ValidationError(_(
-                'Either a user must be selected or an email address must '
-                'be specified.')
-            )
+            raise forms.ValidationError(
+                _('Either a user must be selected or an email address must '
+                  'be specified.'))
         return cleaned_data
 
 
@@ -160,9 +150,9 @@ class SubmissionAdminForm(forms.ModelForm):
             if self.instance:
                 qs = qs.exclude(pk=self.instance.pk)
             if qs.exists():
-                raise forms.ValidationError(_(
-                    'This message has already been published in some '
-                    'other submission. Messages can only be published once.')
+                raise forms.ValidationError(
+                    _('This message has already been published in some '
+                      'other submission. Messages can only be published once.')
                 )
 
         return publish
