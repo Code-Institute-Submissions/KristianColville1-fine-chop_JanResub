@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     'django_summernote',
+    'sorl.thumbnail',
+    'imperavi',
     "newsletter",
 ]
 
