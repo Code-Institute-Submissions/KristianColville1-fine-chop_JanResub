@@ -55,9 +55,11 @@ INSTALLED_APPS = [
     'contact',
     'email_subscriptions',
 
-    # other
+    # other - imported
     "crispy_forms",
     "crispy_bootstrap5",
+    'django_summernote',
+    "newsletter",
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -204,7 +206,7 @@ else:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
-GOOGLE_MAPS_API_KEY = os.environ.get("GOOGLE_MAPS_API_KEY")
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
