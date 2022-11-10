@@ -74,15 +74,14 @@
             </ul>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-4">
-            <p class="w-75 text-center"><i class="fa-regular fa-envelope mr-2"></i> Stay up to date on the latest from
+            <p class="w-100 text-center"><i class="fa-regular fa-envelope mr-2"></i> Subscribe to stay up to date on the latest from
                 <strong>FineChop</strong></p>
-            <form action="" class="allauth-form-inner-content">
+            <form enctype="multipart/form-data" method="post" action="/newsletter/[NAME-OF-NEWSLETTER]/subscribe/">
                 {% csrf_token %}
-                <label for="email" hidden><a class="sr-only sr-only-focusable" href="#content">Enter your email below to
-                        subscribe to our news letter</a></label>
-                <input class="btn rounded text-center w-100" type="email" id="email" name="email"
-                    placeholder="Enter your e-mail address" required>
-                <button class="btn btn-primary mt-2 w-100 shadow">Subscribe</button>
+                <label for="id_email_field" placeholder="Email" hidden><a class="visually-hidden-focusable" href="#content">Skip to main
+                        content</a></label>
+                <input type="email" name="email_field" id="id_email_field" class="w-100 text-center rounded mb-1" placeholder="Enter your email address"required>
+                <button id="id_submit" name="submit" value="Subscribe" type="submit" class="btn btn-primary w-100">Subscribe</button>
             </form>
             <p class="w-100 text-center mt-5">&copy; Created by <strong><a class="text-decoration-none copyright"
                         href="https://github.com/KristianColville1" target="_blank" rel="noopener" aria-label="Click here to view Kristian Colville GitHub

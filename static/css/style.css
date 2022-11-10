@@ -305,6 +305,13 @@ h1 {
     /* Removes labels from allauth forms */
 }
 
+/* Google Map */
+
+#google-maps {
+    height: 250px;
+    width: 100%;
+}
+
 /* -------------------------------------------------------Media Queries */
 @media only screen and (max-width: 991px) {
     .navbar .nav-link {

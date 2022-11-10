@@ -284,7 +284,7 @@ All the Testing documentation can be found [here](/TESTING.md)
 | Issue ID | Expected Behaviour | Behaviour reported | Bug Fix |
 |---|---|---|---|
 |[#8](https://github.com/KristianColville1/fine-chop/issues/8)|When the dropdown menu is clicked it slides a menu downwards to display the menu for the user|Dropdown menu slides up and down but the page also scrolls up to the top. Bad user experience| Added preventDefault to jquery event for sliding dropdown menu's and reevaluated using a general purpose event, fixed issue and created general purpose click event for dropdown menu's|
-|[#9](https://github.com/KristianColville1/fine-chop/issues/9)]|DjLint was expected to help conform to code standards and best practices|It works locally but when deploying on Heroku the extended pip packages are effecting the deployment running successfully| Even after uninstalling djlint the dependencies it brought with it still affected the project. I deleted the virtual environment and created a new one with my requirements.txt before I installed djlint|
+|[#9](https://github.com/KristianColville1/fine-chop/issues/9)|DjLint was expected to help conform to code standards and best practices|It works locally but when deploying on Heroku the extended pip packages are effecting the deployment running successfully| Even after uninstalling djlint the dependencies it brought with it still affected the project. I deleted the virtual environment and created a new one with my requirements.txt before I installed djlint|
 |||||
 |||||
 
@@ -541,6 +541,7 @@ and navigate to permissions
 Open a separate tab and navigate to the S3 dashboard and then to your bucket and get the ARN like we did in a previous step. create an array for the Resource key and paste in your ARN twice but for the second value in the array put a /* at the end so we can access the bucket and the buckets contents.
 
 ![AWS console](documentation/readme_folder/group-permissions-6.png)
+
 ![AWS console](documentation/readme_folder/group-permissions-7.png)
 
 - When completed click next and next again skipping the tag section as it's irrelevant for this project and add a name and description for the policy you created
@@ -554,9 +555,11 @@ Open a separate tab and navigate to the S3 dashboard and then to your bucket and
 21. The last thing we need to do to complete our set up and access to our S3 bucket is to create a user for our user group so they can use the permissions we created
 
 - Navigate to the the user sections of our IAM
+
 ![AWS console](documentation/readme_folder/user-permissions-1.png)
 
 - Click on add user
+
 ![AWS console](documentation/readme_folder/user-permissions-2.png)
 
 - Create a user for our user group and allow programmatic access so we can use it in our Django project, click next and skip the tag section and click on create user
@@ -569,7 +572,7 @@ Open a separate tab and navigate to the S3 dashboard and then to your bucket and
 
 23. As a final mention you must install boto3 and django-storages in order to use your S3 bucket.
 
-- In your settings.py file of your project directory paste in this and changing the bucket name and region that you chose for your S3 bucket
+- In your settings.py file of your project directory paste in this and also changing the bucket name and region that you chose for your S3 bucket
 
         # static file config heroku
         # Cache control
@@ -601,6 +604,7 @@ Open a separate tab and navigate to the S3 dashboard and then to your bucket and
 [Back to Top](#table-of-contents)
 
 ## Credits
+
 ## Acknowledgments
 
 [Back to Top](#table-of-contents)
