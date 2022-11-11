@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     # other - imported
     "crispy_forms",
     "crispy_bootstrap5",
+    "storages",
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
