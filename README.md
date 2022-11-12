@@ -274,7 +274,10 @@ All the Testing documentation can be found [here](/TESTING.md)
 |---|---|---|---|
 |[#8](https://github.com/KristianColville1/fine-chop/issues/8)|When the dropdown menu is clicked it slides a menu downwards to display the menu for the user|Dropdown menu slides up and down but the page also scrolls up to the top. Bad user experience| Added preventDefault to jquery event for sliding dropdown menu's and reevaluated using a general purpose event, fixed issue and created general purpose click event for dropdown menu's|
 |[#9](https://github.com/KristianColville1/fine-chop/issues/9)|DjLint was expected to help conform to code standards and best practices|It works locally but when deploying on Heroku the extended pip packages are effecting the deployment running successfully| Even after uninstalling djlint the dependencies it brought with it still affected the project. I deleted the virtual environment and created a new one with my requirements.txt before I installed djlint|
-|||||
+|[#10](https://github.com/KristianColville1/fine-chop/issues/10)|Click on a drop down menu in the navigation and it slides down that menu|Click on a drop down menu in the navigation and it scrolls the page up to the start. This bug interferes with the visual design when viewing allauth forms| A temporary fix included making sure the navigation is always viewable on pages with allauth forms by always adding the background. Needs more investigation|
+|[#11](https://github.com/KristianColville1/fine-chop/issues/11)|Expected Imperavi to import it's widget properly so a nice text editor could be used for creating html newsletters|Fails to import the widget|Removed apps for the newsletter, imperavi and widget |
+|[#12](https://github.com/KristianColville1/fine-chop/issues/10)|Widget to display itself for creating general newsletter|Type Error at /admin/newsletter/message/add/ because too many positional arguments given in admin| Removed apps for the newsletter, imperavi and widget |
+|[#13](https://github.com/KristianColville1/fine-chop/issues/13)|Home page should load when deployed|Getting internal 500 server error| Reset virtual environment and removed unused imports before deploying project again and this fixed the issue |
 |||||
 
 [Back to Top](#table-of-contents)
