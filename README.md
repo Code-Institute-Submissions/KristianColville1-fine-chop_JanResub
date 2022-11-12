@@ -121,7 +121,7 @@ User roles:
     Customer,
     Staff Member,
     eCommerce Business Owner,
-    Developer
+    Marketer
 
 #### User (New & Returning site user)
 
@@ -155,7 +155,7 @@ User roles:
 |[#22](https://github.com/KristianColville1/fine-chop/issues/22)|As a shopper, I can easily see what I have searched for and the results of my search, so that I can quickly locate the food item or check the food item availability|
 |[#24](https://github.com/KristianColville1/fine-chop/issues/24)|As a Shopper, I can easily identify that I have selected the correct food item and the right size meal, so that I ensure I don't accidentally select the wrong food item or meal size|
 |[#27](https://github.com/KristianColville1/fine-chop/issues/27)|As a consumer, I can have a personalised user profile, so that view my order history, confirmations and save my payment information|
-|||
+|[#31](https://github.com/KristianColville1/fine-chop/issues/31)|As a Consumer, I can Leave a review on a food item, so that I can express my dissatisfaction/ satisfaction with something I have purchased|
 |||
 |||
 |||
@@ -168,7 +168,7 @@ User roles:
 | Issue ID | User Story |
 |---|---|
 |[#26](https://github.com/KristianColville1/fine-chop/issues/26)|As a staff member, I can update food item images, so that our food items always have the best representation online|
-|||
+|[#33](https://github.com/KristianColville1/fine-chop/issues/33)|As a staff member, I can reply to reviews and help dissatisfied customers, so that I can provide a higher level of customer service for the business|
 |||
 |||
 
@@ -180,8 +180,8 @@ User roles:
 |---|---|
 |[#24](https://github.com/KristianColville1/fine-chop/issues/24)|As a eCommerce Business Owner, I can quickly add or remove products from food menu's, so that keep the menu up to date with correct meals purchased when people dine-in|
 |[#25](https://github.com/KristianColville1/fine-chop/issues/25)|As a eCommerce Business Owner, I can manipulate prices of items on the menu, so that I can compete with the wider market of restaurant owners, manage expenditure and predict future sales|
-|||
-|||
+|[#32](https://github.com/KristianColville1/fine-chop/issues/32)|As a eCommerce Business Owner, I can have a method of authentication for reviewing food items, so that I can protect my business from malice and help improve my business based off of genuine reviews|
+|[#25](https://github.com/KristianColville1/fine-chop/issues/25)||
 
 <br>
 
@@ -189,22 +189,13 @@ User roles:
 
 | Issue ID | User Story |
 |---|---|
-|||
-|||
-|||
-|||
+|[#28](https://github.com/KristianColville1/fine-chop/issues/28)|As a marketer, I have the ability to easily create & manipulate content for the website, so that help keep people engaged and drive sales for the business|
+|[#29](https://github.com/KristianColville1/fine-chop/issues/29)|As a Marketer, I have the ability to target an audience of FineChop and send them emails about the latest offers, promotions and specials available, so that I can perform my function and help drive business to website to increase sales|
+|[#30](https://github.com/KristianColville1/fine-chop/issues/30)|As a Marketer, I can access a special menu so I can perform tasks like email & content marketing, so that I can perform my function easily and quickly on the site to help increase user engagement and drive sales|
+|[#34](https://github.com/KristianColville1/fine-chop/issues/34)|As a marketer, I can be notified of reviews on products, so that I can identify food item satisfaction and come up with strategies to improve the user experience|
+|[#35](https://github.com/KristianColville1/fine-chop/issues/35)|As a marketer, I can keep track of marketing campaigns, so that I can identify the best times of year to promote products and services for the website, measure performance and improve user engagement|
 
 <br>
-
-#### Developer
-
-| Issue ID | User Story |
-|---|---|
-|||
-|||
-|||
-|||
-
 
 [Back to Top](#table-of-contents)
 
