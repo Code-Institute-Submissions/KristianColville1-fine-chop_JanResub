@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     # custom apps
     'home',
     'profiles',
-    'about',
     'contact',
     'email_subscriptions',
     'menu',
