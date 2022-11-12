@@ -46,16 +46,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
+
+    # custom apps
     'home',
     'profiles',
     'about',
     'contact',
     'email_subscriptions',
+    'menu',
 
     # other - imported
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     "crispy_forms",
     "crispy_bootstrap5",
     "storages",
