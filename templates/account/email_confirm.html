@@ -8,11 +8,11 @@
 <div class="container-fluid min-vh-100">
     <div class="row mt-5 allauth-container-wrapper">
         <div class="col-sm-12 col-md-8 col-lg-4 offset-md-2 offset-lg-4 allauth-container pt-3 mt-5">
-                <h1>{% trans "Confirm E-mail Address" %}</h1>
+                <h1 class="text-center">{% trans "Confirm E-mail Address" %}</h1>
                 {% if confirmation %}
                     {% user_display confirmation.email_address.user as user_display %}
                     <p class="text-center">
-                        {% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}
+                        {% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}" class="text-info">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}
                     </p>
                     <form method="post"
                           action="{% url 'account_confirm_email' confirmation.key %}"
