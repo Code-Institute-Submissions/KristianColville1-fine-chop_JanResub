@@ -127,7 +127,13 @@ User roles:
 
 | Issue ID | User Story |
 |---|---|
-|||
+|[#1](https://github.com/KristianColville1/fine-chop/issues/1)|As a New User I can create an account so that I can store my personal information and not have to reenter details for each visit|
+|[#2](https://github.com/KristianColville1/fine-chop/issues/2)|As a New User I can quickly create an account to store personal information so that I can speed up the process and navigate through the website faster|
+|[#3](https://github.com/KristianColville1/fine-chop/issues/3)|As a Returning User I can sign into the website so that I don't have to reenter personal information again for each visit|
+|[#4](https://github.com/KristianColville1/fine-chop/issues/4)|As a Returning User I can I have the option to quickly sign in so that I can avoid having to reenter personal information at each visit and navigate the website faster|
+|[#5](https://github.com/KristianColville1/fine-chop/issues/5)|As a New User I can easily navigate around the web app so that I can find whatever content I am interested in|
+|[#6](https://github.com/KristianColville1/fine-chop/issues/6)|As a New User, I can intuitively & easily understand the purpose of the web app, so that I have perceived expectations/actions I can perform on the web app|
+|[#7](https://github.com/KristianColville1/fine-chop/issues/7)|As a New user, I can receive an email to confirm that my account has been registered successfully, so that I know my new account is activated and have confirmation of username selected|
 |||
 |||
 |||
@@ -138,6 +144,18 @@ User roles:
 
 | Issue ID | User Story |
 |---|---|
+|[#14](https://github.com/KristianColville1/fine-chop/issues/14)|As a shopper, I can view menu items, so that select some to purchase|
+|[#15](https://github.com/KristianColville1/fine-chop/issues/15)|As a Shopper, I can view individual food items from the menu and view their details, so that check the description, the rating, the image, the size and the price|
+|[#16](https://github.com/KristianColville1/fine-chop/issues/16)|As a shopper, I can find special offers and deals, so that take advantage of the offer and save money on food I would like to purchase|
+|[#17](https://github.com/KristianColville1/fine-chop/issues/17)|As a shopper, I can easily view my trolley total at any time, so that avoid spending too much and keep within my preferred budget|
+|[#18](https://github.com/KristianColville1/fine-chop/issues/18)|As a shopper, I can sort through the list of menu items, so that easily find the highest rated & best priced food items to purchase|
+|[#19](https://github.com/KristianColville1/fine-chop/issues/19)|As a shopper, I can sort through the menu to find a specific category of food items, so that find what i'm looking for or search for the best-priced or best-rated food item in that category or find the product by name|
+|[#20](https://github.com/KristianColville1/fine-chop/issues/20)|As a shopper, I can sort multiple categories of food items simultaneously, so that find the best-priced or best-products across broad categories, such as "Thai Noodles" or "Rice Noodles"|
+|[#21](https://github.com/KristianColville1/fine-chop/issues/21)|As a Shopper, I can search for a food item by name or description, so that I can find a specific food item I would like to purchase|
+|[#22](https://github.com/KristianColville1/fine-chop/issues/22)|As a shopper, I can easily see what I have searched for and the results of my search, so that I can quickly locate the food item or check the food item availability|
+|[#24](https://github.com/KristianColville1/fine-chop/issues/24)|As a Shopper, I can easily identify that I have selected the correct food item and the right size meal, so that I ensure I don't accidentally select the wrong food item or meal size|
+|[#27](https://github.com/KristianColville1/fine-chop/issues/27)|As a consumer, I can have a personalised user profile, so that view my order history, confirmations and save my payment information|
+|||
 |||
 |||
 |||
@@ -149,7 +167,7 @@ User roles:
 
 | Issue ID | User Story |
 |---|---|
-|||
+|[#26](https://github.com/KristianColville1/fine-chop/issues/26)|As a staff member, I can update food item images, so that our food items always have the best representation online|
 |||
 |||
 |||
@@ -160,8 +178,8 @@ User roles:
 
 | Issue ID | User Story |
 |---|---|
-|||
-|||
+|[#24](https://github.com/KristianColville1/fine-chop/issues/24)|As a eCommerce Business Owner, I can quickly add or remove products from food menu's, so that keep the menu up to date with correct meals purchased when people dine-in|
+|[#25](https://github.com/KristianColville1/fine-chop/issues/25)|As a eCommerce Business Owner, I can manipulate prices of items on the menu, so that I can compete with the wider market of restaurant owners, manage expenditure and predict future sales|
 |||
 |||
 
