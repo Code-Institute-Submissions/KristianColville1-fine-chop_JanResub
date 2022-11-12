@@ -117,22 +117,13 @@ Another goal for the project was to show a love for Asian cuisine and develop a 
 
 User roles:
 
-    New User, Returning User, Customer,
-     Executive Chef, Receptionist, Delivery Driver,
-      Site Owner, Developer
+    User
+    Customer,
+    Staff Member,
+    eCommerce Business Owner,
+    Developer
 
-#### New User
-
-| Issue ID | User Story |
-|---|---|
-|||
-|||
-|||
-|||
-
-<br>
-
-#### Returning User
+#### User (New & Returning site user)
 
 | Issue ID | User Story |
 |---|---|
@@ -143,7 +134,7 @@ User roles:
 
 <br>
 
-#### Customer
+#### Customer (Shopper & Consumer)
 
 | Issue ID | User Story |
 |---|---|
@@ -154,7 +145,7 @@ User roles:
 
 <br>
 
-#### Executive Chef
+#### Staff Member
 
 | Issue ID | User Story |
 |---|---|
@@ -165,7 +156,7 @@ User roles:
 
 <br>
 
-#### Receptionist
+#### eCommerce Business Owner (site owner)
 
 | Issue ID | User Story |
 |---|---|
@@ -176,18 +167,7 @@ User roles:
 
 <br>
 
-#### Delivery Driver
-
-| Issue ID | User Story |
-|---|---|
-|||
-|||
-|||
-|||
-
-<br>
-
-#### Site Owner
+#### Marketer
 
 | Issue ID | User Story |
 |---|---|
@@ -589,9 +569,9 @@ Open a separate tab and navigate to the S3 dashboard and then to your bucket and
         AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
         # Static and media files
-        STATICFILES_STORAGE = 'custom_storage.StaticStorage'
+        STATICFILES_STORAGE = 'custom_storages.StaticStorage'
         STATICFILES_LOCATION = 'static'
-        DEFAULT_FILE_STORAGE = 'custom_storage.MediaStorage'
+        DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
         MEDIAFILES_LOCATION = 'media'
 
 - You will also need to configure django to use your S3 bucket so create a file as below and place it in the main project directory
