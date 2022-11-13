@@ -49,7 +49,7 @@ $(document).ready(function () {
     window.addEventListener("scroll", function () {
         // nested condition if allauth wrapper class elements don't exist
         if (checkAllauthForm.length === 0) {
-            if (this.window.scrollY > 90) {
+            if (this.window.scrollY > 50) {
                 navWrapper.addClass("nav-bg");
             }
             if (this.window.scrollY < 50) {

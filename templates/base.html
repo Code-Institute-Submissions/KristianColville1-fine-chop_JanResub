@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +51,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="collapse navbar-collapse mx-3" id="navbarNavAltMarkup">
                     <ul class="mx-sm-1 mx-auto navbar-nav ">
                         {% if user.is_superuser %}
                         <li class="nav-link">
@@ -77,10 +78,7 @@
                             </div>
                         </li>
                         <li class="nav-link">
-                            <a>Browse Menu</a>
-                        </li>
-                        <li class="nav-link">
-                            <a>News</a>
+                            <a>Menu</a>
                         </li>
                         <li class="nav-link">
                             <div class="dropdown">
@@ -97,6 +95,9 @@
                                     </li>
                                 </ul>
                             </div>
+                        </li>
+                        <li class="nav-link">
+                            <a>News</a>
                         </li>
                         {% endif %}
                         <li class="nav-link">
@@ -128,6 +129,10 @@
                             </div>
                         </li>
                     </ul>
+                    <form class="mx-auto d-flex">
+                        <input class="form-control m-2 rounded-pill border shadow-sm" type="search" placeholder="Search"
+                            aria-label="Search">
+                    </form>
                     <ul class="mx-auto navbar-nav nav-social d-sm-flex d-lg-none flex-row">
                         <li class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Facebook">
                             <a href="#" class="text-decoration-none" target="_blank" rel="noopener"
@@ -153,7 +158,22 @@
             </nav>
         </div>
     </header>
+    {% for message in messages %}
+    <div class="container-fluid mt-5 message-container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 offset-md-4">
+                <div class="alert {{message.tags}} alert-dismissible text-center fade show mt-5 shadow-sm rounded-pill"
+                    id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+                        aria-label="Click here to close alert message"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor%}
     {% block content %}{% endblock content %}
+
     {% block extra_body %}{% endblock extra_body %}
     {% include "includes/footer.html" %}
     <script src="https://kit.fontawesome.com/0d880835d2.js" crossorigin="anonymous"></script>
