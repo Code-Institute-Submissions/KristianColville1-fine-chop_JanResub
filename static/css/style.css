@@ -182,18 +182,23 @@ nav {
     transition: all 0.2s ease-in-out;
 }
 
+.fs-12 {
+    font-size: 12px;
+    font-weight: 300;
+}
+
 /* ham menu */
 .navbar-toggler {
-    width: 45px;
-    height: 45px;
-    border: 1px outset var(--mellow-apricot);
+    width: 55px;
+    height: 55px;
+    border: 2px outset var(--mellow-apricot);
     position: relative;
     margin-right: 10px;
 }
 
 .ham {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     transition: transform 400ms;
@@ -221,7 +226,7 @@ nav {
 .line {
     fill: none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: var(--new-york-pink);
+    stroke: white;
     stroke-width: 5;
     stroke-linecap: round;
 }
