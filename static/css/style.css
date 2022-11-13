@@ -369,8 +369,12 @@ h1 {
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
-    display: none;
+    display: none !important;
     /* Removes labels from allauth forms */
+}
+
+.form-label {
+    display: none;
 }
 
 /* Google Map */
