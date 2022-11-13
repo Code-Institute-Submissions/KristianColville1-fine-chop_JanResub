@@ -1,7 +1,13 @@
 <div class="fixed-bottom mobile-nav-container d-lg-none">
+    <form class="m-4 d-flex small-search d-none">
+        {% csrf_token %}
+        <input class="dropdown-item form-control" type="search" placeholder="Search" aria-label="Search">
+    </form>
     <ul class="mobile-nav-view p-0 mx-3">
-        <li><a href=""><i class="fa-solid fa-house"></i></a></li>
-        <li><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
+        <li><a href="{% url 'home' %}" aria-label="Click here to go to the home page"><i
+                    class="fa-solid fa-house"></i></a></li>
+        <li><a role="button" aria-label="click here to open search bar" onclick="openSmallSearchBar()"><i
+                    class="fa-solid fa-magnifying-glass"></i></a></li>
         <li class="trolley-container"><a class="trolley-btn" role="button" id="trolley-btn"><i
                     class="fa-solid fa-cart-shopping"></i></a></li>
         <li><a href=""><i class="fa-solid fa-map"></i></a></li>
