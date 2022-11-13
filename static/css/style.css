@@ -400,6 +400,31 @@ h1 {
     color: var(--matte-black);
 }
 
+/* Social Accounts */
+.socialaccount_provider i {
+    font-size: 30px;
+}
+
+.fa-google {
+    color: #de5246;
+}
+
+.fa-facebook {
+    color: #4267B2;
+}
+
+.fa-instagram {
+  color: #fff;
+  vertical-align: middle;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, .25);
+  border-radius: 8px;
+}
+
+.fa-twitter {
+    color: #1DA1F2;
+}
 /* -------------------------------------------------------Media Queries */
 @media only screen and (max-width: 991px) {
     .navbar .nav-link {
