@@ -121,7 +121,7 @@ nav {
     background-color: var(--matte-black);
     border-top-left-radius: 20%;
     border-top-right-radius: 20%;
-    border-top: 1px solid var(--onyx);
+    border-top: 2px outset var(--mellow-apricot);
     padding-top: 15px;
 
 }
@@ -142,6 +142,11 @@ nav {
     text-shadow: 1px 1px 1px var(--matte-black);
 }
 
+#trolley-btn i {
+    color: var(--matte-black);
+    text-shadow: 1px 1px 1px var(--onyx);
+}
+
 .mobile-nav-view li a > i {
     position: relative;
     top: 15px;
@@ -152,8 +157,8 @@ nav {
     height: 65px;
     border-radius: 50%;
     border: 1px outset var(--madder-lake);
-    background: rgb(224, 145, 134);
-    background: linear-gradient(90deg, rgba(224, 145, 134, 1) 22%, rgba(115, 64, 157, 1) 58%);
+    background: rgb(255, 191, 125);
+    background: linear-gradient(90deg, rgba(255, 191, 125, 1) 65%, rgba(115, 64, 157, 1) 98%);
     position: relative;
     top: -10px;
 }
@@ -173,11 +178,15 @@ nav {
     transform: translate(-50%, -50%);
 }
 
+.small-search {
+    transition: all 0.2s ease-in-out;
+}
+
 /* ham menu */
 .navbar-toggler {
     width: 45px;
     height: 45px;
-    border: 1px outset var(--yellow-orange-color-wheel);
+    border: 1px outset var(--mellow-apricot);
     position: relative;
     margin-right: 10px;
 }
