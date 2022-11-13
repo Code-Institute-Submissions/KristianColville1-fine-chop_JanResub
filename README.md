@@ -153,12 +153,12 @@ User roles:
 |[#20](https://github.com/KristianColville1/fine-chop/issues/20)|As a shopper, I can sort multiple categories of food items simultaneously, so that find the best-priced or best-products across broad categories, such as "Thai Noodles" or "Rice Noodles"|
 |[#21](https://github.com/KristianColville1/fine-chop/issues/21)|As a Shopper, I can search for a food item by name or description, so that I can find a specific food item I would like to purchase|
 |[#22](https://github.com/KristianColville1/fine-chop/issues/22)|As a shopper, I can easily see what I have searched for and the results of my search, so that I can quickly locate the food item or check the food item availability|
-|[#24](https://github.com/KristianColville1/fine-chop/issues/24)|As a Shopper, I can easily identify that I have selected the correct food item and the right size meal, so that I ensure I don't accidentally select the wrong food item or meal size|
+|[#23](https://github.com/KristianColville1/fine-chop/issues/23)|As a Shopper, I can easily identify that I have selected the correct food item and the right size meal, so that I ensure I don't accidentally select the wrong food item or meal size|
 |[#27](https://github.com/KristianColville1/fine-chop/issues/27)|As a consumer, I can have a personalised user profile, so that view my order history, confirmations and save my payment information|
 |[#31](https://github.com/KristianColville1/fine-chop/issues/31)|As a Consumer, I can Leave a review on a food item, so that I can express my dissatisfaction/ satisfaction with something I have purchased|
-|||
-|||
-|||
+|[#37](https://github.com/KristianColville1/fine-chop/issues/37)|As a consumer, I can identify with relative ease what the new food menu items are, so that I can try new meals and have more options to choose from|
+|[#39](https://github.com/KristianColville1/fine-chop/issues/39)|As a consumer, I can book a table to dine in, so that I can have the option to visit FineChop if I am interested in a dine-in experience|
+|[#40](https://github.com/KristianColville1/fine-chop/issues/40)|As a shopper, I can have the option to purchase a gift card, so that I can give someone a gift or use as an alternate method of transaction|
 |||
 
 <br>
@@ -169,7 +169,7 @@ User roles:
 |---|---|
 |[#26](https://github.com/KristianColville1/fine-chop/issues/26)|As a staff member, I can update food item images, so that our food items always have the best representation online|
 |[#33](https://github.com/KristianColville1/fine-chop/issues/33)|As a staff member, I can reply to reviews and help dissatisfied customers, so that I can provide a higher level of customer service for the business|
-|||
+|[#38](https://github.com/KristianColville1/fine-chop/issues/38)|As a staff member, I can post new job roles on the website and collect resumes, so that I can fill roles that are vacant and choose from a custom talent pool of applicants|
 |||
 
 <br>
@@ -178,10 +178,12 @@ User roles:
 
 | Issue ID | User Story |
 |---|---|
-|[#24](https://github.com/KristianColville1/fine-chop/issues/24)|As a eCommerce Business Owner, I can quickly add or remove products from food menu's, so that keep the menu up to date with correct meals purchased when people dine-in|
+|[#24](https://github.com/KristianColville1/fine-chop/issues/24)|
+As a eCommerce Business Owner, I can quickly add or remove products from food menu's, so that I can keep the menu up to date with correct meals purchased when people dine-in|
 |[#25](https://github.com/KristianColville1/fine-chop/issues/25)|As a eCommerce Business Owner, I can manipulate prices of items on the menu, so that I can compete with the wider market of restaurant owners, manage expenditure and predict future sales|
 |[#32](https://github.com/KristianColville1/fine-chop/issues/32)|As a eCommerce Business Owner, I can have a method of authentication for reviewing food items, so that I can protect my business from malice and help improve my business based off of genuine reviews|
 |[#25](https://github.com/KristianColville1/fine-chop/issues/25)||
+|[#36](https://github.com/KristianColville1/fine-chop/issues/36)|As a eCommerce Business Owner, I can have a feature in my website that helps new food Items to stand out, so that customers are aware of new meals and can help me test new and exciting food menu options|
 
 <br>
 
