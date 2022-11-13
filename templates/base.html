@@ -55,22 +55,19 @@
                     <ul class="mx-sm-1 mx-auto navbar-nav ">
                         {% if user.is_superuser %}
                         <li class="nav-link">
-                            <a class="" href="">Dashboard</a>
+                            <a class="" href="#">Dashboard</a>
                         </li>
                         {% else %}
+                        <li class="nav-link">
+                            <a class="" href="#">About</a>
+                        </li>
                         <li class="nav-link">
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" id="about-dropdown"
                                     data-toggle="dropdown" aria-expanded="false">
-                                    About
+                                    Contact
                                 </a>
                                 <ul class="dropdown-menu shadow mt-2" aria-labelledby="about-dropdown">
-                                    <li>
-                                        <a class="dropdown-item" href="#">About Us</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">Contact Us</a>
-                                    </li>
                                     <li>
                                         <a class="dropdown-item" href="#">Careers</a>
                                     </li>
@@ -78,7 +75,7 @@
                             </div>
                         </li>
                         <li class="nav-link">
-                            <a>Menu</a>
+                            <a href="#">Menu</a>
                         </li>
                         <li class="nav-link">
                             <div class="dropdown">
@@ -97,14 +94,30 @@
                             </div>
                         </li>
                         <li class="nav-link">
-                            <a>News</a>
+                            <a href="#">News</a>
                         </li>
                         {% endif %}
-                        <li class="nav-link">
+
+                    </ul>
+                    <ul class="mx-auto navbar-nav d-none d-lg-flex">
+                        <li class="nav-link mx-1">
+                            <form class="dropdown">
+                                {% csrf_token %}
+                                <a class="dropdown-toggle" href="#" role="button" id="search-dropdown"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                                <ul class="dropdown-menu mt-2" aria-labelledby="search-dropdown">
+                                    <input class="dropdown-item form-control"
+                                        type="search" placeholder="Search" aria-label="Search">
+                                </ul>
+                            </form>
+                        </li>
+                        <li class="nav-link mx-1">
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" id="login-dropdown"
                                     data-toggle="dropdown" aria-expanded="false">
-                                    Account
+                                    <i class="fa-solid fa-user"></i>
                                 </a>
                                 <ul class="dropdown-menu shadow mt-2" aria-labelledby="login-dropdown">
                                     <li>
@@ -113,26 +126,29 @@
                                     {% if user.is_authenticated %}
                                     <li>
                                         <a class="dropdown-item" href="{% url 'account_logout' %}"
-                                            aria-label="click here to sign out of FineChop">Sign Out</a>
+                                            aria-label="click here to sign out of FineChop">Sign
+                                            Out</a>
                                     </li>
                                     {% else %}
                                     <li>
                                         <a class="dropdown-item" href="{% url 'account_login' %}"
-                                            aria-label="click here to login into FineChop">Sign In</a>
+                                            aria-label="click here to login into FineChop">Sign
+                                            In</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="{% url 'account_signup' %}"
-                                            aria-label="click here to sign up to FineChop">Sign Up</a>
+                                            aria-label="click here to sign up to FineChop">Sign
+                                            Up</a>
                                     </li>
                                     {% endif %}
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-link mx-1">
+                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+
+                        </li>
                     </ul>
-                    <form class="mx-auto d-flex">
-                        <input class="form-control m-2 rounded-pill border shadow-sm" type="search" placeholder="Search"
-                            aria-label="Search">
-                    </form>
                     <ul class="mx-auto navbar-nav nav-social d-sm-flex d-lg-none flex-row">
                         <li class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Facebook">
                             <a href="#" class="text-decoration-none" target="_blank" rel="noopener"
