@@ -58,10 +58,24 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.instagram',
+    'allauth.socialaccount.providers.twitter',
     "crispy_forms",
     "crispy_bootstrap5",
     "storages",
 ]
+
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION = "username_email"
+ACCOUNT_USERNAME_MIN_LENGTH = 5
+ACCOUNT_SIGNUP_REDIRECT_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = ""
+SOCIALACCOUNT_AUTO_SIGNUP = True
+SOCIALACCOUNT_QUERY_EMAIL = ACCOUNT_EMAIL_REQUIRED
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
@@ -117,14 +131,6 @@ AUTHENTICATION_BACKENDS = (
 )
 
 WSGI_APPLICATION = 'core.wsgi.application'
-
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_AUTHENTICATION = "username_email"
-ACCOUNT_USERNAME_MIN_LENGTH = 5
-ACCOUNT_SIGNUP_REDIRECT_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = ""
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -192,7 +198,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
 if 'USE_AWS' in os.environ:
     # static file config heroku
     # Cache control
@@ -217,7 +222,6 @@ if 'USE_AWS' in os.environ:
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
