@@ -58,6 +58,14 @@ $(document).ready(function () {
         }
     });
     
+
 });
 
-
+const openSmallSearchBar = function () {
+    if ($(".small-search").hasClass("d-none")) {
+        $(".small-search").fadeIn().removeClass("d-none");
+    } else {
+         $(".small-search").addClass("d-none");
+    }
+    
+};
