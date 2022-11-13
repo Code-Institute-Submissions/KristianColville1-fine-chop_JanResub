@@ -3,9 +3,14 @@
 {% load i18n %}
 
 {% block head_title %}{% trans "Social Network Login Failure" %}{% endblock %}
+<div class="container-fluid min-vh-100">
+    <div class="row mt-5 allauth-container-wrapper">
+        <div class="col-sm-12 col-md-8 col-lg-4 offset-md-2 offset-lg-4 allauth-container pt-3 mt-1">
+            {% block content %}
+            <h1>{% trans "Social Network Login Failure" %}</h1>
 
-{% block content %}
-<h1>{% trans "Social Network Login Failure" %}</h1>
-
-<p>{% trans "An error occurred while attempting to login via your social network account." %}</p>
+            <p>{% trans "An error occurred while attempting to login via your social network account." %}</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
