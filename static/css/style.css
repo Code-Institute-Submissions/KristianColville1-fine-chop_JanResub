@@ -115,6 +115,64 @@ nav {
     cursor: pointer;
 }
 
+/* mobile nav view */
+
+.mobile-nav-container {
+    background-color: var(--matte-black);
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    border-top: 1px solid var(--onyx);
+    padding-top: 15px;
+
+}
+
+.mobile-nav-view {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.mobile-nav-view li,
+.mobile-nav-view li a,
+.mobile-nav-view li button,
+.movile-nav-view li a i {
+    font-size: 22px;
+    color: white;
+    text-shadow: 1px 1px 1px var(--matte-black);
+}
+
+.mobile-nav-view li a > i {
+    position: relative;
+    top: 15px;
+}
+
+.trolley-container {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 1px outset var(--madder-lake);
+    background: rgb(224, 145, 134);
+    background: linear-gradient(90deg, rgba(224, 145, 134, 1) 22%, rgba(115, 64, 157, 1) 58%);
+    position: relative;
+    top: -10px;
+}
+
+
+.trolley-container:active {
+    background: rgb(224, 145, 134);
+    background: linear-gradient(90deg, rgba(224, 145, 134, 1) 41%, rgba(115, 64, 157, 1) 98%);
+    border: 1px inset var(--madder-lake);
+    transition: all 0.5s ease-in-out;
+}
+
+#trolley-btn i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* ham menu */
 .navbar-toggler {
     width: 45px;
@@ -217,6 +275,7 @@ footer {
 .footer-logo {
     width: 350px;
 }
+
 footer ul {
     list-style-type: none;
 }
@@ -296,7 +355,8 @@ h1 {
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
-    display: none; /* Removes labels from allauth forms */
+    display: none;
+    /* Removes labels from allauth forms */
 }
 
 /* Google Map */
@@ -325,6 +385,7 @@ h1 {
 .btn-close {
     color: var(--matte-black);
 }
+
 /* -------------------------------------------------------Media Queries */
 @media only screen and (max-width: 991px) {
     .navbar .nav-link {
@@ -332,7 +393,7 @@ h1 {
     }
 }
 
-@media only screen and (max-width: 575px){
+@media only screen and (max-width: 575px) {
 
     .footer-logo,
     footer p,
@@ -353,6 +414,7 @@ h1 {
     .navbar-brand {
         width: 250px;
     }
+
     .footer-logo {
         width: 250px;
     }
