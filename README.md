@@ -17,6 +17,7 @@ Developer: Kristian Colville
     * [Target Audience](#target-audience)
     * [User Requirements and Expectations](#user-requirements-and-expectations)
     * [User Stories](#user-stories)
+
 * [Design](#design)
     * [Color Scheme](#color-scheme)
     * [Typography](#typography)
@@ -28,6 +29,7 @@ Developer: Kristian Colville
     * [Strategy](#strategy)
 * [Web Marketing](#web-marketing)
 * [Agile Methodology](#agile-methodology)
+    * [Epics](#epics)
 * [Information Architecture](#information-architecture)
     * [Database](#database)
     * [Data Modeling](#data-modeling)
@@ -121,7 +123,8 @@ User roles:
     Customer,
     Staff Member,
     eCommerce Business Owner,
-    Marketer
+    Marketer,
+    Developer
 
 #### User (New & Returning site user)
 
@@ -178,11 +181,9 @@ User roles:
 
 | Issue ID | User Story |
 |---|---|
-|[#24](https://github.com/KristianColville1/fine-chop/issues/24)|
-As a eCommerce Business Owner, I can quickly add or remove products from food menu's, so that I can keep the menu up to date with correct meals purchased when people dine-in|
+|[#24](https://github.com/KristianColville1/fine-chop/issues/24)|As a eCommerce Business Owner, I can quickly add or remove products from food menu's, so that I can keep the menu up to date with correct meals purchased when people dine-in|
 |[#25](https://github.com/KristianColville1/fine-chop/issues/25)|As a eCommerce Business Owner, I can manipulate prices of items on the menu, so that I can compete with the wider market of restaurant owners, manage expenditure and predict future sales|
 |[#32](https://github.com/KristianColville1/fine-chop/issues/32)|As a eCommerce Business Owner, I can have a method of authentication for reviewing food items, so that I can protect my business from malice and help improve my business based off of genuine reviews|
-|[#25](https://github.com/KristianColville1/fine-chop/issues/25)||
 |[#36](https://github.com/KristianColville1/fine-chop/issues/36)|As a eCommerce Business Owner, I can have a feature in my website that helps new food Items to stand out, so that customers are aware of new meals and can help me test new and exciting food menu options|
 
 <br>
@@ -199,6 +200,16 @@ As a eCommerce Business Owner, I can quickly add or remove products from food me
 
 <br>
 
+#### Developer
+
+| Issue ID | User Story |
+|---|---|
+|[#41](https://github.com/KristianColville1/fine-chop/issues/41)|As a Developer, I can implement a 404 error page to alert users that they have accessed a page that does not exist, so that good design principles are practised and the user can navigate back to the home page|
+|[#42](https://github.com/KristianColville1/fine-chop/issues/42)|As a Developer, I can implement a 500 error page to alert users that a server error has occurred, so that good design principles are implemented and the user can navigate back to the home page|
+|||
+|||
+
+<br>
 [Back to Top](#table-of-contents)
 
 ## Design
@@ -250,6 +261,35 @@ The restaurant business is highly competitive and the strategy trade-off for **F
 [Back to Top](#table-of-contents)
 
 ## Agile Methodology
+This project was developed using agile methodologies through small-medium sized feature incremental sprints. Their were 3 major sprints spaced out for the project.
+
+A Kanban board was created using github projects and can be found at ![my github project FineChop](https://github.com/users/KristianColville1/projects/3). All stories were categorized into three main stages for development and testing. User stories were prioritized using the Moscow method and updated accordingly to higher or lower levels if improvements or further considerations were met.
+
+Moscow Method in order of prioritization:
+
+- Must Have
+- Should Have
+- Could Have
+- Wont Have
+
+Sprints:
+
+- Sprint 1
+- Sprint 2
+- Sprint 3
+
+### Epics
+
+#### 1 Base Project Setup
+#### 2 User Authentication
+#### 3 Reservations Application
+#### 4 Subscriptions
+#### 5 Deployment
+#### 6 Home Application
+#### 7 Menu Application
+#### 8 Marketing
+#### Documentation
+
 
 [Back to Top](#table-of-contents)
 
