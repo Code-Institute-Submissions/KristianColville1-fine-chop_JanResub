@@ -1,7 +1,11 @@
-from django.shortcuts import render, redirect
-from django.views import View
-from django.contrib.auth.models import User
+from django.shortcuts import render
 
 
 def get_home(request):
+    """Get home page"""
     return render(request, 'home/index.html')
+
+
+def get_about_page(request):
+    """Get about page"""
+    return render(request, 'home/about.html')
