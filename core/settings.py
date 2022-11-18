@@ -64,7 +64,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
     "crispy_forms",
     "crispy_bootstrap5",
-    "storages",
+    "cloudinary_storage",
+    "cloudinary",
 ]
 
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -222,6 +223,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
