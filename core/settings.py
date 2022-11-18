@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 import dj_database_url
 import django_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 if os.path.exists("env.py"):
     import env
@@ -64,8 +67,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
     "crispy_forms",
     "crispy_bootstrap5",
-    "cloudinary_storage",
-    "cloudinary",
+    "storages",
 ]
 
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
