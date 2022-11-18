@@ -1,0 +1,35 @@
+.about {
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    margin-top: 100px;
+}
+
+.about-bg-1 {
+    height: 400px;
+    background: url('/static/img/home-page/about-main.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.headings {
+    color: var(--madder-lake);
+}
+
+.about-philosophy {
+    background-color: whitesmoke;
+}
+
+.about-philosophy .headings~h2,
+.about-reviews .headings {
+    color: var(--matte-black);
+    text-shadow: none;
+}
+
+.about-reviews {
+    height: 300px;
+    background-color: white;
+}
+
+.about-order-now {
+    height: 300px;
+}
