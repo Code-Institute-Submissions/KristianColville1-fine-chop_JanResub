@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    /**
+     * Set a timer and display these images on the image page and iterate 
+     * through them. Called using iterateSlideShow function.
+     */
     let timeToDisplay = 7000;
 
     let slideshow = $("#home-bg-slideshow");
