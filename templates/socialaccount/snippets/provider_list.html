@@ -6,13 +6,13 @@
 <a title="{{provider.name}}" role="button" class="btn socialaccount_provider" 
      href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
      {% if provider.name == 'Google' %}
-      <i class="fa-brands fa-google"></i>
+      <i class="fa-brands fa-google google"></i>
      {% elif provider.name == 'Facebook' %}
-     <i class="fa-brands fa-facebook"></i>
+     <i class="fa-brands fa-facebook facebook"></i>
      {% elif provider.name == 'Instagram' %}
-     <i class="fa-brands fa-instagram"></i>
+     <i class="fa-brands fa-instagram instagram"></i>
      {% elif provider.name == 'Twitter' %}
-     <i class="fa-brands fa-twitter"></i>
+     <i class="fa-brands fa-twitter twitter"></i>
      {% endif %}
      </a>
 {% endfor %}
