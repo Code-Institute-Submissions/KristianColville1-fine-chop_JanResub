@@ -5,9 +5,6 @@ $(document).ready(function () {
      * Improves the UI and makes the website more cohesive.
      */
 
-    // Gets dropdowns
-    const dropdowns = document.getElementsByClassName(".dropdown-menu");
-
     // when called slides up any open dropdowns
     let slideAllDropdownsUp = () => {
         $(".dropdown-menu").each(function () {
@@ -35,7 +32,7 @@ $(document).ready(function () {
     });
 
     /**
-     * Checks to see if the class allauth-wrapper exists and performs an 
+     * Checks to see if the class allauth-wrapper exists and performs an
      * action based on that behaviour for scrolling and adding a background
      * to the navigation menu.
      */
@@ -57,15 +54,15 @@ $(document).ready(function () {
             }
         }
     });
-    
-
 });
 
+/**
+ * Opens a search bar on the bottom of the screen for mobile users
+ */
 const openSmallSearchBar = function () {
     if ($(".small-search").hasClass("d-none")) {
         $(".small-search").fadeIn().removeClass("d-none");
     } else {
-         $(".small-search").addClass("d-none");
+        $(".small-search").addClass("d-none");
     }
-    
 };
