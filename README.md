@@ -281,15 +281,43 @@ Sprints:
 ### Epics
 
 #### 1 Base Project Setup
+
+Setting up the project and having the basics put together for incremental development. The next step after initial designing and wire-framing.
+
 #### 2 User Authentication
+
+Providing the ability to login or sign up through various methods such as social media with Google, Facebook, Instagram & Twitter.
+Designing the Allauth templates and building everything for an intuitive UI.
+
 #### 3 Reservations Application
+
+Successfully implementing the ability to reserve tables at FineChop Restaurant and additional features like purchasing gift cards.
+
 #### 4 Subscriptions
-#### 5 Deployment
-#### 6 Home Application
-#### 7 Menu Application
-#### 8 Marketing
+
+A precursor for the marketing milestone. Successfully acquiring email addresses and providing the ability for email marketing.
+Additional smaller features like offers and gift cards.
+
+
+#### 5 Home Application
+
+Providing a nice UI and providing additional routes for ordering and more information.
+
+#### 6 Menu Application
+
+An application that handles the menu items for creation.
+
+#### 7 Marketing
+
+Provide staff of multiple kinds with the ability to do their tasks for content and email marketing.
+
+#### 8 Deployment
+
+Completing a minimal viable product with as many user stories completed for the website and successfully sending it out into the world.
+
 #### Documentation
 
+Tasks such as the README file
 
 [Back to Top](#table-of-contents)
 
@@ -320,7 +348,7 @@ All the Testing documentation can be found [here](/TESTING.md)
 |[#11](https://github.com/KristianColville1/fine-chop/issues/11)|Expected Imperavi to import it's widget properly so a nice text editor could be used for creating html newsletters|Fails to import the widget|Removed apps for the newsletter, imperavi and widget |
 |[#12](https://github.com/KristianColville1/fine-chop/issues/10)|Widget to display itself for creating general newsletter|Type Error at /admin/newsletter/message/add/ because too many positional arguments given in admin| Removed apps for the newsletter, imperavi and widget |
 |[#13](https://github.com/KristianColville1/fine-chop/issues/13)|Home page should load when deployed|Getting internal 500 server error| Reset virtual environment and removed unused imports before deploying project again and this fixed the issue |
-|||||
+|[#48](https://github.com/KristianColville1/fine-chop/issues/48)|static files to load properly|Not loading static files|Fixed any links by removing / from urls and added static root url and this seemed to fix the problem. I identified it as a static file issue from looking at the heroku logs for the deployment |
 
 [Back to Top](#table-of-contents)
 
