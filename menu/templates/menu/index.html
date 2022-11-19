@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'menu/css/menu.css' %}">{% endblock extra_css %}
+{% block head_title %}Menu{% endblock head_title %}
+{% block content %}
+{% include 'menu/includes/food-menu.html' %}
+
+<div class="container bg-light">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 offset-md-3">
+            <!--TODO: for loop for menu items of specific type-->
+            <div class="">
+                food item
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
