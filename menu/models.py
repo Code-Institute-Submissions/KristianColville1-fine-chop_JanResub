@@ -1,6 +1,5 @@
 from django.db import models
 
-
 CATEGORY_CHOICES = (
     ('A', 'Starters'),
     ('B', 'Mains'),
@@ -14,6 +13,8 @@ CATEGORY_CHOICES = (
     ('J', 'Kids Menu'),
     ('K', 'Drinks'),
 )
+
+STATUS_CHOICES = ((0, "Not Serving"), (1, "Serving"))
 
 
 class FoodItem(models.Model):
@@ -40,7 +41,9 @@ class FoodItemProductDetails(models.Model):
 class MenuItem(FoodItem, FoodItemProductDetails):
     """Menu item class mixin"""
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=1)
-    slug = models.SlugField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS_CHOICES, default=1)
 
     def __str__(self):
         """String representation"""
