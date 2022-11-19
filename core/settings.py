@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'contact',
     'email_subscriptions',
     'menu',
+    'reservations',
 
     # other - imported
     'allauth',
