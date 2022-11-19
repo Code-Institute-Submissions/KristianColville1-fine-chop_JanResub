@@ -319,11 +319,6 @@ nav {
 footer {
     background-color: var(--matte-black);
     color: white;
-    border-top: 3px inset var(--madder-lake);
-}
-
-.footer-logo {
-    width: 350px;
 }
 
 footer ul {
@@ -332,9 +327,9 @@ footer ul {
 
 footer .footer-links ul li {
     display: inline-block;
-    width: 45px;
-    height: 45px;
-    border: 2px solid white;
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
     border-radius: 50%;
 
     position: relative;
@@ -350,7 +345,7 @@ footer a,
 }
 
 .footer-links a i {
-    font-size: 24px;
+    font-size: 16px;
 
     position: absolute;
     top: 50%;
