@@ -1,18 +1,19 @@
 from django.db import models
 
-CATEGORIES = [
-    'Starters',
-    'Mains',
-    'Noodles',
-    'Rices',
-    'Wok',
-    'Curries',
-    'Soups',
-    'Vegan',
-    'Salads',
-    'Kids Menu',
-    'Drinks',
-]
+
+CATEGORY_CHOICES = (
+    ('A', 'Starters'),
+    ('B', 'Mains'),
+    ('C', 'Noodles'),
+    ('D', 'Rices'),
+    ('E', 'Wok'),
+    ('F', 'Curries'),
+    ('G', 'Soups'),
+    ('H', 'Vegan'),
+    ('I', 'Salads'),
+    ('J', 'Kids Menu'),
+    ('K', 'Drinks'),
+)
 
 
 class FoodItem(models.Model):
@@ -35,3 +36,12 @@ class FoodItemProductDetails(models.Model):
     class Meta:
         abstract = True
 
+
+class MenuItem(FoodItem, FoodItemProductDetails):
+    """Menu item class mixin"""
+    category = models.CharField(choices=CATEGORY_CHOICES, max_length=1)
+    slug = models.SlugField()
+
+    def __str__(self):
+        """String representation"""
+        return self.name
