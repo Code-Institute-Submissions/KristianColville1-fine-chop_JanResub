@@ -50,10 +50,15 @@
     {
         "pk": 10,
         "model": "menu.category",
-        "fields": { "name": "kids_menu", "friendly_name": "Kids Menu" }
+        "fields": { "name": "sides", "friendly_name": "Sides" }
     },
     {
         "pk": 11,
+        "model": "menu.category",
+        "fields": { "name": "kids_menu", "friendly_name": "Kids Menu" }
+    },
+    {
+        "pk": 12,
         "model": "menu.category",
         "fields": { "name": "drinks", "friendly_name": "Drinks" }
     }

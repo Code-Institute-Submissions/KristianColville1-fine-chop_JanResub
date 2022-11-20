@@ -37,20 +37,35 @@
     {
         "pk": 8,
         "model": "menu.allergen",
-        "fields": { "name": "soybeans", "friendly_name": "Soybeans" }
+        "fields": { "name": "celery", "friendly_name": "Celery" }
     },
     {
         "pk": 9,
         "model": "menu.allergen",
-        "fields": { "name": "sesame", "friendly_name": "Sesame" }
+        "fields": { "name": "sulphur_dioxide", "friendly_name": "Sulphur Dioxide" }
     },
     {
         "pk": 10,
         "model": "menu.category",
-        "fields": { "name": "peanuts", "friendly_name": "Peanuts" }
+        "fields": { "name": "mustard", "friendly_name": "Mustard" }
     },
     {
         "pk": 11,
+        "model": "menu.allergen",
+        "fields": { "name": "soybeans", "friendly_name": "Soybeans" }
+    },
+    {
+        "pk": 12,
+        "model": "menu.allergen",
+        "fields": { "name": "sesame", "friendly_name": "Sesame" }
+    },
+    {
+        "pk": 13,
+        "model": "menu.category",
+        "fields": { "name": "peanuts", "friendly_name": "Peanuts" }
+    },
+    {
+        "pk": 14,
         "model": "menu.allergen",
         "fields": { "name": "dairy", "friendly_name": "Dairy" }
     }
