@@ -30,30 +30,6 @@ $(document).ready(function () {
         let menu = $(this);
         $(menu).slideUp().removeClass("menu-activated");
     });
-
-    /**
-     * Checks to see if the class allauth-wrapper exists and performs an
-     * action based on that behaviour for scrolling and adding a background
-     * to the navigation menu.
-     */
-
-    let navWrapper = $(".nav-wrapper");
-    let checkAllauthForm = document.getElementsByClassName("allauth-container");
-    // if it does exist and there is an element with this class then add background
-    if (checkAllauthForm.length != 0) {
-        navWrapper.addClass("nav-bg");
-    }
-    window.addEventListener("scroll", function () {
-        // nested condition if allauth wrapper class elements don't exist
-        if (checkAllauthForm.length === 0) {
-            if (this.window.scrollY > 50) {
-                navWrapper.addClass("nav-bg");
-            }
-            if (this.window.scrollY < 50) {
-                navWrapper.removeClass("nav-bg");
-            }
-        }
-    });
 });
 
 /**

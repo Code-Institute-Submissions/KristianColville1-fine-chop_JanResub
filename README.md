@@ -17,7 +17,6 @@ Developer: Kristian Colville
     * [Target Audience](#target-audience)
     * [User Requirements and Expectations](#user-requirements-and-expectations)
     * [User Stories](#user-stories)
-
 * [Design](#design)
     * [Color Scheme](#color-scheme)
     * [Typography](#typography)
@@ -349,6 +348,7 @@ All the Testing documentation can be found [here](/TESTING.md)
 |[#12](https://github.com/KristianColville1/fine-chop/issues/10)|Widget to display itself for creating general newsletter|Type Error at /admin/newsletter/message/add/ because too many positional arguments given in admin| Removed apps for the newsletter, imperavi and widget |
 |[#13](https://github.com/KristianColville1/fine-chop/issues/13)|Home page should load when deployed|Getting internal 500 server error| Reset virtual environment and removed unused imports before deploying project again and this fixed the issue |
 |[#48](https://github.com/KristianColville1/fine-chop/issues/48)|static files to load properly|Not loading static files|Fixed any links by removing / from urls and added static root url and this seemed to fix the problem. I identified it as a static file issue from looking at the heroku logs for the deployment |
+|[#49](https://github.com/KristianColville1/fine-chop/issues/49)|Images to slide over the next image with ease| I added a min height for the body element in css and manipulated the z axis of my project contents to display on top of the darker overlay behind for the home page |
 
 [Back to Top](#table-of-contents)
 
