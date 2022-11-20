@@ -12,10 +12,25 @@
 html,
 body {
     max-width: 100%;
+    min-height: 100%;
     overflow: visible;
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
     background-color: var(--matte-black);
+}
+
+.body-overlay {
+    width: 100%;
+    min-height: 100%;
+    position:absolute;
+    z-index: 1;
+    background-color: var(--onyx);
+    opacity: 0.4;
+}
+
+.top-layer {
+    position: absolute;
+    z-index: 2;
 }
 
 a {
@@ -31,12 +46,6 @@ header {
 
 .nav-wrapper {
     padding-top: 10px;
-}
-
-nav {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .nav-bg {
@@ -249,14 +258,14 @@ nav {
 /* -------------------------------------------------------Home */
 
 .home-content,
-.home-landing-lg,
-.home-overlay {
+.home-landing-lg {
     height: 100vh !important;
     width: 100%;
 }
 
 .home-content {
     position: absolute;
+    z-index: 2;
 }
 
 .home-content > .container {
@@ -266,12 +275,6 @@ nav {
 .home-landing-lg {
     position: relative;
     overflow: clip !important;
-}
-
-.home-overlay {
-    position: absolute;
-    background-color: var(--onyx);
-    opacity: 0.45;
 }
 
 #home-bg-slideshow {
@@ -461,6 +464,23 @@ h1 {
     color: #1DA1F2;
 }
 
+/* trolley */
+
+.remove-from-trolley,
+.add-to-trolley {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.remove-from-trolley i,
+.add-to-trolley i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 /* -------------------------------------------------------Media Queries */
 @media only screen and (max-width: 991px) {
     .navbar .nav-link {
