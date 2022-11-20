@@ -1,0 +1,57 @@
+[
+    {
+        "pk": 1,
+        "model": "menu.allergen",
+        "fields": { "name": "crustaceans", "friendly_name": "Crustaceans" }
+    },
+    {
+        "pk": 2,
+        "model": "menu.allergen",
+        "fields": { "name": "eggs", "friendly_name": "Eggs" }
+    },
+    {
+        "pk": 3,
+        "model": "menu.allergen",
+        "fields": { "name": "lupin", "friendly_name": "Lupin" }
+    },
+    {
+        "pk": 4,
+        "model": "menu.allergen",
+        "fields": { "name": "tree_nuts", "friendly_name": "Tree Nuts" }
+    },
+    {
+        "pk": 5,
+        "model": "menu.allergen",
+        "fields": { "name": "gluten", "friendly_name": "Gluten" }
+    },
+    {
+        "pk": 6,
+        "model": "menu.allergen",
+        "fields": { "name": "molluscs", "friendly_name": "Molluscs" }
+    },
+    {
+        "pk": 7,
+        "model": "menu.allergen",
+        "fields": { "name": "fish", "friendly_name": "Fish" }
+    },
+    {
+        "pk": 8,
+        "model": "menu.allergen",
+        "fields": { "name": "soybeans", "friendly_name": "Soybeans" }
+    },
+    {
+        "pk": 9,
+        "model": "menu.allergen",
+        "fields": { "name": "sesame", "friendly_name": "Sesame" }
+    },
+    {
+        "pk": 10,
+        "model": "menu.category",
+        "fields": { "name": "peanuts", "friendly_name": "Peanuts" }
+    },
+    {
+        "pk": 11,
+        "model": "menu.allergen",
+        "fields": { "name": "dairy", "friendly_name": "Dairy" }
+    }
+]

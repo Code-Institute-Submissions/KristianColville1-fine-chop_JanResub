@@ -3,6 +3,24 @@ from django.db import models
 STATUS_CHOICES = ((0, "Not Serving"), (1, "Serving"))
 
 
+class Allergen(models.Model):
+    """
+    Allergen Model for food items
+    """
+
+    class Meta:
+        verbose_name_plural = 'Allergens'
+
+    name = models.CharField(max_length=100)
+    friendly_name = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_friendly_name(self):
+        return self.friendly_name
+
+
 class Category(models.Model):
     """
     Category model for food menu items
@@ -45,18 +63,14 @@ class FoodItemProductDetails(models.Model):
 
 class MenuItem(FoodItem, FoodItemProductDetails):
     """Menu item class mixin"""
-    category = models.ForeignKey('Category',
+    category = models.ForeignKey(Category,
                                  null=True,
                                  blank=True,
                                  on_delete=models.SET_NULL)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now_add=True)
+    allergens = models.ManyToManyField(Allergen,
+                                       blank=True)
     status = models.IntegerField(choices=STATUS_CHOICES, default=1)
     portion_sizes = models.BooleanField(default=False, null=True, blank=True)
-    rating = models.DecimalField(max_digits=6,
-                                 decimal_places=2,
-                                 null=True,
-                                 blank=True)
     rating = models.DecimalField(max_digits=6,
                                  decimal_places=2,
                                  null=True,

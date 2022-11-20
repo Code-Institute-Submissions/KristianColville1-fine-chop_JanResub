@@ -1,37 +1,37 @@
 [
     {
         "pk": 1,
-        "model": "menu_menuitem.category",
+        "model": "menu.category",
         "fields": { "name": "starters", "friendly_name": "Starters" }
     },
     {
         "pk": 2,
-        "model": "menu_menuitem.category",
+        "model": "menu.category",
         "fields": { "name": "mains", "friendly_name": "Mains" }
     },
     {
         "pk": 3,
-        "model": "menu_menuitem.category",
+        "model": "menu.category",
         "fields": { "name": "noodles", "friendly_name": "Noodles" }
     },
     {
         "pk": 4,
-        "model": "menu_menuitem.category",
+        "model": "menu.category",
         "fields": { "name": "rices", "friendly_name": "Rices" }
     },
     {
         "pk": 5,
-        "model": "menu_menuitem.category",
+        "model": "menu.category",
         "fields": { "name": "wok", "friendly_name": "Wok" }
     },
     {
         "pk": 6,
-        "model": "menu_menuitem.category",
+        "model": "menu.category",
         "fields": { "name": "curries", "friendly_name": "Curries" }
     },
     {
         "pk": 7,
-        "model": "menu_menuitem.category",
+        "model": "menu.category",
         "fields": {
             "name": "soups",
             "friendly_name": "Soups"
@@ -39,22 +39,22 @@
     },
     {
         "pk": 8,
-        "model": "menu_menuitem.category",
+        "model": "menu.category",
         "fields": { "name": "vegan", "friendly_name": "Vegan" }
     },
     {
         "pk": 9,
-        "model": "menu_menuitem.category",
+        "model": "menu.category",
         "fields": { "name": "salads", "friendly_name": "Salads" }
     },
     {
         "pk": 10,
-        "model": "menu_menuitem.category",
+        "model": "menu.category",
         "fields": { "name": "kids_menu", "friendly_name": "Kids Menu" }
     },
     {
         "pk": 11,
-        "model": "menu_menuitem.category",
+        "model": "menu.category",
         "fields": { "name": "drinks", "friendly_name": "Drinks" }
     }
 ]

@@ -1,13 +1,15 @@
 [
     {
         "pk": 1,
-        "model": "menuitems.menuitem",
+        "model": "menu.menuitem",
         "fields": {
             "product_code": "#10001",
             "name": "Poh Pia Rolls",
             "description": "Vegetables with Glass noodle served with Plum Sauce",
-            "price": 6.50,
+            "allergens": [1,2,3],
+            "price": 6.5,
             "category": 1,
+            "portion_sizes": "False",
             "rating": 4.6,
             "image_url": "",
             "image": ""
