@@ -1,0 +1,30 @@
+.menu-spacer {
+    width: 100%;
+    height: 140px;
+}
+
+.horizontal-scroll-food-menu {
+    width: 100%;
+    height: 45px;
+    margin-top: 95px;
+    background-color: var(--matte-black);
+    border-bottom: 1px solid var(--onyx);
+    overflow-x: auto;
+    white-space: nowrap;
+    position: fixed;
+}
+
+.horizontal-scroll-food-menu a {
+    color: white;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+}
+
+.food-menu-active,
+.horizontal-scroll-food-menu a:hover {
+    background-color: #777;
+    color: var(--mellow-apricot);
+    text-shadow: 1px 1px 1px var(--matte-black);
+    transition: all 0.25s ease-in-out;
+}
