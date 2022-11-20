@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MenuItem, Category
+from .models import MenuItem, Category, Allergen
 
 
 @admin.register(MenuItem)
@@ -19,7 +19,19 @@ class MenuItemAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     """
-    MenuItemAdmin provides staff and site owner with ability
-    to manage menu items for creation and updating.
+    CategoryAdmin provides staff and site owner with ability
+    to manage menus for creation and updating.
     """
     model = Category
+    list_display = ['name', 'friendly_name']
+
+
+@admin.register(Allergen)
+class AllergenAdmin(admin.ModelAdmin):
+    """
+    AllergenAdmin provides staff and site owner with ability
+    to manage menu items and update allergy information
+    accordingly.
+    """
+    model = Allergen
+    list_display = ['name', 'friendly_name']
