@@ -18,3 +18,7 @@ setTimeout(() => {
         alert.close();
     }
 }, 3200);
+
+$(".back-to-top-btn").click(function (e) {
+    window.scrollTo(0, 0);
+});

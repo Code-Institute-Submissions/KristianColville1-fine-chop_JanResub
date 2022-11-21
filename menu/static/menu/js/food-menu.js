@@ -28,4 +28,6 @@ $(document).ready(function () {
             $(`.${classToCall}`).addClass("food-menu-active");
         }
     }
+
+
 });
