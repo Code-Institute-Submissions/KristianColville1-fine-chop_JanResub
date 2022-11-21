@@ -1,5 +1,5 @@
-<div class="nav-wrapper fixed-top">
-    <nav class="navbar navbar-expand-lg">
+<div class="nav-wrapper fixed-top nav-bg">
+    <nav class="container navbar navbar-expand-lg">
         <a class="navbar-brand mx-2" href="{% url 'home' %}" aria-label="Click here to go to the home page"></a>
         <div class="btn navbar-toggler" data="hamburger-menu" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -41,7 +41,7 @@
                     </div>
                 </li>
                 <li class="nav-link">
-                    <a href="#!">Menu</a>
+                    <a href="{% url 'menu' %}">Menu</a>
                 </li>
                 <li class="nav-link">
                     <div class="dropdown">
@@ -67,15 +67,15 @@
             </ul>
             <ul class="mx-auto navbar-nav d-none d-lg-flex">
                 <li class="nav-link mx-1">
-                    <form class="dropdown">
+                    <form class="dropdown" method="GET" action="{% url 'menu' %}">
                         {% csrf_token %}
                         <a class="dropdown-toggle" href="#" role="button" id="search-dropdown" data-toggle="dropdown"
                             aria-expanded="false">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </a>
                         <ul class="dropdown-menu mt-2" aria-labelledby="search-dropdown">
-                            <input class="dropdown-item form-control" type="search" placeholder="Search"
-                                aria-label="Search">
+                            <input class="dropdown-item form-control" type="text" name="q" placeholder="Search our site"
+                                aria-label="Search our site">
                         </ul>
                     </form>
                 </li>

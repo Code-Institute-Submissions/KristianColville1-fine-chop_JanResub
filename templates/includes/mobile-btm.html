@@ -1,7 +1,10 @@
 <div class="fixed-bottom mobile-nav-container d-lg-none">
-    <form class="m-4 d-flex small-search d-none">
+    <form class="m-4 d-flex small-search d-none" method="GET" action="{% url 'menu' %}">
         {% csrf_token %}
-        <input class="dropdown-item form-control" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group w-100">
+            <input class="form-control border border-black rounded-0" type="text" name="q"
+                placeholder="Search our site">
+        </div>
     </form>
     <ul class="mobile-nav-view p-0 mx-3">
         <li class="text-center"><a href="{% url 'home' %}" aria-label="Click here to go to the home page"><i
