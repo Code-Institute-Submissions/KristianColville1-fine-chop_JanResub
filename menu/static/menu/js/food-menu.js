@@ -16,6 +16,7 @@ $(document).ready(function () {
         "soups",
         "vegan",
         "salads",
+        "sides",
         "kids_menu",
         "drinks",
     ];
@@ -24,7 +25,7 @@ $(document).ready(function () {
     for (let i = 0; i < foodMenus.length; i++) {
         if (stringURL.includes(foodMenus[i])) {
             classToCall = foodMenus[i];
+            $(`.${classToCall}`).addClass("food-menu-active");
         }
     }
-    $(`.${classToCall}`).addClass("food-menu-active");
 });

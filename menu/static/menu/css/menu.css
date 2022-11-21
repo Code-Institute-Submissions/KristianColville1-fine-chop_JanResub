@@ -7,11 +7,12 @@
     width: 100%;
     height: 45px;
     margin-top: 95px;
-    background-color: var(--matte-black);
+    background-color: var(--matte-black) !important;
     border-bottom: 1px solid var(--onyx);
     overflow-x: auto;
     white-space: nowrap;
     position: fixed;
+    z-index: 3;
 }
 
 .horizontal-scroll-food-menu a {
@@ -24,7 +25,13 @@
 .food-menu-active,
 .horizontal-scroll-food-menu a:hover {
     background-color: #777;
-    color: var(--mellow-apricot);
+    color: white;
     text-shadow: 1px 1px 1px var(--matte-black);
     transition: all 0.25s ease-in-out;
 }
+
+.food-menu {
+    position: relative;
+    z-index: 1;
+}
+
