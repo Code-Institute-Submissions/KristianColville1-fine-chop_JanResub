@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.db.models.functions import Lower
 from django.db.models import Q
 from .models import MenuItem, Category
 
@@ -13,14 +14,32 @@ def get_menu(request):
     categories = None
     is_specific_food_menu = False
     is_category = 'All'
+    sort = None
+    direction = None
 
     if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                menu_items = menu_items.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            menu_items = menu_items.order_by(sortkey)
+
         if 'category' in request.GET:
             categories = request.GET['category']
-            is_category = f'{categories}'
-            menu_items = menu_items.filter(category__name=is_category)
-            categories = Category.objects.filter(name__in=categories)
-            is_specific_food_menu = True
+            if categories != 'All':
+                is_category = f'{categories}'
+                menu_items = menu_items.filter(category__name=is_category)
+                categories = Category.objects.filter(name__in=categories)
+                is_specific_food_menu = True
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -32,10 +51,12 @@ def get_menu(request):
                 description__icontains=query)
             menu_items = menu_items.filter(queries)
 
+    current_sorting = f'{sort}_{direction}'
     context = {
         'menu_categories': Category.objects.all(),
         'is_category': is_category,
         'current_category': categories,
+        'current_sorting': current_sorting,
         'is_specific_food_menu': is_specific_food_menu,
         'search_term': query,
         'menu_items': menu_items,
