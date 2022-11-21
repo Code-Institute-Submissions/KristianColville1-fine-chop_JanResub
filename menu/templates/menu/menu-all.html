@@ -4,7 +4,7 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'menu/css/menu.css' %}">{% endblock extra_css %}
-{% block head_title %}Menu - All{% endblock head_title %}
+{% block head_title %}Menu - {{is_category|upper}}{% endblock head_title %}
 {% block content %}
 <div class="menu-spacer">
     {% comment %} provides spacing for the fixed food menu and containers {% endcomment%}
@@ -13,7 +13,11 @@
     <div class="container-fluid mt-3 food-menu">
         <div class="row">
             <div class="col text-center mt-3">
+                {% if is_specific_food_menu %}
+                <h2 class="headings">{{is_category|upper}}</h2>
+                {% else%}
                 <h2 class="headings">All Menu Items</h2>
+                {% endif%}
                 <hr class="w-100 mb-1 text-white">
             </div>
         </div>
@@ -79,6 +83,9 @@
         </div>
     </div>
 {% endblock content %}
+
+{% if is_specific_food_menu %}
 {% block extra_js %}
 <script src="{% static 'menu/js/food-menu.js' %}"></script>
 {% endblock extra_js %}
+{% endif %}

@@ -8,10 +8,19 @@ def get_menu(request):
     """
     Brings the user to the food menu page
     """
-    categories = Category.objects.all()
     menu_items = MenuItem.objects.all()
+    query = None
+    categories = None
+    is_specific_food_menu = False
+    is_category = 'All'
 
     if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category']
+            is_category = f'{categories}'
+            menu_items = menu_items.filter(category__name=is_category)
+            categories = Category.objects.filter(name__in=categories)
+            is_specific_food_menu = True
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -24,7 +33,11 @@ def get_menu(request):
             menu_items = menu_items.filter(queries)
 
     context = {
-        'categories': categories,
+        'menu_categories': Category.objects.all(),
+        'is_category': is_category,
+        'current_category': categories,
+        'is_specific_food_menu': is_specific_food_menu,
+        'search_term': query,
         'menu_items': menu_items,
     }
     return render(request, 'menu/menu-all.html', context)
@@ -41,12 +54,3 @@ def get_menu_item_detail(request, menu_item_id, str):
         'menu_item': menu_item,
     }
     return render(request, 'menu/menu_item_detail.html', context)
-
-
-def get_food_menu(request, str):
-    categories = Category.objects.all()
-    context = {
-        'main_menu': False,
-        'categories': categories,
-    }
-    return render(request, 'menu/category.html', context)
