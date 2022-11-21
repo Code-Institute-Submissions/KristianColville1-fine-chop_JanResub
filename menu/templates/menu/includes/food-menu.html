@@ -1,4 +1,5 @@
 <div class="horizontal-scroll-food-menu text-center shadow">
-    {% for category in categories%}<a class="nav-link {{category.friendly_name|lower}}"
-        href="{% url 'food_menu' category.name|lower %}">{{category.friendly_name}}</a>{% endfor %}
+    {% for category in categories%}<a class="nav-link {{category.name|lower}}"
+        href="{% url 'food_menu' category.name|lower %}" aria-label="Food menu for
+        {{category.friendly_name}}">{{category.friendly_name}}</a>{% endfor %}
 </div>
