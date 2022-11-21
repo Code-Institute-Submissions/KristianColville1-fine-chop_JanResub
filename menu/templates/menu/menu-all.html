@@ -4,84 +4,109 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'menu/css/menu.css' %}">{% endblock extra_css %}
-{% block head_title %}Menu - {{is_category|upper}}{% endblock head_title %}
+{% block head_title %}{{is_category|title}}{% endblock head_title %}
 {% block content %}
 <div class="menu-spacer">
     {% comment %} provides spacing for the fixed food menu and containers {% endcomment%}
 </div>
 {% include 'menu/includes/food-menu.html' %}
-    <div class="container-fluid mt-3 food-menu">
-        <div class="row">
-            <div class="col text-center mt-3">
-                {% if is_specific_food_menu %}
-                <h2 class="headings">{{is_category|upper}}</h2>
-                {% else%}
-                <h2 class="headings">All Menu Items</h2>
-                {% endif%}
-                <hr class="w-100 mb-1 text-white">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
-                <div class="row">
-                    {% for food in menu_items %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 ">
-                        <div class="card h-100 border-0">
-                            {% if food.image %}
-                            <a href="{% url 'item_details' food.name food.id %}">
-                                <img class="card-img-top img-fluid" src="{{ food.image.url }}"
-                                    alt="{{ food.name }}">
-                            </a>
-                            {% elif food.image == '' %}
-                            <a href="{% url 'item_details' food.name food.id %}">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.webp"
-                                    alt="{{ food.name }}">
-                            </a>
-                            {% endif %}
-                            <div class="card-body pb-0">
-                                <p class="mb-0">{{ food.name }}</p>
-                            </div>
-                            <div class="card-footer bg-white pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="lead fs-4 mb-0 text-left font-weight-bold">€{{ food.price }}</p>
-                                        {% if food.rating %}
-                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ food.rating }} /
-                                            5</small>
-                                        {% else %}
-                                        <small class="text-muted">No Rating</small>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% if forloop.counter|divisibleby:1 %}
-                    <div class="col-12 d-sm-none mb-3">
-                        <hr class="w-100 mb-1 text-white">
-                    </div>
+<div class="container-fluid mt-3 food-menu">
+    <div class="row">
+        <div class="col text-center">
+            <div class="col-12 d-flex justify-content-around">
+                <p class="p-0 m-0 g-0 text-center d-flex flex-column justify-content-center">
+                    {% if is_category %}
+                    <span class="small"><a href="{% url 'menu' %}" class="text-info fs-5">Menu -
+                            {{is_category|title}}</a> |
+                    </span>
                     {% endif %}
-                    {% if forloop.counter|divisibleby:2 %}
-                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-3">
-                        <hr class="w-100 mb-1 text-white">
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:3 %}
-                    <div class="col-12 d-none d-lg-block d-xl-none mb-3">
-                        <hr class="w-100 mb-1 text-white">
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:4 %}
-                    <div class="col-12 d-none d-xl-block mb-3">
-                        <hr class="w-100 mb-1 text-white">
-                    </div>
-                    {% endif %}
-                    {% endfor %}
+                    <span class="text-white">
+                    {{ menu_items|length }} Products{% if search_term %} found for
+                    <strong>"{{ search_term }}"</strong>{% endif %}</span>
+                </p>
+                <div class="dropdown">
+                    <button class="btn text-white dropdown-toggle" type="button" id="sorting-dropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort By
+                    </button>
+                    <ul class="dropdown-menu bg-white" aria-labelledby="sorting-dropdown">
+                        <li><a href="{% url 'menu' %}?sort=price&direction=asc" class="dropdown-item"
+                                aria-label="Sort food items by price">By
+                                Price</a></li>
+                        <li><a href="{% url 'menu' %}?sort=rating&direction=desc" class="dropdown-item"
+                                aria-label="Sort food items by rating">By
+                                Rating</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="row mt-1 mb-2"></div>
+            <div class="row">
+                {% for food in menu_items %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 card-container">
+                    <div class="card border-0">
+                        {% if food.image %}
+                        <a href="{% url 'item_details' food.name food.id %}">
+                            <img class="card-img-top img-fluid" src="{{ food.image.url }}" alt="{{ food.name }}">
+                        </a>
+                        {% elif food.image == '' %}
+                        <a href="{% url 'item_details' food.name food.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.webp" alt="{{ food.name }}">
+                        </a>
+                        {% endif %}
+                        <div class="card-body pb-0">
+                            <p class="mb-0">{{ food.name }}</p>
+                        </div>
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="lead fs-4 mb-0 text-left font-weight-bold">€{{ food.price }}</p>
+                                    {% if food.category %}
+                                    <p class="small mt-1 mb-0">
+                                        <a class="text-muted" href="{% url 'menu' %}?category={{ food.category.name }}">
+                                            <i class="fa-solid fa-utensils mr-1"></i> {{ food.category.friendly_name }}
+                                        </a>
+                                    </p>
+                                    {% endif %}
+                                    {% if food.rating %}
+                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ food.rating }} /
+                                        5</small>
+                                    {% else %}
+                                    <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:1 %}
+                <div class="col-12 d-sm-none mb-3">
+                    <hr class="w-100 mb-1 text-white">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 %}
+                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-3">
+                    <hr class="w-100 mb-1 text-white">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 %}
+                <div class="col-12 d-none d-lg-block d-xl-none mb-3">
+                    <hr class="w-100 mb-1 text-white">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                <div class="col-12 d-none d-xl-block mb-3">
+                    <hr class="w-100 mb-1 text-white">
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
 
 {% if is_specific_food_menu %}
