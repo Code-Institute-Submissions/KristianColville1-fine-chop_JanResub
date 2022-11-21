@@ -113,10 +113,12 @@
         </div>
     </div>
 </div>
+<div class="back-to-top-btn border-black p-md-4 mx-md-5">
+    <a class="btn d-flex h-100 ">
+        <i class="fas fa-arrow-up my-auto fs-3"></i>
+    </a>
+</div>
 {% endblock content %}
-
-{% if is_specific_food_menu %}
 {% block extra_js %}
 <script src="{% static 'menu/js/food-menu.js' %}"></script>
 {% endblock extra_js %}
-{% endif %}
