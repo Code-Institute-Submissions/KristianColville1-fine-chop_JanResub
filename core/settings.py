@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'email_subscriptions',
     'menu',
     'reservations',
+    'cart',
 
     # other - imported
     'allauth',

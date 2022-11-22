@@ -25,7 +25,8 @@ urlpatterns = [
     path('', include('home.urls')),
     path('subscribe/', include('email_subscriptions.urls')),
     path('menu/', include('menu.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('cart/', include('cart.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = handler404
 handler500 = handler500
