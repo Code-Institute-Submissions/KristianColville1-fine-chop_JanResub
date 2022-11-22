@@ -5,14 +5,494 @@
         "fields": {
             "product_code": "#10001",
             "name": "Poh Pia Rolls",
-            "description": "Vegetables with Glass noodle served with Plum Sauce",
-            "allergens": [1,2,3],
+            "description": "Vegetables with Glass noodle served with Plum Sauce.",
+            "allergens": [1, 2, 3],
             "price": 6.5,
             "category": 1,
             "portion_sizes": "False",
             "rating": 4.6,
-            "image_url": "",
-            "image": ""
+            "image_url": "https://asianfoodnetwork.com/content/dam/afn/global/en/recipes/poh-pia-tod-fried-spring-rolls/Fried%20Spring%20Rolls_article_1920x1280_4.jpg.transform/desktop-img/img.jpg",
+            "image": "poh-pia-rolls.jpeg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10002",
+            "name": "Hoisin Duck Rolls",
+            "description": "Shredded duck with Veg served with Homemade Hoisin sauce.",
+            "allergens": [1, 2, 3],
+            "price": 7.0,
+            "category": 1,
+            "portion_sizes": "False",
+            "rating": 4.6,
+            "image_url": "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/duckpancakeswithhois_67779_16x9.jpg",
+            "image": "hosin-duck-rolls.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10003",
+            "name": "Char Grilled Chicken Skewers",
+            "description": "Tender Irish chicken skewers with satay dipping sauce.",
+            "allergens": [4, 5, 3],
+            "price": 6.0,
+            "category": 1,
+            "portion_sizes": "False",
+            "rating": 5.0,
+            "image_url": "https://cdn.donnahaycdn.com.au/images/content-images/chargrilled_lime_sriracha_chicken_skewers.jpg",
+            "image": "cgcs.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10004",
+            "name": "Crispy Wonton",
+            "description": "Deep fried shrimp & chicken wrapped in wonton served with sweet chilli sauce.",
+            "allergens": [11, 8, 3],
+            "price": 6.9,
+            "category": 1,
+            "portion_sizes": "False",
+            "rating": 4.0,
+            "image_url": "https://rasamalaysia.com/wp-content/uploads/2015/01/chicken_wontons_thumb.jpg",
+            "image": "chicken_wontons.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10005",
+            "name": "Crispy Calamari",
+            "description": "In Peppered breadcrumbs with lime chilli sauce.",
+            "allergens": [1, 2, 3],
+            "price": 6.5,
+            "category": 1,
+            "portion_sizes": "False",
+            "rating": 4.6,
+            "image_url": "https://c.ndtvimg.com/9qq583bo_calamari-rings_625x300_04_September_18.jpg",
+            "image": "crispy-calamari.webp"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10006",
+            "name": "Bangkok Chicken Wings",
+            "description": "Chicken Wings with red onion, spring onion, carrot, coriander in Thai dressing.",
+            "allergens": [1, 2, 3],
+            "price": 7.0,
+            "category": 1,
+            "portion_sizes": "False",
+            "rating": 4.6,
+            "image_url": "https://danielfooddiary.com/wp-content/uploads/2012/03/greyhoundcafe1.jpg",
+            "image": "bangkok-chicken-wings.jpg"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10007",
+            "name": "BBQ Pork Ribs",
+            "description": "Tender marinated pork ribs in homemade BBQ sauce.",
+            "allergens": [4, 5, 3],
+            "price": 6.0,
+            "category": 1,
+            "portion_sizes": "False",
+            "rating": 5.0,
+            "image_url": "https://simply-delicious-food.com/wp-content/uploads/2020/06/Sticky-BBQ-ribs-3.jpg",
+            "image": "ribs-3.jpeg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10008",
+            "name": "King Prawn Rolls",
+            "description": "Marinated King Prawn wrapped in filo pastry with sweet chilli sauce.",
+            "allergens": [11, 8, 3],
+            "price": 6.9,
+            "category": 1,
+            "portion_sizes": "False",
+            "rating": 4.0,
+            "image_url": "https://eggwansfoododyssey.com/wp-content/uploads/2010/08/deep-fried-prawn-rolls.jpg",
+            "image": "deep-fried-prawn-rolls.jpg"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10009",
+            "name": "Crispy Peppered Chicken",
+            "description": "Crispy Chicken tossed with salt, pepper, chilli, garlic,red onion, carrot, spring onion & coriander.",
+            "allergens": [11, 8, 3],
+            "price": 6.9,
+            "category": 1,
+            "portion_sizes": "False",
+            "rating": 4.0,
+            "image_url": "https://hintofhelen.com/wp-content/uploads/2017/09/Salt-and-pepper-chicken-Hint-of-Helen-3-480x360.jpg",
+            "image": "crispy-peppered-chicken.jpg"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10010",
+            "name": "Mapo doufu",
+            "description": "Sichuan in origin, mapo doufu consists of tofu cubes settled in a spicy sauce containing minced meat, traditionally beef or pork.",
+            "allergens": [11, 8, 3],
+            "price": 10.5,
+            "category": 2,
+            "portion_sizes": "True",
+            "rating": 4.2,
+            "image_url": "https://omnivorescookbook.com/wp-content/uploads/2022/05/220510_Mapo-Tofu_550.jpg",
+            "image": "mapo-doufu.jpg"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10011",
+            "name": "Tsukemono",
+            "description": "Thinly sliced Japanese pickles collectively called tsukemono.",
+            "allergens": [11, 8, 3],
+            "price": 10.5,
+            "category": 2,
+            "portion_sizes": "True",
+            "rating": 4.2,
+            "image_url": "https://www.justonecookbook.com/wp-content/uploads/2019/05/Tsukemono-Kasuzuke-I.jpg",
+            "image": "t-k.jpg"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10012",
+            "name": "Tom yum",
+            "description": "spicy, sour, and aromatic soup that is traditionally served with rice.",
+            "allergens": [11, 8, 3],
+            "price": 10.5,
+            "category": 2,
+            "portion_sizes": "True",
+            "rating": 4.2,
+            "image_url": "https://www.ocado.com/cmscontent/recipe_image_large/31996767.jpg?aYjg",
+            "image": "tom-yum.jpeg"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10013",
+            "name": "Shoyu ramen",
+            "description": "Employs meat or seafood broth, which is mixed with a fragrant combination of kombu stock and soy sauce.",
+            "allergens": [11, 8, 3],
+            "price": 10.5,
+            "category": 2,
+            "portion_sizes": "True",
+            "rating": 4.2,
+            "image_url": "https://images.getrecipekit.com/20210930182508-untitled-design-33.jpg?aspect_ratio=1:1&quality=90&",
+            "image": "shoyu-ramen.webp"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10014",
+            "name": "Dango",
+            "description": "Dango is a traditional Japanese sweet treat, presented as rice flour and sugar dumplings skewered on a bamboo stick",
+            "allergens": [11, 8, 3],
+            "price": 10.5,
+            "category": 2,
+            "portion_sizes": "True",
+            "rating": 4.8,
+            "image_url": "https://flouredframe.com/wp-content/uploads/2020/09/dango-thumbnail.jpg",
+            "image": "dango.jpg"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10015",
+            "name": "Tsukemen",
+            "description": "Cold noodles are dipped in the accompanying soup, broth, or sauce, which are served hot.",
+            "allergens": [11, 8, 3],
+            "price": 12.5,
+            "category": 2,
+            "portion_sizes": "True",
+            "rating": 4.2,
+            "image_url": "https://www.cherryonmysundae.com/wp-content/uploads/2019/02/tsukemen-final-10.jpg",
+            "image": "tsukemen.jpeg"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10016",
+            "name": "Tendon",
+            "description": "A delicious combination of tempura and donburi - hence the name tendon",
+            "allergens": [11, 8, 3],
+            "price": 10.5,
+            "category": 2,
+            "portion_sizes": "True",
+            "rating": 4.8,
+            "image_url": "https://cdn.media.amplience.net/i/japancentre/recipe-354-tendon-tempura-rice-bowl/Tendon-tempura-rice-bowl?$poi$&w=700&h=410&sm=c&fmt=auto",
+            "image": "tendon.webp"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10017",
+            "name": "Ansim",
+            "description": "In South Korea, ansim is typically roasted on a grill",
+            "allergens": [11, 8, 3],
+            "price": 10.5,
+            "category": 2,
+            "portion_sizes": "True",
+            "rating": 4.2,
+            "image_url": "https://cdn.tasteatlas.com/images/dishes/e64e02d1861c472d97db01fabd014bed.jpg?w=600",
+            "image": "ansim.jpg"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10018",
+            "name": "Miso ramen",
+            "description": "Miso ramen is a flavorful dish made by cooking the miso base, broth, and vegetables in a wok.",
+            "allergens": [11, 8, 3],
+            "price": 14.5,
+            "category": 2,
+            "portion_sizes": "True",
+            "rating": 4.5,
+            "image_url": "https://dishingouthealth.com/wp-content/uploads/2022/01/SpicyMisoRamen_Square.jpg",
+            "image": "miso-ramen.jpg"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10019",
+            "name": "Century Egg",
+            "description": "A Chinese delicacy made by preserving duck, quail, or chicken eggs in a saline solution",
+            "allergens": [11, 8, 3],
+            "price": 11.5,
+            "category": 2,
+            "portion_sizes": "True",
+            "rating": 4.3,
+            "image_url": "https://americasrestaurant.com/wp-content/uploads/2022/04/what-does-century-egg-taste-like.jpg",
+            "image": "century-egg.jpg"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10020",
+            "name": "Agemono",
+            "description": "Foods are fried without a coating of flour or batter; karaage",
+            "allergens": [11, 8, 3],
+            "price": 10.55,
+            "category": 2,
+            "portion_sizes": "True",
+            "rating": 4.6,
+            "image_url": "https://cdn.tasteatlas.com/Images/Dishes/b85420f66ac04f11825cf82fd7d363df.jpg",
+            "image": "agemono.jpeg"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10021",
+            "name": "Char Kway Teow",
+            "description": "Savoury, flavorful flat wide rice noodles coated in a salty sweet soy sauce. Paired deliciously with pork belly, beansprouts, Chinese chives, garlic and egg.",
+            "allergens": [11, 8, 3],
+            "price": 10.4,
+            "category": 3,
+            "portion_sizes": "False",
+            "rating": 4.2,
+            "image_url": "https://christieathome.com/wp-content/uploads/2020/12/Char-Kway-Teow-28-2048x2048.jpg",
+            "image": "char-kway-teow.jpg"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10022",
+            "name": "Ja Jangmyeon",
+            "description": "Jajangmyeon Black Bean Noodles. Thick wheat noodles smothered in a heavy black bean sauce with either pork or chicken, cabbage and onions.",
+            "allergens": [11, 8, 3],
+            "price": 10.0,
+            "category": 3,
+            "portion_sizes": "False",
+            "rating": 4.5,
+            "image_url": "https://christieathome.com/wp-content/uploads/2021/01/Jajangmyeon1.jpg",
+            "image": "jajangmyeon.jpg"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10023",
+            "name": "Chicken Ramen Bowel",
+            "description": "Ramen noodles smothered in a sweet soy sauce paired with tender juicy marinated chicken with a soy sauce egg, green onions and beansprouts.",
+            "allergens": [11, 8, 3],
+            "price": 10.2,
+            "category": 3,
+            "portion_sizes": "False",
+            "rating": 4.2,
+            "image_url": "https://christieathome.com/wp-content/uploads/2021/01/Soy-Chicken-Ramen-Bowl-18b-2048x2048.jpg",
+            "image": "chicken-ramen.jpg"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10024",
+            "name": "Chicken Pad Thai",
+            "description": "A delicious, savoury, sweet and sour stir-fried noodle dish",
+            "allergens": [11, 8, 3],
+            "price": 10.2,
+            "category": 3,
+            "portion_sizes": "False",
+            "rating": 4.0,
+            "image_url": "https://christieathome.com/wp-content/uploads/2020/05/chicken-pad-thai6-scaled.jpg",
+            "image": "chicken-pad-thai.jpg"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10025",
+            "name": "Mee Goreng",
+            "description": "Thick chewy egg noodles smothered in a glossy, sweet and savoury sauce with pork belly, shrimp, fish cakes, Chinese chives and beansprouts",
+            "allergens": [11, 8, 3],
+            "price": 8.0,
+            "category": 3,
+            "portion_sizes": "False",
+            "rating": 4.0,
+            "image_url": "https://christieathome.com/wp-content/uploads/2020/12/Mee-Goreng-8-2048x2048.jpg",
+            "image": "mee-goreng.jpg"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10026",
+            "name": "Pad Woon Sen",
+            "description": "Delicious, chewy glass noodles covered in a soy oyster sauce accompanied with chicken, leafy greens and a red chilli vinegar.",
+            "allergens": [11, 8, 3],
+            "price": 8.50,
+            "category": 3,
+            "portion_sizes": "False",
+            "rating": 4.3,
+            "image_url": "https://christieathome.com/wp-content/uploads/2020/11/Pad-See-Ew-Thin-Noodles1-2048x2048.jpg",
+            "image": "pad-woon-sen.jpeg"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10027",
+            "name": "Hokkein Mee",
+            "description": "Savoury thick chewy egg noodles smothered in a brown sweet and salty soy sauce accompanied with prawns, pork belly, cabbage, and gai-lan.",
+            "allergens": [11, 8, 3],
+            "price": 10.0,
+            "category": 3,
+            "portion_sizes": "False",
+            "rating": 4.7,
+            "image_url": "https://christieathome.com/wp-content/uploads/2020/12/Hokkein-Mee-14-2048x2048.jpg",
+            "image": "hokkein-mee.jpg"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10028",
+            "name": "Sichuan Dan Dan Noodles",
+            "description": "Noodles smothered in a mala spicy chili oil, accompanied with hoisin flavoured pork and tangy preserved mustard greens",
+            "allergens": [11, 8, 3],
+            "price": 10.0,
+            "category": 3,
+            "portion_sizes": "False",
+            "rating": 4.3,
+            "image_url": "https://christieathome.com/wp-content/uploads/2020/12/Sichian-Dan-Dan-Noodles-19b-1-2048x2048.jpg",
+            "image": "dan-dan-noodles.jpg"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10029",
+            "name": "Janchi Guksu",
+            "description": "Janchi Guksu (Warm Korean Noodles). A delicious comforting bowl of thin chewy noodles with soft boiled egg on top and a spicy kimchi sauce",
+            "allergens": [11, 8, 3],
+            "price": 10.6,
+            "category": 3,
+            "portion_sizes": "False",
+            "rating": 4.7,
+            "image_url": "https://christieathome.com/wp-content/uploads/2020/05/Janchi-Guksu9-scaled.jpg",
+            "image": "janchi.jpg"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10030",
+            "name": "Bibim Guksu",
+            "description": "Korean Kimchi Bibim Guksu. Delicious chewy cold noodles mixed in a spicy, vinegary and sweet sauce!",
+            "allergens": [11, 8, 3],
+            "price": 9.55,
+            "category": 3,
+            "portion_sizes": "False",
+            "rating": 4.8,
+            "image_url": "https://christieathome.com/wp-content/uploads/2020/04/Bibim-Guksu5-scaled.jpg",
+            "image": "bibim.jpg"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10031",
+            "name": "Wonton Mein",
+            "description": "Wonton Noodle Soup. Thin chewy egg noodles swimming in a chicken broth paired with pork wontons and leafy greens.",
+            "allergens": [11, 8, 3],
+            "price": 8.55,
+            "category": 3,
+            "portion_sizes": "False",
+            "rating": 5.0,
+            "image_url": "https://christieathome.com/wp-content/uploads/2020/06/wonton-mein4-scaled.jpg",
+            "image": "wonton-mein.jpg"
         }
     }
 ]

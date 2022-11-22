@@ -46,7 +46,7 @@
     },
     {
         "pk": 10,
-        "model": "menu.category",
+        "model": "menu.allergen",
         "fields": { "name": "mustard", "friendly_name": "Mustard" }
     },
     {
@@ -61,7 +61,7 @@
     },
     {
         "pk": 13,
-        "model": "menu.category",
+        "model": "menu.allergen",
         "fields": { "name": "peanuts", "friendly_name": "Peanuts" }
     },
     {
