@@ -10,7 +10,7 @@
     {% comment %} provides spacing for the fixed food menu and containers {% endcomment%}
 </div>
 {% include 'menu/includes/food-menu.html' %}
-<div class="container-fluid mt-3 food-menu">
+<div class="container-fluid pt-2 food-menu">
     <div class="row">
         <div class="col text-center">
             <div class="col-12 d-flex justify-content-around">
@@ -20,12 +20,12 @@
                             {{is_category|title}}</a> |
                     </span>
                     {% endif %}
-                    <span class="text-white">
+                    <span>
                     {{ menu_items|length }} Products{% if search_term %} found for
                     <strong>"{{ search_term }}"</strong>{% endif %}</span>
                 </p>
                 <div class="dropdown">
-                    <button class="btn text-white dropdown-toggle" type="button" id="sorting-dropdown"
+                    <button class="btn text-info dropdown-toggle" type="button" id="sorting-dropdown"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Sort By
                     </button>
@@ -53,22 +53,23 @@
             <div class="row">
                 {% for food in menu_items %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 card-container">
-                    <div class="card h-100 border-0">
+                    <div class="card h-100 border-0 overflow-hidden" style="max-height: 400px;">
                         {% if food.image %}
                         <a href="{% url 'item_details' food.name food.id %}">
-                            <img class="card-img-top img-fluid" src="{{ food.image.url }}" alt="{{ food.name }}">
+                            <img class="card-img-top img-fluid" src="{{ food.image.url }}" alt="{{ food.name }}" style="max-height:250px;">
                         </a>
                         {% elif food.image == '' %}
                         <a href="{% url 'item_details' food.name food.id %}">
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.webp" alt="{{ food.name }}">
                         </a>
                         {% endif %}
-                        <div class="card-body pb-0">
-                            <p class="mb-0">{{ food.name }}</p>
+                        <div class="card-body pb-0 overflow-hidden">
+                            
                         </div>
                         <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
                                 <div class="col">
+                                    <p class="mb-0">{{ food.name }}</p>
                                     <p class="lead fs-4 mb-0 text-left font-weight-bold">€{{ food.price }}</p>
                                     {% if food.category %}
                                     <p class="small mt-1 mb-0">
