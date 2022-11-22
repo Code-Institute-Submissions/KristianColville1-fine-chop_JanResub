@@ -4,6 +4,28 @@
 {% load crispy_forms_tags %}
 {% block head_title %}Cart{% endblock head_title %}
 {% block content %}
-
+<div class="container mt-5">
+    <div class="row mt-5">
+        <div class="col">
+            <hr>
+            <h1 class="w-100 text-center headings mb-4">Cart</h1>
+            <hr class="w-100 text-white">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if bag_items %}
+            <div class="table-responsive rounded"></div>
+            {% else %}
+            <p class="lead text-white">Your cart is empty.</p>
+            <a href="{% url 'menu' %}" class="btn btn-orange text-white rounded btn-lg">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock content %}
-
