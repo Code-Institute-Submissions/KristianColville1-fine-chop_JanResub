@@ -20,8 +20,8 @@
                             {{is_category|title}}</a> |
                     </span>
                     {% endif %}
-                    <span>
-                    {{ menu_items|length }} Products{% if search_term %} found for
+                    <span class="text-white">
+                    {{ menu_items|length }} Food Items {% if search_term %} found for
                     <strong>"{{ search_term }}"</strong>{% endif %}</span>
                 </p>
                 <div class="dropdown">
@@ -30,17 +30,22 @@
                         Sort By
                     </button>
                     <ul class="dropdown-menu bg-white" aria-labelledby="sorting-dropdown">
-                        <li><a href="{% url 'menu' %}?sort=price&direction=asc" class="dropdown-item"
+                        <li><a href="{% url 'menu' %}?category={{is_category}}&sort=price&direction=asc" class="dropdown-item"
                                 aria-label="Sort food items by price low to high">Price (low to high)</a></li>
-                        <li><a href="{% url 'menu' %}?sort=price&direction=desc" class="dropdown-item"
+                        <li><a href="{% url 'menu' %}?category={{is_category}}&sort=price&direction=desc"
+                                class="dropdown-item"
                                 aria-label="Sort food items by price high to low">price (high to low)</a></li>
-                        <li><a href="{% url 'menu' %}?sort=rating&direction=asc" class="dropdown-item"
+                        <li><a href="{% url 'menu' %}?category={{is_category}}&sort=rating&direction=asc"
+                                class="dropdown-item"
                                 aria-label="Sort food items by rating low to high">Rating (low to high)</a></li>
-                        <li><a href="{% url 'menu' %}?sort=rating&direction=desc" class="dropdown-item"
+                        <li><a href="{% url 'menu' %}?category={{is_category}}&sort=rating&direction=desc"
+                                class="dropdown-item"
                                 aria-label="Sort food items by rating high to low">Rating (high to low)</a></li>
-                        <li><a href="{% url 'menu' %}?sort=name&direction=asc" class="dropdown-item"
+                        <li><a href="{% url 'menu' %}?category={{is_category}}&sort=name&direction=asc"
+                                class="dropdown-item"
                                 aria-label="Sort food items by name from A to Z">Name (A-Z)</a></li>
-                        <li><a href="{% url 'menu' %}?sort=name&direction=desc" class="dropdown-item"
+                        <li><a href="{% url 'menu' %}?category={{is_category}}&sort=name&direction=desc"
+                                class="dropdown-item"
                                 aria-label="Sort food items by name from Z to A">Name (Z-A)</a></li>
                     </ul>
                 </div>
