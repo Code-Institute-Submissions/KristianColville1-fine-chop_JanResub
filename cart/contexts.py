@@ -25,7 +25,7 @@ def cart_contents(request):
             # if the total delivery cost is above this
             # then don't deliver as too far away
 
-    grand_total = delivery_total + total
+    grand_total = delivery_cost + total
 
     context = {
         'cart_items': cart_items,
