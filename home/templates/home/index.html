@@ -4,8 +4,8 @@
 {% load crispy_forms_tags %}
 {% block head_title %}Home{% endblock head_title %}
 {% block content %}
+<div class="body-overlay"></div>
 <div class="home-landing-lg position-relative">
-        <div class="home-overlay"></div>
     <div id="home-bg-slideshow">
         {% comment %}Adds images to background of homepage{% endcomment%}
     </div>
@@ -16,23 +16,26 @@
             <div class="col-sm-12 col-lg-6 border-right d-flex nowrap flex-column justify-content-center">
                 <h1 class="headings text-center m-0">View our menu</h1>
                 <h2 class="text-center m-0">Order Online</h2>
-                <a href="" class="text-white text-center w-100 m-0">
+                <a href="{% url 'menu' %}" class="text-white text-center w-100 m-0" aria-label="Click here to go to the main food menu">
                     <p class="m-0 home-top-link"><i class="fa-solid fa-map mx-2"></i> Order A Meal at FineChop</p>
                 </a>
                 <hr class="w-25 mx-auto mt-0 btn-orange">
-                <button class="mt-3 btn btn-orange shadow text-white mx-auto text-capitalize"><i
-                        class="fa-solid fa-angles-right mx-2"></i> Order Now</button>
+                <a href="{% url 'menu' %}" class="mt-3 btn btn-orange shadow text-white mx-auto text-capitalize"
+                    aria-label="Click here to go to the main food menu"><i
+                        class="fa-solid fa-angles-right mx-2"></i> Order Now</a>
             </div>
             <div class="col-sm-12 col-lg-6 border-left d-flex nowrap flex-column justify-content-center">
                 <h1 class="headings text-center m-0">Learn More</h1>
                 <h2 class="text-center m-0">About FineChop</h2>
-                <a href="" class="text-white text-center w-100">
+                <a href="{% url 'about' %}" class="text-white text-center w-100"
+                    aria-label="Click here to go to the about page">
                     <p class="m-0 home-top-link"><i class="fa-regular fa-newspaper mx-2"></i> View latest News About
                         FineChop</p>
                 </a>
                 <hr class="w-25 mx-auto mt-0 btn-orange">
-                <button class="mt-3 btn btn-orange shadow text-white mx-auto text-capitalize"><i
-                        class="fa-solid fa-angles-right mx-2"></i> More about us</button>
+                <a href="{% url 'about' %}" class="mt-3 btn btn-orange shadow text-white mx-auto text-capitalize"><i
+                        class="fa-solid fa-angles-right mx-2" aria-label="Click here to go to the about page"></i>
+                        More about us</a>
             </div>
         </div>
     </div>
@@ -51,7 +54,7 @@
                 <input type="email" name="email_field" id="id_email_field" class="w-100 rounded shadow p-1"
                     placeholder=" Enter your email address" required>
                 <button id="id_submit" name="submit" value="Subscribe" type="submit"
-                    class="btn btn-orange p-1 mt-1 shadow">Subscribe</button>
+                    class="btn btn-orange p-1 mt-1 shadow text-white">Subscribe</button>
             </form>
             </div>
         </div>

@@ -3,7 +3,7 @@ $(document).ready(function () {
      * Set a timer and display these images on the home page and iterate 
      * through them. Called using iterateSlideShow function.
      */
-    let timeToDisplay = 7000;
+    let timeToDisplay = 10000;
 
     let slideshow = $("#home-bg-slideshow");
     const urls = [

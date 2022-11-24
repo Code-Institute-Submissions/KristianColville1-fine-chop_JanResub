@@ -10,15 +10,23 @@
         <li class="text-center"><a href="{% url 'home' %}" aria-label="Click here to go to the home page"><i
                     class="fa-solid fa-house"></i></a>
         </li>
-        <li class="text-center"><a role="button" aria-label="click here to open search bar"
+        <li class="text-center"><a role="button" aria-label="click here to open a small search bar"
                 onclick="openSmallSearchBar()"><i class="fa-solid fa-magnifying-glass"></i></a>
         </li>
-        <li class="trolley-container">
-            <a class="trolley-btn" role="button" id="trolley-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+        <li class="trolley-container d-flex justify-content-center">
+            <a class="trolley-btn" href="{% url 'view_cart' %}" id="trolley-btn" aria-label="Click to open your cart of goods"><i class="fa-solid fa-cart-shopping"></i></a>
+            <p class="position-absolute top-100">
+                {% if grand_total %}
+                €{{ grand_total|floatformat:2 }}
+                {% else %}
+                €0.00
+                {% endif %}
+            </p>
         </li>
-        <li class="text-center"><a href=""><i class="fa-solid fa-map"></i></a>
+        <li class="text-center"><a href="{% url 'menu' %}" aria-label="Click to open up the menu page"><i
+                    class="fa-solid fa-map"></i></a>
         </li>
-        <li class="text-center"><a href=""><i class="fa-solid fa-user"></i></a>
+        <li class="text-center"><a href="" aria-label="Click to open user settings"><i class="fa-solid fa-user"></i></a>
         </li>
     </ul>
 </div>
