@@ -349,7 +349,7 @@ All the Testing documentation can be found [here](/TESTING.md)
 |[#13](https://github.com/KristianColville1/fine-chop/issues/13)|Home page should load when deployed|Getting internal 500 server error| Reset virtual environment and removed unused imports before deploying project again and this fixed the issue |
 |[#48](https://github.com/KristianColville1/fine-chop/issues/48)|static files to load properly|Not loading static files|Fixed any links by removing / from urls and added static root url and this seemed to fix the problem. I identified it as a static file issue from looking at the heroku logs for the deployment |
 |[#49](https://github.com/KristianColville1/fine-chop/issues/49)|Images to slide over the next image with ease| I added a min height for the body element in css and manipulated the z axis of my project contents to display on top of the darker overlay behind for the home page |
-
+|[#50](https://github.com/KristianColville1/fine-chop/issues/50)|Expected Heroku to automatically store static and media files on AWS S3 Bucket|Prevents storage to S3 bucket|Removed whitenoise and django heroku from the extensions and reloaded my requirements.txt file and this fixed the static files loading on heroku|
 [Back to Top](#table-of-contents)
 
 ## Technologies & Tools
