@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import django_heroku
 
 if os.path.exists("env.py"):
     import env
@@ -57,6 +56,7 @@ INSTALLED_APPS = [
     'cart',
 
     # other - imported
+    "storages",
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -66,7 +66,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
     "crispy_forms",
     "crispy_bootstrap5",
-    "storages",
 ]
 
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -226,7 +225,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 
-if os.environ.get("USE_AWS") is True:
+if 'USE_AWS' in os.environ:
     # static file config heroku
     # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
@@ -264,4 +263,3 @@ MINIMUM_DELIVERY_COST = 2.50
 DELIVERY_COST_PER_KM = 0.40
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-django_heroku.settings(locals())
