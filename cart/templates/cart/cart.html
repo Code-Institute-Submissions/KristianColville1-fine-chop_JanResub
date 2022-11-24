@@ -4,32 +4,84 @@
 {% load crispy_forms_tags %}
 {% block head_title %}Cart{% endblock head_title %}
 {% block content %}
-<div class="container mt-5">
+<div class="container mt-5 bg-light">
     <div class="row mt-5">
-        <div class="col">
+        <div class="col mt-5">
+            <h2 class="w-100 text-center mb-4">Cart</h2>
             <hr>
-            <h1 class="w-100 text-center headings mb-4">Cart</h1>
-            <hr class="w-100 text-white">
         </div>
     </div>
-    <div class="row">
+    <div class="container row bg-light">
         <div class="col">
-            {% if bag_items %}
-            <div class="table-responsive rounded"></div>
+            {% if cart_items %}
+            <div class="table-responsive rounded">
+                <table class="table table-sm table-borderless">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col">Menu Info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    {% for food in cart_items %}
+                    <tr class="border">
+                        <td class="p-3 w-25">
+                            <a href="{% url 'item_details' food.menu_item.name food.menu_item.id %}">
+                                <img class="img-fluid rounded" src="{{ food.menu_item.image.url }}"
+                                    style="max-height: 100px;">
+                            </a>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0"><strong>{{ food.menu_item.name }}</strong></p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">€{{ food.menu_item.price }}</p>
+                        </td>
+                        <td class="py-3 w-25">
+                            <p class="my-0">{{ food.quantity }}</p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">€{{ food.menu_item.price }}</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5" class="pt-5 text-right">
+                            <h6><strong>Cart Total: €{{ total|floatformat:2 }}</strong></h6>
+                            <h6>Delivery: €{{ delivery_cost|floatformat:2 }}</h6>
+                            <h4 class="mt-4"><strong>Total: €{{ grand_total|floatformat:2 }}</strong></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-right">
+                            <a href="{% url 'menu' %}" class="btn btn-outline-dark rounded btn-lg">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                            <a href="" class="btn btn-orange text-white rounded mt-xs-2 mt-md-0 btn-lg border">
+                                <span class="text-uppercase">Secure Checkout</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             {% else %}
-            <p class="lead text-white">Your cart is empty.</p>
-            <a href="{% url 'menu' %}" class="btn btn-orange text-white rounded btn-lg">
+            <p class="lead mb-5">Your bag is empty.</p>
+            <a href="{% url 'menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
                 </span>
                 <span class="text-uppercase">Keep Shopping</span>
             </a>
             {% endif %}
-        </div>
-    </div>
-    <div class="row h-25">
-        <div class="col text-white">
-            {{minimum_delivery_cost}}
         </div>
     </div>
 </div>

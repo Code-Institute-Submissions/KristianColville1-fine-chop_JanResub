@@ -1,5 +1,7 @@
+from django.shortcuts import get_object_or_404
 from django.conf import settings
 from decimal import Decimal
+from menu.models import MenuItem
 
 
 def cart_contents(request):
@@ -12,14 +14,24 @@ def cart_contents(request):
     user_distance = 0
     delivery_cost = 0
     can_deliver = True
-
+    cart = request.session.get('cart', {})
+    
+    for food_id, quantity in cart.items():
+        menu_item = get_object_or_404(MenuItem, pk=food_id)
+        total += quantity * menu_item.price
+        item_count += quantity
+        cart_items.append({
+            'food_id': food_id,
+            'quantity': quantity,
+            'menu_item': menu_item,
+        })
     # calculates delivery cost based on kilometer
-    if user_distance < 3.5:
+    if user_distance < 3:
         delivery_cost = settings.MINIMUM_DELIVERY_COST
     else:
-        user_distance = user_distance - 3.5
+        user_distance = user_distance - 3
         delivery_total = user_distance / 1 * settings.DELIVERY_COST_PER_KM
-        delivery_total = Decimal(delivery_total + 3.5 / 100)
+        delivery_total = Decimal(delivery_total + 3)
         if delivery_total > 8.50:
             can_deliver = False
             # if the total delivery cost is above this
