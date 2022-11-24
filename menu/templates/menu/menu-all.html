@@ -58,10 +58,10 @@
             <div class="row">
                 {% for food in menu_items %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 card-container">
-                    <div class="card h-100 border-0 overflow-hidden" style="max-height: 400px;">
+                    <div class="card h-100 border-0 overflow-hidden">
                         {% if food.image %}
                         <a href="{% url 'item_details' food.name food.id %}">
-                            <img class="card-img-top img-fluid" src="{{ food.image.url }}" alt="{{ food.name }}" style="max-height:250px;">
+                            <img class="card-img-top img-fluid" src="{{ food.image.url }}" alt="{{ food.name }}" style="max-height:350px;">
                         </a>
                         {% elif food.image == '' %}
                         <a href="{% url 'item_details' food.name food.id %}">

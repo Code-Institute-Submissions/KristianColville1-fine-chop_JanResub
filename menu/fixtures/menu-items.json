@@ -407,7 +407,7 @@
             "name": "Pad Woon Sen",
             "description": "Delicious, chewy glass noodles covered in a soy oyster sauce accompanied with chicken, leafy greens and a red chilli vinegar.",
             "allergens": [11, 8, 3],
-            "price": 8.50,
+            "price": 8.5,
             "category": 3,
             "portion_sizes": "False",
             "rating": 4.3,
@@ -493,6 +493,358 @@
             "rating": 5.0,
             "image_url": "https://christieathome.com/wp-content/uploads/2020/06/wonton-mein4-scaled.jpg",
             "image": "wonton-mein.jpg"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10032",
+            "name": "Saba zushi",
+            "description": "Sushi rice base that is topped with marinated mackerel fillet, which is typically covered with a thin, delicate layer of kelp",
+            "allergens": [6, 5, 7],
+            "price": 9.55,
+            "category": 4,
+            "portion_sizes": "False",
+            "rating": 5.0,
+            "image_url": "https://cdn.tasteatlas.com//images/dishes/b80335afe96b4a86a92f25fd3bc7522a.jpg?w=905&h=510",
+            "image": "saba-zushi.jpg"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10033",
+            "name": "Tekkamaki",
+            "description": "Firm sushi rice, with a slightly acidic taste, is spread on top of nori, and the central part of the roll is a piece of raw tuna. Tender and soft, pink in color and mild in flavor, tuna perfectly balances the subtle flavors of nori and rice.",
+            "allergens": [6, 5, 7],
+            "price": 8.55,
+            "category": 4,
+            "portion_sizes": "False",
+            "rating": 5.0,
+            "image_url": "https://cdn.tasteatlas.com//Images/Dishes/0b7bc5e746654a82a27fb5031073a5b1.jpg?w=905&h=510",
+            "image": "tekkamaki.jpg"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10034",
+            "name": "Kiritanpo",
+            "description": "Kiritanpo is a traditional Japanese dish with origins in the Akita prefecture. It is made from cooked, half-smashed rice that is placed on a skewer, shaped into cylinders, then toasted over an open fire",
+            "allergens": [6, 5, 3],
+            "price": 6.5,
+            "category": 4,
+            "portion_sizes": "False",
+            "rating": 4.8,
+            "image_url": "https://cdn.tasteatlas.com//Images/Dishes/f95317e086e04d9d8e86e523bc8c5e5a.jpg?w=905&h=510",
+            "image": "kiritanpo.jpg"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10035",
+            "name": "Injeolmi",
+            "description": "Injeolmi are traditional South Korean steamed rice cakes. They are prepared by steaming and pounding rice into a pliable dough which is then rolled and generously dusted with roasted soybean powder. The varieties include ssuk injeolmi, which incorporates mugwort powder, or kkaeinjeolmi, which is dusted with black sesame.",
+            "allergens": [6, 5, 3],
+            "price": 6.5,
+            "category": 4,
+            "portion_sizes": "False",
+            "rating": 4.1,
+            "image_url": "https://cdn.tasteatlas.com//Images/Dishes/4a4e5c842c4f4d5a9049c8fb6550a20c.jpg?w=905&h=510",
+            "image": "injeolmi.jpg"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10036",
+            "name": "Lotus Leaf Rice",
+            "description": "Lotus leaf rice (lo mai gai or nor mai gai) is a classic Chinese dish consisting of sticky rice wrapped and steamed in lotus leaves. The rice is usually soaked, seasoned with various condiments and spices, and blended with additional ingredients such as chicken, duck, mushrooms, shrimps, scallions, and salted eggs.",
+            "allergens": [6, 5, 3],
+            "price": 7.5,
+            "category": 4,
+            "portion_sizes": "False",
+            "rating": 4.6,
+            "image_url": "https://cdn.tasteatlas.com//Images/Dishes/bb17201eb2f1483388168b6f7e181b00.jpg?w=905&h=510",
+            "image": "lotus-leaf-rice.jpg"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10037",
+            "name": "Hosomaki",
+            "description": "One of the most popular makizushi varieties are the thin hosomaki rolls. They consist of traditional roasted nori sheets that are layered with vinegar rice, filled with just one ingredient, then shaped into thin rolls.",
+            "allergens": [6, 5, 3],
+            "price": 7.55,
+            "category": 4,
+            "portion_sizes": "False",
+            "rating": 5.0,
+            "image_url": "https://cdn.tasteatlas.com//Images/Dishes/54d2dc650d1643fe9e404035cbf0089c.jpg?w=905&h=510",
+            "image": "hosomaki.jpg"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10038",
+            "name": "Chirashizushi",
+            "description": "Chirashizushi is one of the most common sushi varieties prepared in Japanese households. This unusual version (often referred to as scattered sushi) consists of a bowl of sushi rice complemented with a wide group of ingredients that are either layered on top or mixed in the rice.",
+            "allergens": [6, 5, 3],
+            "price": 7.55,
+            "category": 4,
+            "portion_sizes": "False",
+            "rating": 4.3,
+            "image_url": "https://cdn.tasteatlas.com//Images/Dishes/11eb1d842c21491e961627d6848bcf3a.jpg?w=905&h=510",
+            "image": "chirashizushi.jpg"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10039",
+            "name": "Lo mai fan",
+            "description": "Lo mai fan is a traditional rice dish originating from China. It’s often served as a part of dim sum meals. Chinese sticky rice, as it’s also known, is made with a combination of glutinous rice, shiitake mushrooms, shrimps, soy sauce, Chinese sausage, scallions, salt, pepper, sugar, and sesame oil.",
+            "allergens": [6, 2, 3],
+            "price": 7,
+            "category": 4,
+            "portion_sizes": "False",
+            "rating": 4.2,
+            "image_url": "https://cdn.sanity.io/images/2r0kdewr/production/c770a4e9f38e527ff0b2afd38d7201ef103cbe3e-1000x667.jpg?w=600&fm=webp&q=50",
+            "image": "lo-mai-fan.webp"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10040",
+            "name": "Hokkien Fried Rice",
+            "description": "Hokkien fried rice is a popular Chinese rice dish originating from the province of Fujian. In order to prepare it, rice and eggs are first stir-fried together, then topped with a thick gravy made with poultry, dried mushrooms, seafood, and vegetables.",
+            "allergens": [6, 9, 3],
+            "price": 5.55,
+            "category": 4,
+            "portion_sizes": "False",
+            "rating": 4.0,
+            "image_url": "https://cdn.tasteatlas.com//images/dishes/03cbe7e2b4a74d5fa8050b5a5149f654.jpg?w=905&h=510",
+            "image": "hokkien-fried-rice.jpg"
+        }
+    },
+    {
+        "pk": 41,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10041",
+            "name": "Yangzhou Fried Rice",
+            "description": "Yangzhou fried rice is a Chinese dish consisting of rice, eggs, and vegetables such as carrots, mushrooms, peas, while the common additions also include shrimps, meat, scallions, and Chinese ham. Traditional versions often may incorporate sea cucumbers, crab meat, and bamboo shoots.",
+            "allergens": [6, 5, 3],
+            "price": 6,
+            "category": 4,
+            "portion_sizes": "False",
+            "rating": 5.0,
+            "image_url": "https://cdn.tasteatlas.com//Images/Dishes/45e5473ffdea4c658aa74b47f3065ea7.jpg?w=905&h=510",
+            "image": "yangzhou-fried-rice.jpg"
+        }
+    },
+    {
+        "pk": 42,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10042",
+            "name": "Chamchi gimbap",
+            "description": "This gimbap (Korean rice roll) is made with canned tuna. Apart from rice and fish, the fillings may include other ingredients that are typically used in gimbap such as fresh or pickled vegetables, eggs, or fish cakes, while the tuna is often mashed and then combined with mayonnaise, mustard, and spices.",
+            "allergens": [6, 5, 7],
+            "price": 10,
+            "category": 4,
+            "portion_sizes": "False",
+            "rating": 4.0,
+            "image_url": "https://cdn.tasteatlas.com//images/dishes/0c1cceea9415481f8185b22d3b746f51.jpg?w=905&h=510",
+            "image": "chamchi-gimbap.jpg"
+        }
+    },
+    {
+        "pk": 43,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10043",
+            "name": "Crispy Sweet Chilli Chicken",
+            "description": "Chinese crispy shredded chicken coated in a sweet and chilli sauce.",
+            "allergens": [1],
+            "price": 10,
+            "category": 5,
+            "portion_sizes": "False",
+            "rating": 5.0,
+            "image_url": "https://mymorningmocha.com/wp-content/uploads/2022/04/Crispy-Chilli-Chicken.jpeg",
+            "image": "Crispy-Chilli-Chicken.jpeg"
+        }
+    },
+    {
+        "pk": 44,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10044",
+            "name": "Thai Sweet & Sour Chicken",
+            "description": "",
+            "allergens": [1],
+            "price": 10,
+            "category": 5,
+            "portion_sizes": "False",
+            "rating": 5.0,
+            "image_url": "Thai sweet and sour chicken with added chilli sauce. A rich spicy and sweet flavour that will melt in your mouth.",
+            "image": "thai-sweet-and-sour-chicken.webp"
+        }
+    },
+    {
+        "pk": 45,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10045",
+            "name": "Crispy Roast Duck",
+            "description": "Roast Duck Served with Asian vegetables and Plum sauce.",
+            "allergens": [1],
+            "price": 10,
+            "category": 5,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://thewoksoflife.com/wp-content/uploads/2015/11/peking-duck-recipe-5.jpg",
+            "image": "crispy-roast-duck.jpg"
+        }
+    },
+    {
+        "pk": 46,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10046",
+            "name": "Sambal Sauce",
+            "description": "Wok fried mixed vegetables in our homemade sambal paste.",
+            "allergens": [1],
+            "price": 10,
+            "category": 5,
+            "portion_sizes": "False",
+            "rating": 4.8,
+            "image_url": "https://ucarecdn.com/4d45e6d1-3c6e-4a1f-8f05-c1281d11ee94/-/scale_crop/1280x1280/center/-/quality/normal/-/format/jpeg/sambal-nasi-lemak.jpg",
+            "image": "sambal.jpg"
+        }
+    },
+    {
+        "pk": 47,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10047",
+            "name": "Chilli & Cashew Nut",
+            "description": "With Mixed vegetable and cashew nuts, dry Chilli. ",
+            "allergens": [1],
+            "price": 10,
+            "category": 5,
+            "portion_sizes": "False",
+            "rating": 4.7,
+            "image_url": "https://www.tastythais.com/wp-content/uploads/2020/01/thai-spicy-cashews.jpg",
+            "image": "thai-spicy-cashews.jpg"
+        }
+    },
+    {
+        "pk": 48,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10048",
+            "name": "Pad Kha Pao",
+            "description": "With fresh garlic, chilli, onion, carrot, mixed pepper, mushroom and sweet basil.",
+            "allergens": [1],
+            "price": 10,
+            "category": 5,
+            "portion_sizes": "False",
+            "rating": 4.7,
+            "image_url": "https://glebekitchen.com/wp-content/uploads/2019/11/thaibasilchickentopbowl-1.jpg",
+            "image": "pad-kha-pao.jpg"
+        }
+    },
+    {
+        "pk": 49,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10049",
+            "name": "Pad Prik",
+            "description": "Mixed pepper, onion, carrot and mushroom with black bean sauce.",
+            "allergens": [1],
+            "price": 10,
+            "category": 5,
+            "portion_sizes": "False",
+            "rating": 4.7,
+            "image_url": "https://assets.bonappetit.com/photos/57aceadb1b3340441497532f/1:1/w_2560%2Cc_limit/04292015-RSVP-038.jpg",
+            "image": "pad-prik.webp"
+        }
+    },
+    {
+        "pk": 50,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10050",
+            "name": "Pad King",
+            "description": "Ginger, mixed peppers ,onion, carrot and spring onion fried in seasoning sauce.",
+            "allergens": [1],
+            "price": 10,
+            "category": 5,
+            "portion_sizes": "False",
+            "rating": 4.6,
+            "image_url": "https://img.hellofresh.com/f_auto,fl_lossy,h_640,q_auto,w_1200/hellofresh_s3/image/prawn-pad-thai-7bb184d7-c94831de.jpg",
+            "image": "pad-king.jpg"
+        }
+    },
+    {
+        "pk": 51,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10051",
+            "name": "Malay BBQ Honey",
+            "description": "Stir fried mixed pepper, onion, carrot in Malaysian style BBQ sauce",
+            "allergens": [1],
+            "price": 10,
+            "category": 5,
+            "portion_sizes": "False",
+            "rating": 4.5,
+            "image_url": "https://rasamalaysia.com/wp-content/uploads/2015/01/honey_bbq_chicken_wings3.jpg",
+            "image": "malay-bbq-honey.jpg"
+        }
+    },
+    {
+        "pk": 52,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10052",
+            "name": "Chilli & Thai Herbs",
+            "description": "Stir fried chilli, mixed pepper, carrot , Thai herbs with fine beans and basil leaves. ",
+            "allergens": [1],
+            "price": 10,
+            "category": 5,
+            "portion_sizes": "False",
+            "rating": 4.4,
+            "image_url": "https://huasenghong.co.th/wp-content/uploads/2019/03/%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%89%E0%B9%88%E0%B8%B2-540x395.png",
+            "image": "chilli-and-thai-herbs.png"
+        }
+    },
+    {
+        "pk": 53,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10053",
+            "name": "Chilli Satay Sauce",
+            "description": "Stir fried onion, carrot, mixed peppers, peanuts in Malaysian satay sauce. ",
+            "allergens": [1],
+            "price": 10,
+            "category": 5,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://assets.bonappetit.com/photos/5c3501b12efb8f2d33e3972b/16:9/w_2560%2Cc_limit/Salsa-Macha.jpg",
+            "image": "chilli-satay-sauce.webp"
         }
     }
 ]

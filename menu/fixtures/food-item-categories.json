@@ -27,38 +27,28 @@
     {
         "pk": 6,
         "model": "menu.category",
-        "fields": { "name": "curries", "friendly_name": "Curries" }
-    },
-    {
-        "pk": 7,
-        "model": "menu.category",
         "fields": {
             "name": "soups",
             "friendly_name": "Soups"
         }
     },
     {
-        "pk": 8,
+        "pk": 7,
         "model": "menu.category",
         "fields": { "name": "vegan", "friendly_name": "Vegan" }
     },
     {
-        "pk": 9,
+        "pk": 8,
         "model": "menu.category",
         "fields": { "name": "salads", "friendly_name": "Salads" }
     },
     {
-        "pk": 10,
+        "pk": 9,
         "model": "menu.category",
         "fields": { "name": "sides", "friendly_name": "Sides" }
     },
     {
-        "pk": 11,
-        "model": "menu.category",
-        "fields": { "name": "kids_menu", "friendly_name": "Kids Menu" }
-    },
-    {
-        "pk": 12,
+        "pk": 10,
         "model": "menu.category",
         "fields": { "name": "drinks", "friendly_name": "Drinks" }
     }

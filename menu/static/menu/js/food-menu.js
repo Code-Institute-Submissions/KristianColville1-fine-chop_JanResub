@@ -12,12 +12,10 @@ $(document).ready(function () {
         "noodles",
         "rices",
         "wok",
-        "curries",
         "soups",
         "vegan",
         "salads",
         "sides",
-        "kids_menu",
         "drinks",
     ];
     let stringURL = location.href;
