@@ -226,9 +226,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 
-
-
-if 'USE_AWS' in os.environ:
+if os.environ.get("USE_AWS") is True:
     # static file config heroku
     # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
