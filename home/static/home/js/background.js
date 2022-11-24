@@ -7,10 +7,10 @@ $(document).ready(function () {
 
     let slideshow = $("#home-bg-slideshow");
     const urls = [
-        "../static/img/home-page/home-2.webp",
-        "../static/img/home-page/home-3.webp",
-        "../static/img/home-page/home-4.webp",
-        "../static/img/home-page/home-1.webp",
+        "/static/img/home-page/home-2.webp",
+        "/static/img/home-page/home-3.webp",
+        "/static/img/home-page/home-4.webp",
+        "/static/img/home-page/home-1.webp",
     ];
 
     let index = 0;
