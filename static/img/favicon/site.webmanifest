@@ -3,7 +3,7 @@
     "background_color": "#ffbf7d",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "https://fine-chop.herokuapp.com/",
     "name": "FineChop",
     "short_name": "FineChop",
     "description": "Asian cuisine - Delicious food you can enjoy dining in or ordering from our website ",

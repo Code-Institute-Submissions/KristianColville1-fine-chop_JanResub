@@ -1,19 +1,19 @@
 .home-img-1{
-    background: url('/static/img/home-page/home-1.webp')no-repeat center center;
-    background-size: cover;
-}
-
-.home-img-2 {
     background: url('/static/img/home-page/home-2.webp')no-repeat center center;
     background-size: cover;
 }
 
-.home-img-3 {
+.home-img-2 {
     background: url('/static/img/home-page/home-3.webp')no-repeat center center;
     background-size: cover;
 }
 
-.home-img-4 {
+.home-img-3 {
     background: url('/static/img/home-page/home-4.webp')no-repeat center center;
+    background-size: cover;
+}
+
+.home-img-4 {
+    background: url('/static/img/home-page/home-1.webp')no-repeat center center;
     background-size: cover;
 }

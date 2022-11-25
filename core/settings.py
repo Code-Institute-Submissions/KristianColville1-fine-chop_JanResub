@@ -258,7 +258,7 @@ if 'USE_AWS' in os.environ:
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-MINIMUM_DELIVERY_COST = 2.50
+MINIMUM_DELIVERY_COST = 3
 DELIVERY_COST_PER_KM = 0.40
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
