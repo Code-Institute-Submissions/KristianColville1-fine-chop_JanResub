@@ -56,7 +56,6 @@ def update_cart(request, food_id):
     cart = request.session.get('cart', {})
 
     if portion_size == 'm':
-        print('I made it here')
         if quantity > 0:
             cart[food_id]['menu_items_by_size'][portion_size] = quantity
 

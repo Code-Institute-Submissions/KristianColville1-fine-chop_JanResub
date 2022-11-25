@@ -106,12 +106,10 @@
                     </div>
                 </li>
                 <li class="nav-link mx-1">
-                    <a href="{% url 'view_cart' %}" aria-label="Click the cart icon to view whats in the cart for orders"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a class="{% if grand_total > 0 %}text-orange{% endif %}"href="{% url 'view_cart' %}" aria-label="Click the cart icon to view whats in the cart for orders"><i class="fa-solid fa-cart-shopping"></i></a>
                     <p class="text-white position-absolute">
                         {% if grand_total > 0 %}
                         €{{ grand_total|floatformat:2 }}
-                        {% else %}
-                        €0.00
                         {% endif %}
                     </p>
                 </li>
