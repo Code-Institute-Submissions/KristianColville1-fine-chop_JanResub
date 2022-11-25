@@ -2,6 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% load crispy_forms_tags %}
+{% load cart_tools %}
 {% block head_title %}Cart{% endblock head_title %}
 {% block content %}
 <div class="container mt-5 bg-light">
@@ -41,14 +42,14 @@
                             <p class="my-0">€{{ food.menu_item.price }}</p>
                         </td>
                         <td class="py-3 w-25">
-                            <form class="form update-form" method="POST" action="">
+                            <form class="form update-form" method="POST" action="{% url 'update_cart' food.food_id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-sm btn-orange text-white rounded-0"
-                                                data-item_id="{{ food.menu_item_id }}"
-                                                id="decrement-qty_{{ food.menu_item_id }}">
+                                                data-item_id="{{ food.food_id }}"
+                                                id="decrement-qty_{{ food.food_id }}">
                                                 <span>
                                                     <i class="fas fa-minus fa-sm"></i>
                                                 </span>
@@ -56,30 +57,32 @@
                                         </div>
                                         <input class="form-control form-control-sm qty_input" type="number"
                                             name="quantity" value="{{ food.quantity }}" min="1" max="20"
-                                            data-item_id="{{ food.menu_item_id }}"
-                                            id="id_qty_{{ food.menu_item_id }}">
+                                            data-food_id="{{ food.food_id }}"
+                                            id="id_qty_{{ food.food_id }}">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-sm btn-orange text-white rounded-0"
-                                                data-item_id="{{ food.menu_item_id }}"
-                                                id="increment-qty_{{ food.menu_item_id }}">
+                                                data-item_id="{{ food.food_id }}"
+                                                id="increment-qty_{{ food.food_id }}">
                                                 <span>
                                                     <i class="fas fa-plus fa-sm"></i>
                                                 </span>
                                             </button>
                                         </div>
-                                        {% if food.menu_item.has_portions %}
+                                        {% if food.menu_item.portion_sizes %}
                                         <input type="hidden" name="portion_size"
-                                            value="{{ food.menu_item.portion_size }}">
+                                            value="{{ food.portion_size }}">
                                         {% endif %}
                                     </div>
                                 </div>
                             </form>
-                            <a class="update-link text-info"><small>Update</small></a>
-                            <a class="remove-item text-danger float-right" id="remove_{{ food.menu_item_id }}"
-                                data-size="{{ food.portion_size }}"><small>Remove</small></a>
+                            <div class="w-100 d-flex justify-content-between">
+                            <a class="btn update-link text-info" id="update_{{food.food_id}}"><small>Update</small></a>
+                            <a class="btn remove-item text-danger" id="remove_{{ food.food_id }}"
+                                data-portion_size="{{ food.portion_size }}"><small>Remove</small></a>
+                            </div>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">€{{ food.menu_item.price }}</p>
+                            <p class="my-0">€{{ food.menu_item.price | calc_subtotal:food.quantity }}</p>
                         </td>
                     </tr>
                     {% endfor %}
@@ -109,13 +112,15 @@
                 </table>
             </div>
             {% else %}
-            <p class="lead mb-5">Your bag is empty.</p>
-            <a href="{% url 'menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
+            <p class="lead mb-5 w-100 text-center">Your cart is empty!</p>
+            <div class="w-100 d-flex justify-content-center my-1">
+            <a href="{% url 'menu' %}" class="btn btn-orange text-white border rounded-0 btn-lg">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
                 </span>
-                <span class="text-uppercase">Keep Shopping</span>
+                <span class="text-uppercase">Add Food to Cart</span>
             </a>
+            </div>
             {% endif %}
         </div>
     </div>
