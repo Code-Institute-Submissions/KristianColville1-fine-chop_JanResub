@@ -41,7 +41,42 @@
                             <p class="my-0">€{{ food.menu_item.price }}</p>
                         </td>
                         <td class="py-3 w-25">
-                            <p class="my-0">{{ food.quantity }}</p>
+                            <form class="form update-form" method="POST" action="">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-sm btn-orange text-white rounded-0"
+                                                data-item_id="{{ food.menu_item_id }}"
+                                                id="decrement-qty_{{ food.menu_item_id }}">
+                                                <span>
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control form-control-sm qty_input" type="number"
+                                            name="quantity" value="{{ food.quantity }}" min="1" max="20"
+                                            data-item_id="{{ food.menu_item_id }}"
+                                            id="id_qty_{{ food.menu_item_id }}">
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-sm btn-orange text-white rounded-0"
+                                                data-item_id="{{ food.menu_item_id }}"
+                                                id="increment-qty_{{ food.menu_item_id }}">
+                                                <span>
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        {% if food.menu_item.has_portions %}
+                                        <input type="hidden" name="portion_size"
+                                            value="{{ food.menu_item.portion_size }}">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </form>
+                            <a class="update-link text-info"><small>Update</small></a>
+                            <a class="remove-item text-danger float-right" id="remove_{{ food.menu_item_id }}"
+                                data-size="{{ food.portion_size }}"><small>Remove</small></a>
                         </td>
                         <td class="py-3">
                             <p class="my-0">€{{ food.menu_item.price }}</p>
@@ -86,3 +121,7 @@
     </div>
 </div>
 {% endblock content %}
+{% block extra_js %}
+<script src="{% static 'menu/js/quantity-input.js' %}"></script>
+<script src="{% static 'cart/js/update-cart.js' %}"></script>
+{% endblock extra_js %}

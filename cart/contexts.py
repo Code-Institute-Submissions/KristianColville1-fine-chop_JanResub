@@ -34,7 +34,7 @@ def cart_contents(request):
                 item_count += quantity
                 cart_items.append({
                     'food_id': food_id,
-                    'quantity': food_amount,
+                    'quantity': quantity,
                     'menu_item': menu_item,
                     'portion_size': portion_size
                 })
