@@ -1,27 +1,30 @@
 $(document).ready(function () {
     /**
-     * Set a timer and display these images on the home page and iterate 
+     * Set a timer and display these images on the home page and iterate
      * through them. Called using iterateSlideShow function.
      */
     let timeToDisplay = 10000;
 
     let slideshow = $("#home-bg-slideshow");
-    const urls = [
-        "/static/img/home-page/home-2.webp",
-        "/static/img/home-page/home-3.webp",
-        "/static/img/home-page/home-4.webp",
-        "/static/img/home-page/home-1.webp",
+    const imageClasses = [
+        "home-img-1",
+        "home-img-2",
+        "home-img-3",
+        "home-img-4",
     ];
 
     let index = 0;
+    var lastImage = '';
     let transition = function () {
-        var url = urls[index];
-        slideshow.css("background", "url(" + url + ") no-repeat center center");
-        slideshow.css("background-size", "cover");
+        let current = imageClasses[index]
+        slideshow.addClass(current);
+        slideshow.removeClass(lastImage);
+        lastImage = current;
         index++;
-        if (index > urls.length - 1) {
+        if (index > imageClasses.length - 1) {
             index = 0;
         }
+
     };
 
     const iterateSlideShow = function () {

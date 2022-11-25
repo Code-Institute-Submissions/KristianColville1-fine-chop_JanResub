@@ -2,6 +2,9 @@
 {% load static %}
 {% load i18n %}
 {% load crispy_forms_tags %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/background.css' %}">
+{% endblock extra_css%}
 {% block head_title %}Home{% endblock head_title %}
 {% block content %}
 <div class="body-overlay"></div>
