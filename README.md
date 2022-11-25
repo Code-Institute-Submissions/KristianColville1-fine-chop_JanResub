@@ -161,7 +161,11 @@ User roles:
 |[#37](https://github.com/KristianColville1/fine-chop/issues/37)|As a consumer, I can identify with relative ease what the new food menu items are, so that I can try new meals and have more options to choose from|
 |[#39](https://github.com/KristianColville1/fine-chop/issues/39)|As a consumer, I can book a table to dine in, so that I can have the option to visit FineChop if I am interested in a dine-in experience|
 |[#40](https://github.com/KristianColville1/fine-chop/issues/40)|As a shopper, I can have the option to purchase a gift card, so that I can give someone a gift or use as an alternate method of transaction|
-|||
+|[#51](https://github.com/KristianColville1/fine-chop/issues/51)|As a shopper, I can update the quantity of individual menu items in the cart, so that make changes to my purchase and the food I will receive|
+|[#52](https://github.com/KristianColville1/fine-chop/issues/52)|As a Customer, I can enter my payment information, so that so I can checkout quickly and with no hassle|
+|[#53](https://github.com/KristianColville1/fine-chop/issues/53)|As a Customer, I can feel that my personal and payment information is safe and secure, so that I can confidently provide the needed information to make a purchase on this website|
+|[#54](https://github.com/KristianColville1/fine-chop/issues/54)|As a Customer, I can view an order confirmation after I checkout, so that I can verify that I have made a purchase and check if I haven't made any mistakes|
+|[#55](https://github.com/KristianColville1/fine-chop/issues/55)|As a Consumer, I can receive an email confirmation after checking out, so that so I have a record of the transaction and a confirmation of what I have purchased|
 
 <br>
 
