@@ -846,5 +846,565 @@
             "image_url": "https://assets.bonappetit.com/photos/5c3501b12efb8f2d33e3972b/16:9/w_2560%2Cc_limit/Salsa-Macha.jpg",
             "image": "chilli-satay-sauce.webp"
         }
+    },
+    {
+        "pk": 54,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10054",
+            "name": "Egg Roll Soup",
+            "description": "This Egg Roll Soup recipe brings together all of those irresistible egg roll flavors we love…in a soup!!",
+            "allergens": [1, 2, 3],
+            "price": 10,
+            "category": 6,
+            "portion_sizes": "False",
+            "rating": 4.0,
+            "image_url": "https://www.jocooks.com/wp-content/uploads/2020/01/egg-roll-soup-1.jpg",
+            "image": "egg-roll-soup.jpg"
+        }
+    },
+    {
+        "pk": 55,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10055",
+            "name": "Thai Coconut Curry Chicken Soup",
+            "description": "This coconut curry soup with chicken and chickpeas is so filling and satisfying, it’s hard to believe that it qualifies as health food—but we promise, it really, really does",
+            "allergens": [1, 2, 3],
+            "price": 10.5,
+            "category": 7,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://images.themodernproper.com/billowy-turkey/production/posts/2020/coconut-curry-soup-24.jpg?w=1200&auto=compress%2Cformat&fit=crop&dm=1599768516&s=5bb90156a9c0b8f8f7f40d77a5374652",
+            "image": "coconut-soup.webp"
+        }
+    },
+    {
+        "pk": 56,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10056",
+            "name": "Vegan Yellow Curry Noodle Bowls",
+            "description": "This simple vegan yellow curry with noodles and coconut milk is made with pantry staples like ginger and turmeric, leaving out any harder to find ingredients for a quick and easy colourful noodle bowl. Packed with veggies and naturally gluten free.",
+            "allergens": [1, 2, 3],
+            "price": 9,
+            "category": 7,
+            "portion_sizes": "False",
+            "rating": 4.7,
+            "image_url": "https://hurrythefoodup.com/wp-content/uploads/2021/03/Vegan-Yellow-Curry-703x1024.jpg.webp",
+            "image": "vegan-yellow-curry.webp"
+        }
+    },
+    {
+        "pk": 57,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10057",
+            "name": "Orange Tofu",
+            "description": "This crispy vegan orange tofu is so simple to make, low-oil and made with just a few natural ingredients",
+            "allergens": [1, 2, 3],
+            "price": 9.5,
+            "category": 7,
+            "portion_sizes": "False",
+            "rating": 5.0,
+            "image_url": "https://hurrythefoodup.com/wp-content/uploads/2021/03/orange-tofu.jpg.webp",
+            "image": "orange-tofu.webp"
+        }
+    },
+    {
+        "pk": 58,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10058",
+            "name": "Vegetable Stir Fry with Creamy Peanut Sauce",
+            "description": "A delicious peanut sauce compliments this fantastic stir fry. Thai spices with Chinese herbs.",
+            "allergens": [1, 2, 3],
+            "price": 9.8,
+            "category": 7,
+            "portion_sizes": "False",
+            "rating": 4.2,
+            "image_url": "https://hurrythefoodup.com/wp-content/uploads/2020/09/Easy-Vegetable-Stir-Fry-recipe-card-image-683x1024.jpg.webp",
+            "image": "veg-stir-fry.webp"
+        }
+    },
+    {
+        "pk": 59,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10059",
+            "name": "Vegan Miso Soup",
+            "description": "This delicious homemade vegan miso soup recipe is so flavorful and comforting. Made with vegetable broth, veggies and tofu!",
+            "allergens": [1, 2, 3],
+            "price": 7,
+            "category": 7,
+            "portion_sizes": "False",
+            "rating": 4.2,
+            "image_url": "https://hurrythefoodup.com/wp-content/uploads/2021/03/vegan-miso-soup.jpg.webp",
+            "image": "vegan-miso-soup.webp"
+        }
+    },
+    {
+        "pk": 60,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10060",
+            "name": "Vegan Vegetable Lo Mein",
+            "description": "All the benefits of a Lo Mein but with Tofu. Chinese vegetables and Japanese herbs to compliment. You won't be disappointed!!",
+            "allergens": [1, 2, 3],
+            "price": 7,
+            "category": 7,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://hurrythefoodup.com/wp-content/uploads/2014/11/veggy-fake-stir-fry-1244px-721x1024.jpg",
+            "image": "veg-low-mein.jpg"
+        }
+    },
+    {
+        "pk": 61,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10061",
+            "name": "Crispy Baked Peanut Tofu with Pickled Shallots and Fresh Herbs",
+            "description": "Baked to perfection!! Our chefs have created a complimented dish that was inspired by each culture we share here at FineChop. Tangy pickled shallots and fresh herbs from our gardens.",
+            "allergens": [1, 2, 3],
+            "price": 9.4,
+            "category": 8,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://hurrythefoodup.com/wp-content/uploads/2021/03/baked-peanut-tofu.jpg.webp",
+            "image": "baked-peanut-tofu.webp"
+        }
+    },
+    {
+        "pk": 62,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10062",
+            "name": "Thai Crunch Salad with Peanut Dressing",
+            "description": "It's made with crisp Napa cabbage, crunchy vegetables and edamame but it's the creamy peanut dressing that makes it so good.",
+            "allergens": [1, 2, 3],
+            "price": 9,
+            "category": 8,
+            "portion_sizes": "False",
+            "rating": 4.6,
+            "image_url": "https://i0.wp.com/www.onceuponachef.com/images/2013/07/thai-crunch-salad-1.jpg?w=749&ssl=1",
+            "image": "thai-crunch-salad.webp"
+        }
+    },
+    {
+        "pk": 63,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10063",
+            "name": "Thai Quinoa Salad with Fresh Herbs & Lime Vinaigrette",
+            "description": "This flavorful Thai quinoa salad packed with protein and fresh veggies is a healthy eater's dream!",
+            "allergens": [1, 2, 3],
+            "price": 9,
+            "category": 8,
+            "portion_sizes": "False",
+            "rating": 4.6,
+            "image_url": "https://i0.wp.com/www.onceuponachef.com/images/2013/05/thai-quinoa-salad-4.jpg?resize=760%2C504&ssl=1",
+            "image": "thai-quinoa-salad.webp"
+        }
+    },
+    {
+        "pk": 64,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10064",
+            "name": "Asian Slaw with Ginger Peanut Dressing",
+            "description": "This Asian slaw is a great way to eat your colors, and it's every bit as delicious as it is healthful.",
+            "allergens": [1, 2, 3],
+            "price": 9,
+            "category": 8,
+            "portion_sizes": "False",
+            "rating": 4.3,
+            "image_url": "https://i0.wp.com/www.onceuponachef.com/images/2011/03/Asian-Slaw.jpg?resize=760%2C950&ssl=1",
+            "image": "asian-slaw.webp"
+        }
+    },
+    {
+        "pk": 65,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10065",
+            "name": "Thai Cucumber Salad with Peanuts",
+            "description": "This light cucumber salad is one of my warm weather staples. The dressing is tangy and sweet, and the peanuts add a welcome salty crunch. The best part is that the juice from the cucumbers seeps into the dressing, giving it a delicious cucumber flavor.",
+            "allergens": [1, 2, 3],
+            "price": 9,
+            "category": 8,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://i0.wp.com/www.onceuponachef.com/images/2015/09/Thai-Cucumber-Peanut-Salad3.jpg?resize=760%2C602&ssl=1",
+            "image": "thai-cucumber-salad.webp"
+        }
+    },
+    {
+        "pk": 66,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10066",
+            "name": "Thai Spicy Duck Salad",
+            "description": "Roast duck served with mixed salad and Thai chilli & lime dressing",
+            "allergens": [1, 2, 3],
+            "price": 8.5,
+            "category": 8,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://www.seriouseats.com/thmb/9CYWUy2UQ7iVz0Z3J_fGZZwJopg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2013__06__20130603-254598-thai-duck-salad-60b712cb653b4538822ccbfb2e458f61.jpg",
+            "image": "thai-spicy-duck-salad.jpg"
+        }
+    },
+    {
+        "pk": 67,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10067",
+            "name": "Thai Prawn Crackers",
+            "description": "Manora Uncooked Thai Prawn Crackers are made from high quality, fresh shrimp, no artificial colouring added. Delicious and crispy, once cooked these shrimp chips are an ideal snack for adults and children alike. For better taste, try with chilli or tomato sauce.",
+            "allergens": [1, 2, 3],
+            "price": 4.5,
+            "category": 9,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://tansfoodcorner.com/wp-content/uploads/2021/11/Cracker-fried.jpg",
+            "image": "Cracker-fried.jpg"
+        }
+    },
+    {
+        "pk": 68,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10068",
+            "name": "Steamed Jasmine Rice",
+            "description": "Jasmine rice is a particularly fine, medium-grain type of rice. It is fragrant when cooked, hence the name. The polished white rice is prepared without salt to balance the Thai flavors.",
+            "allergens": [1, 2, 3],
+            "price": 4.5,
+            "category": 9,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://ianbenites.com/wp-content/uploads/2020/10/20201019_162000.jpg",
+            "image": "steamed-jasmin-rice.jpg"
+        }
+    },
+    {
+        "pk": 69,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10069",
+            "name": "Brown Rice",
+            "description": "Brown rice is a whole grain rice with the inedible outer hull removed.",
+            "allergens": [1, 2, 3],
+            "price": 4.5,
+            "category": 9,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://cdn.loveandlemons.com/wp-content/uploads/2020/01/how-to-cook-brown-rice.jpg",
+            "image": "brown-rice.jpg"
+        }
+    },
+    {
+        "pk": 70,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10070",
+            "name": "Egg Fried Rice",
+            "description": "Fluffy and aromatic egg fried rice is a crowd pleaser. A hearty meal on the go and a satisfying dinner after a hard day at work.",
+            "allergens": [1, 2, 3],
+            "price": 3,
+            "category": 9,
+            "portion_sizes": "False",
+            "rating": 4.4,
+            "image_url": "https://i0.wp.com/seonkyounglongest.com/wp-content/uploads/2020/02/Egg-Fried-Rice-2.jpg?fit=1300%2C867&ssl=1",
+            "image": "egg-fried-rice.webp"
+        }
+    },
+    {
+        "pk": 71,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10071",
+            "name": "Stir Fried Egg Noodles",
+            "description": "Whole grain noodles tossed with a heap of vegetables (whichever ones you have around) and your protein of choice (we used chicken) in a shortcut stir fry sauce.",
+            "allergens": [1, 2, 3],
+            "price": 2.5,
+            "category": 9,
+            "portion_sizes": "False",
+            "rating": 4.4,
+            "image_url": "https://omnivorescookbook.com/wp-content/uploads/2022/03/220224_Soy-Sauce-Pan-Fried-Noodles_550.jpg",
+            "image": "stir-fried-egg-noodles.jpg"
+        }
+    },
+    {
+        "pk": 72,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10072",
+            "name": "Rice Noodles",
+            "description": "Rice noodles, or simply rice noodle, are noodles made with rice flour and water as the principal ingredients",
+            "allergens": [1, 2, 3],
+            "price": 2.5,
+            "category": 9,
+            "portion_sizes": "False",
+            "rating": 4.1,
+            "image_url": "https://www.thespruceeats.com/thmb/pBnoMooPrBzwCVw8B-V1ae1Vosg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/crispy-noodles-lettuce-wraps-stir-fry-3217104-hero-1-55866904f5f344a092a931a2afc5c6f3.jpg",
+            "image": "rice-noodles.jpg"
+        }
+    },
+    {
+        "pk": 73,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10073",
+            "name": "Chips",
+            "description": "Chips are long, thin pieces of potato fried in oil or fat and eaten hot, usually with a meal",
+            "allergens": [1, 2, 3],
+            "price": 4,
+            "category": 9,
+            "portion_sizes": "False",
+            "rating": 4.7,
+            "image_url": "https://www.thespruceeats.com/thmb/AxgERyL88tzebyGhS0n6daq4Ojg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/best-twice-cooked-chip-recipe-434891-hero-01-5d90eb5142b042e1b71e2c3bcce9c5c9.jpg",
+            "image": "chips.jpg"
+        }
+    },
+    {
+        "pk": 74,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10074",
+            "name": "Sweet Potato Fries",
+            "description": "Sweet potato chips are long, thin pieces of potato fried in oil or fat and eaten hot, usually with a meal",
+            "allergens": [1, 2, 3],
+            "price": 4,
+            "category": 9,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://www.cubesnjuliennes.com/wp-content/uploads/2021/01/Baked-Sweet-Potato-Fries-Recipe.jpg",
+            "image": "sweet-chips.jpg"
+        }
+    },
+    {
+        "pk": 75,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10075",
+            "name": "Asian Greens",
+            "description": "AA Choy, Bok Choy, Chinese Broccoli, Chinese Selery, Daikon Greens, En Choy and Fava Greens steamed and prepared to perfection",
+            "allergens": [1, 2, 3],
+            "price": 4.5,
+            "category": 9,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://www.seriouseats.com/thmb/5bjhI_FIOXFvnRXCG4--KUdRi5A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2014__06__20140422-chinese-greens-14-9dde7934dc634720abc9722d820eeaf1.jpg",
+            "image": "asian-greens.jpg"
+        }
+    },
+    {
+        "pk": 76,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10076",
+            "name": "Japanese Edamame",
+            "description": "Edamame is a preparation of immature soybeans in the pod, found in cuisines with origins in East Asia. The pods are boiled or steamed and may be served with salt or other condiments.",
+            "allergens": [1, 2, 3],
+            "price": 2.5,
+            "category": 9,
+            "portion_sizes": "False",
+            "rating": 4.7,
+            "image_url": "https://www.closetcooking.com/wp-content/uploads/2008/02/Edamame-Salad.jpg",
+            "image": "japanese-edamame.jpg"
+        }
+    },
+    {
+        "pk": 77,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10077",
+            "name": "Portion of Curry Sauce",
+            "description": "Chinese curry sauce inspired from south east Asia",
+            "allergens": [1, 2, 3],
+            "price": 4.5,
+            "category": 9,
+            "portion_sizes": "False",
+            "rating": 5.0,
+            "image_url": "https://st.depositphotos.com/1364913/4584/i/950/depositphotos_45849717-stock-photo-portion-of-curry-sauce.jpg",
+            "image": "curry-sauce.jpg"
+        }
+    },
+    {
+        "pk": 78,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10078",
+            "name": "Coke",
+            "description": "Coca-Cola, or Coke, is a carbonated soft drink manufactured by the Coca-Cola Company.",
+            "allergens": [],
+            "price": 2,
+            "category": 10,
+            "portion_sizes": "False",
+            "rating": 4.3,
+            "image_url": "https://cdn.huntoffice.ie/images/D/AU00099-X.jpg",
+            "image": "coke.webp"
+        }
+    },
+    {
+        "pk": 79,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10079",
+            "name": "Diet Coke",
+            "description": "Coca-Cola, or Coke, is a carbonated soft drink manufactured by the Coca-Cola Company.",
+            "allergens": [],
+            "price": 2,
+            "category": 10,
+            "portion_sizes": "False",
+            "rating": 4.3,
+            "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d729258e-ad99-48ab-bc93-2154415b9780/68ba14d9-6932-4d3a-8c21-a58c98026dbe_731087742.jpeg?h=540&w=540",
+            "image": "diet-coke.jpeg"
+        }
+    },
+    {
+        "pk": 80,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10080",
+            "name": "Coke Zero",
+            "description": "Coca-Cola, or Coke, is a carbonated soft drink manufactured by the Coca-Cola Company.",
+            "allergens": [],
+            "price": 2,
+            "category": 10,
+            "portion_sizes": "False",
+            "rating": 4.3,
+            "image_url": "https://raviolo-verde.ie/wp-content/uploads/2022/03/coke-zero-600x600-1.jpg",
+            "image": "coke-zero.jpg"
+        }
+    },
+    {
+        "pk": 81,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10081",
+            "name": "Fanta",
+            "description": "Fanta is an American-owned German brand of fruit-flavored carbonated soft drinks created by Coca-Cola.",
+            "allergens": [1, 2, 3],
+            "price": 2,
+            "category": 10,
+            "portion_sizes": "False",
+            "rating": 4.3,
+            "image_url": "",
+            "image": "fanta.jpg"
+        }
+    },
+    {
+        "pk": 82,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10082",
+            "name": "7 up",
+            "description": "7 Up Free is a zero calorie lemon-lime-flavored non-caffeinated soft drink",
+            "allergens": [1, 2, 3],
+            "price": 2,
+            "category": 10,
+            "portion_sizes": "False",
+            "rating": 4.3,
+            "image_url": "https://cdn3.evostore.io/productimages/vow_premium/l/brt00109.jpg",
+            "image": "7-up.jpg"
+        }
+    },
+    {
+        "pk": 83,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10083",
+            "name": "7 up Free",
+            "description": "7 Up is a lemon-lime-flavored non-caffeinated soft drink ",
+            "allergens": [1, 2, 3],
+            "price": 2,
+            "category": 10,
+            "portion_sizes": "False",
+            "rating": 4.3,
+            "image_url": "https://cdn3.evostore.io/productimages/vow_premium/l/brt10879.jpg",
+            "image": "7-up-free.jpg"
+        }
+    },
+    {
+        "pk": 84,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10084",
+            "name": "Lemon Juice",
+            "description": "Lemon juice with spring water and seasoned to taste. Refreshing and vivifying.",
+            "allergens": [1, 2, 3],
+            "price": 3.2,
+            "category": 10,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://amiablefoods.com/wp-content/uploads/cucumber-lemon-juice-recipe-card.jpg",
+            "image": "lemon-juice.jpg"
+        }
+    },
+    {
+        "pk": 85,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10085",
+            "name": "Orange Juice",
+            "description": "Freshly squeezed orange juice with some added spring water. Rich in Vitamin C.",
+            "allergens": [1, 2, 3],
+            "price": 3.20,
+            "category": 10,
+            "portion_sizes": "False",
+            "rating": 4.9,
+            "image_url": "https://www.lacademie.com/wp-content/uploads/2021/10/orange-juice-fresh-fruits.jpg",
+            "image": "orange-juice.jpg"
+        }
+    },
+    {
+        "pk": 86,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10086",
+            "name": "Apple Juice",
+            "description": "Pressed Apples turned into a delicious fruit juice with some added spring water.",
+            "allergens": [1, 2, 3],
+            "price": 3.0,
+            "category": 10,
+            "portion_sizes": "False",
+            "rating": 4.4,
+            "image_url": "https://www.alphafoodie.com/wp-content/uploads/2021/11/Apple-Juice-Square.jpeg",
+            "image": "apple-juice.jpeg"
+        }
+    },
+    {
+        "pk": 87,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10087",
+            "name": "Bottled Water Still",
+            "description": "Bottled still water by Volvic.",
+            "allergens": [1, 2, 3],
+            "price": 3.0,
+            "category": 10,
+            "portion_sizes": "False",
+            "rating": 4.5,
+            "image_url": "https://cdn.shopify.com/s/files/1/0357/1407/2713/products/Volvic-Still-Water-1_5lt_800x.jpg?v=1655086610",
+            "image": "still-water.webp"
+        }
+    },
+    {
+        "pk": 88,
+        "model": "menu.menuitem",
+        "fields": {
+            "product_code": "#10088",
+            "name": "Bottled Water Sparkling",
+            "description": "Sparkling water straight from county Tipperary. Award winning and pure Irish water.",
+            "allergens": [1, 2, 3],
+            "price": 4.0,
+            "category": 10,
+            "portion_sizes": "False",
+            "rating": 5.0,
+            "image_url": "https://www-api.musgravemarketplace.ie/INTERSHOP/static/WFS/musgrave-MWPIRL-Site/-/musgrave/en_IE/productimages/50996/5099618119209_A1C1_L.jpg",
+            "image": "sparkling-water.jpg"
+        }
     }
 ]
