@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'menu',
     'reservations',
     'cart',
+    'checkout',
 
     # other - imported
     'allauth',
@@ -260,5 +261,6 @@ if 'USE_AWS' in os.environ:
 
 MINIMUM_DELIVERY_COST = 3
 DELIVERY_COST_PER_KM = 0.40
+MAX_DELIVERY_DISTANCE = 15
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
