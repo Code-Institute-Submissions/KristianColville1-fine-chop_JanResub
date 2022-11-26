@@ -11,11 +11,6 @@ function handleInputs(foodID) {
 var allQtyInputs = $(".qty_input");
 for (var i = 0; i < allQtyInputs.length; i++) {
     var foodID = $(allQtyInputs[i]).data("item_id");
-    if ($(allQtyInputs[i]).val() > 20) {
-        $(allQtyInputs[i]).val(20);
-        var form = $(allQtyInputs[i]).parensUntil('form');
-        form.submit()
-    }
     handleInputs(foodID);
 }
 
@@ -64,3 +59,15 @@ $(function () {
         else $(this).val($(this).data("old"));
     });
 });
+
+// automatically removes the amount if above 20 when user enters their cart
+$(function () {
+    allQtyInputs = $(".qty_input");
+    for (let i = 0; i < allQtyInputs.length; i++){
+        if ($(allQtyInputs[i]).val() > 20) {
+            let form = $(allQtyInputs[i]).closest("form");
+            $(allQtyInputs[i]).val(20);
+            form.submit()
+        }
+    }
+})
