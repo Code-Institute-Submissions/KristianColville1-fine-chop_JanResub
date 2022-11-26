@@ -11,6 +11,11 @@ function handleInputs(foodID) {
 var allQtyInputs = $(".qty_input");
 for (var i = 0; i < allQtyInputs.length; i++) {
     var foodID = $(allQtyInputs[i]).data("item_id");
+    if ($(allQtyInputs[i]).val() > 20) {
+        $(allQtyInputs[i]).val(20);
+        var form = $(allQtyInputs[i]).parensUntil('form');
+        form.submit()
+    }
     handleInputs(foodID);
 }
 
@@ -38,4 +43,24 @@ $(".decrement-qty").click(function (e) {
     $(closestInput).val(currentValue - 1);
     var foodID = $(this).data("item_id");
     handleInputs(foodID);
+});
+
+// if user tries to manually input a number above 20
+$(function () {
+    $(".qty_input").keydown(function () {
+        // Save the old value
+        if (
+            !$(this).val() ||
+            (parseInt($(this).val()) <= 20 && parseInt($(this).val()) >= 0)
+        )
+            $(this).data("old", $(this).val());
+    });
+    $(".qty_input").keyup(function () {
+        // Check correct, otherwise revert back to old value.
+        if (
+            !$(this).val() ||
+            (parseInt($(this).val()) <= 20 && parseInt($(this).val()) >= 0)
+        );
+        else $(this).val($(this).data("old"));
+    });
 });
