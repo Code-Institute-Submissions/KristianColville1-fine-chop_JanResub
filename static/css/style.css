@@ -509,6 +509,12 @@ h1 {
     background-color: var(--matte-black);
 }
 
+.cart-message-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /* -------------------------------------------------------Media Queries */
 @media only screen and (max-width: 991px) {
     .navbar .nav-link {
