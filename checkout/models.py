@@ -27,7 +27,7 @@ class Order(models.Model):
                                         decimal_places=2,
                                         null=False,
                                         default=0)
-    can_deliver = models.BooleanField(default=False)
+    can_deliver = models.BooleanField(default=False, null=False, blank=False)
     order_total = models.DecimalField(max_digits=10,
                                       decimal_places=2,
                                       null=False,
