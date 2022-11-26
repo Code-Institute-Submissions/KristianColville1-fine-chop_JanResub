@@ -74,12 +74,13 @@
                                         {% endif %}
                                     </div>
                                 </div>
+
                             </form>
-                            <div class="w-100 d-flex justify-content-between">
-                            <a class="btn update-link text-info" id="update_{{food.food_id}}"><small>Update</small></a>
-                            <a class="btn remove-item text-danger" id="remove_{{ food.food_id }}"
-                                data-portion_size="{{ food.portion_size }}"><small>Remove</small></a>
-                            </div>
+                                <a class="btn update-link text-info"
+                                    id="update_{{food.food_id}}"><small>Update</small></a>
+                                <a class="btn remove-item text-danger"
+                                    id="remove_{{ food.food_id }}"
+                                    data-portion_size="{{ food.portion_size }}"><small>Remove</small></a>
                         </td>
                         <td class="py-3">
                             <p class="my-0">€{{ food.menu_item.price | calc_subtotal:food.quantity }}</p>

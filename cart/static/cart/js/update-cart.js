@@ -1,6 +1,6 @@
 // Update quantity on click
 $("a.update-link").click(function (e) {
-    var form = $(".update-form");
+    var form = $(this).prev(".update-form");
     form.submit();
 });
 

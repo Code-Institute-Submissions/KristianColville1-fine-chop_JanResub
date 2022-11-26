@@ -61,7 +61,7 @@
                     <div class="card h-100 border-0 overflow-hidden">
                         {% if food.image %}
                         <a href="{% url 'item_details' food.name food.id %}">
-                            <img class="card-img-top img-fluid" src="{{ food.image.url }}" alt="{{ food.name }}" style="max-height:350px;">
+                            <img class="card-img-top img-fluid" src="{{ food.image.url }}" alt="{{ food.name }}">
                         </a>
                         {% elif food.image == '' %}
                         <a href="{% url 'item_details' food.name food.id %}">

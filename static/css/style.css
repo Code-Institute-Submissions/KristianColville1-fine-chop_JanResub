@@ -424,13 +424,6 @@ h1 {
     width: 100%;
 }
 
-/* Messages */
-
-.message-container {
-    position: fixed;
-    z-index: 4;
-}
-
 .alert-dismissible {
     font-size: 18px;
     font-weight: 500;
@@ -491,6 +484,31 @@ h1 {
 .text-orange {
     color: var(--yellow-orange-color-wheel) !important;
 }
+
+/* toasts */
+.message-container {
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    z-index: 99;
+    background-color: var(--matte-black) !important;
+    color: white;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 5px;
+}
+
+.toast,
+.toast-header,
+.custom-toast {
+    background-color: var(--matte-black);
+}
+
 /* -------------------------------------------------------Media Queries */
 @media only screen and (max-width: 991px) {
     .navbar .nav-link {
