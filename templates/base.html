@@ -41,20 +41,23 @@
         {% include "includes/nav.html" %}
     </header>
 
-    {% for message in messages %}
-    <div class="container-fluid mt-5 message-container">
-        <div class="row">
-            <div class="col-sm-12 col-md-4 offset-md-4">
-                <div class="alert {{message.tags}} alert-dismissible text-center fade show mt-5 shadow-sm rounded-pill"
-                    id="msg" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
-                        aria-label="Click here to close alert message"></button>
-                </div>
-            </div>
-        </div>
+    {% if messages %}
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
     </div>
-    {% endfor%}
+    {% endif %}
     {% block content %}{% endblock content %}
     {% include "includes/mobile-btm.html"%}
     {% block extra_body %}{% endblock extra_body %}

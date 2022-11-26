@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+from menu.models import MenuItem
 
 
 def view_cart(request):
@@ -12,7 +14,7 @@ def add_to_cart(request, menu_item_id):
     """
     Adds quantity of the specified item to cart
     """
-
+    menu_item = MenuItem.objects.get(pk=menu_item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     portion_size = None
@@ -40,25 +42,25 @@ def add_to_cart(request, menu_item_id):
             cart[menu_item_id] += quantity
         else:
             cart[menu_item_id] = quantity
+            messages.success(request,
+                             f'Added {menu_item.name} to your bag')
 
     request.session['cart'] = cart
-    print(request.session['cart'])
     return redirect(redirect_url)
 
 
 def update_cart(request, food_id):
     """Adjust the quantity of the specified product to the specified amount"""
-
+    menu_item = MenuItem.objects.get(pk=food_id)
     quantity = int(request.POST.get('quantity'))
     portion_size = None
     if 'portion_size' in request.POST:
         portion_size = request.POST['portion_size']
     cart = request.session.get('cart', {})
 
-    if portion_size == 'm':
+    if portion_size:
         if quantity > 0:
             cart[food_id]['menu_items_by_size'][portion_size] = quantity
-
         else:
             del cart[food_id]['menu_items_by_size'][portion_size]
             if not cart[food_id]['menu_items_by_size']:

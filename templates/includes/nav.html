@@ -1,5 +1,5 @@
 <div class="nav-wrapper fixed-top nav-bg">
-    <nav class="container navbar navbar-expand-lg">
+    <nav class="container-fluid navbar navbar-expand-lg">
         <a class="navbar-brand mx-2" href="{% url 'home' %}" aria-label="Click here to go to the home page"></a>
         <div class="btn navbar-toggler" data="hamburger-menu" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="collapse navbar-collapse mx-3" id="navbarNavAltMarkup">
-            <ul class="mx-sm-1 mx-auto navbar-nav ">
+            <ul class="mx-sm-1 mx-auto navbar-nav w-100 d-flex nowrap justify-content-center">
                 {% if user.is_superuser %}
                 <li class="nav-link">
                     <a class="" href="#!">Dashboard</a>
@@ -65,7 +65,7 @@
                 {% endif %}
 
             </ul>
-            <ul class="mx-auto navbar-nav d-none d-lg-flex">
+            <ul class="w-100 navbar-nav d-none d-lg-flex justify-content-end mx-4">
                 <li class="nav-link mx-1">
                     <form class="dropdown" method="GET" action="{% url 'menu' %}">
                         {% csrf_token %}
