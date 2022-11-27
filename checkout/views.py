@@ -61,7 +61,10 @@ def get_checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_cart = json.dumps(cart)
             for item_id, item_data in cart.items():
                 try:
                     menu_item = MenuItem.objects.get(id=item_id)

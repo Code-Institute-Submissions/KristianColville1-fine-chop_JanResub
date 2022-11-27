@@ -4,8 +4,6 @@ from django.contrib.auth.models import User
 """Reservations Models for booking tables at FineChop"""
 
 # Choice fields
-SEATING = ((2, "2"), (4, "4"), (5, "5"), (6, "6"), (8, "8"), (9, "9"),
-           (10, "10"), (12, "12"), (15, "15"),)
 
 BOOKING_TIMES = (
     (0, "11:15AM - 12:00PM"),
@@ -42,7 +40,7 @@ class Table(models.Model):
         verbose_name_plural = 'Tables'
 
     table_number = models.IntegerField(choices=TABLE_NUMBER, default=1)
-    seating_amount = models.IntegerField(choices=SEATING, default=2)
+    seating_amount = models.IntegerField(default=2)
     disabled_friendly = models.BooleanField(default=True)
 
     def __str__(self):

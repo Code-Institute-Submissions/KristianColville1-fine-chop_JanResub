@@ -1,10 +1,6 @@
 import uuid
 from django.db import models
 from django.db.models import Sum
-from django.conf import settings
-from django.contrib import messages
-from geopy.geocoders import Nominatim
-import haversine as hs
 from menu.models import MenuItem
 
 
@@ -36,6 +32,11 @@ class Order(models.Model):
                                       decimal_places=2,
                                       null=False,
                                       default=0)
+    original_cart = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254,
+                                  null=False,
+                                  blank=False,
+                                  default='')
 
     def _generate_order_number(self):
         """
@@ -48,25 +49,8 @@ class Order(models.Model):
         Checks the address to make sure it can deliver to this location,
         Updates grand total each time a line item is added
         """
-        # set location of finechop as phibsborough road Dublin
-        # using latitude and longitude as the method of calculation
-        # location_of_finechop = (53.3640427, -6.2719642)
-        # geolocator = Nominatim(user_agent="FineChop")
-        # location_of_customer = geolocator.geocode(self.street_address1)
-        # distance = hs.haversine(location_of_finechop, location_of_customer)
-
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        # if distance > settings.MAX_DELIVERY_DISTANCE:
-        #     messages.warning("""
-        #     We don't currently deliver to this address, only within 15Km of
-        #     Phibsborough road Dublin, Sorry!""")
-
-        # else:
-        #     delivery_cost = settings.MINIMUM_DELIVERY_COST
-        #     delivery_cost += settings.DELIVERY_COST_PER_KM * distance
-        #     self.delivery_cost = delivery_cost
-        #     self.can_deliver = True
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 

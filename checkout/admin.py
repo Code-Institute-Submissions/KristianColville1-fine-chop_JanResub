@@ -16,13 +16,8 @@ class OrderAdmin(admin.ModelAdmin):
     """
     inlines = (OrderLineItemAdminInline, )
 
-    readonly_fields = (
-        'order_number',
-        'date',
-        'delivery_cost',
-        'order_total',
-        'grand_total',
-    )
+    readonly_fields = ('order_number', 'date', 'delivery_cost', 'order_total',
+                       'grand_total', 'original_cart', 'stripe_pid')
 
     fields = (
         'order_number',
@@ -40,6 +35,8 @@ class OrderAdmin(admin.ModelAdmin):
         'order_total',
         'can_deliver',
         'grand_total',
+        'original_cart',
+        'stripe_pid',
     )
 
     list_display = (
