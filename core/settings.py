@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "storages",
+    'rangefilter',
 ]
 
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -264,3 +265,9 @@ DELIVERY_COST_PER_KM = 0.40
 MAX_DELIVERY_DISTANCE = 15
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# stripe
+STRIPE_CURRENCY = 'eur'
+STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY", '')
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", '')
+STRIPE_WH_SECRET = os.environ.get("STRIPE_WH_SECRET", '')

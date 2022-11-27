@@ -27,6 +27,7 @@ urlpatterns = [
     path('menu/', include('menu.urls')),
     path('cart/', include('cart.urls')),
     path('checkout/', include('checkout.urls')),
+    path('reservations/', include('reservations.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = handler404
