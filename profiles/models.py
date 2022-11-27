@@ -4,17 +4,36 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django_countries.fields import CountryField
 
+ROLE_CHOICES = (
+    (1, "CUSTOMER"),
+    (2, "STAFF"),
+    (3, "MARKETER"),
+    (4, "ADMIN"),
+)
 
-class Profile(models.Model):
+
+class Role(models.Model):
     """
-    Profile model
+    Assigns a default role to the user profile
+    can be changed in admin to allow staff and
+    extended team functionalities.
     """
-    first_name = models.CharField(max_length=30, blank=True, null=True)
-    last_name = models.CharField(max_length=30, blank=True, null=True)
-    email = models.CharField(max_length=320, unique=True)
-    user = models.OneToOneField(User,
-                                on_delete=models.CASCADE,
-                                related_name='profile')
+    role = models.IntegerField(choices=ROLE_CHOICES, default=1)
+    title = models.CharField(max_length=200, blank=True, null=True)
+    duties = models.TextField(max_length=1000, blank=True, null=True)
+    description = models.TextField(max_length=500, blank=True, null=True)
+
+    def __str__(self):
+        """
+        Returns the name of the user role
+        """
+        return self.role
+
+
+class Address(models.Model):
+    """
+    Stores the users information for their address
+    """
     default_phone_number = models.CharField(max_length=22,
                                             null=True,
                                             blank=True)
@@ -32,6 +51,33 @@ class Profile(models.Model):
     default_country = CountryField(blank_label='Country',
                                    null=True,
                                    blank=True)
+
+    def __str__(self):
+        """
+        Returns the user phone number and
+        first line of their address
+        """
+        return self.default_phone_number + '' + self.default_street_address1
+
+
+class Profile(models.Model):
+    """
+    Profile model
+    """
+    first_name = models.CharField(max_length=30, blank=True, null=True)
+    last_name = models.CharField(max_length=30, blank=True, null=True)
+    email = models.CharField(max_length=320, unique=True)
+    user = models.OneToOneField(User,
+                                on_delete=models.CASCADE,
+                                related_name='profile')
+    address = models.ForeignKey(Address,
+                                on_delete=models.SET_NULL,
+                                related_name="customer_address",
+                                null=True)
+    role = models.OneToOneField(Role,
+                                on_delete=models.SET_NULL,
+                                related_name="customer_address",
+                                null=True)
 
     class Meta:
         ordering = ['first_name']
