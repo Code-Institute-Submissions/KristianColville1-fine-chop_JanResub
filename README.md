@@ -468,6 +468,8 @@ All the Testing documentation can be found [here](/TESTING.md)
 |[#48](https://github.com/KristianColville1/fine-chop/issues/48)|static files to load properly|Not loading static files|Fixed any links by removing / from urls and added static root url and this seemed to fix the problem. I identified it as a static file issue from looking at the heroku logs for the deployment |
 |[#49](https://github.com/KristianColville1/fine-chop/issues/49)|Images to slide over the next image with ease| I added a min height for the body element in css and manipulated the z axis of my project contents to display on top of the darker overlay behind for the home page |
 |[#50](https://github.com/KristianColville1/fine-chop/issues/50)|Expected Heroku to automatically store static and media files on AWS S3 Bucket|Prevents storage to S3 bucket|Removed whitenoise and django heroku from the extensions and reloaded my requirements.txt file and this fixed the static files loading on heroku|
+|[#56](https://github.com/KristianColville1/fine-chop/issues/56)|when a user who is not logged in purchases an order they can move on to checkout success|users not logged in will experience a 500 server error|Checked the log files and could see the server was getting 301s from stripe but couldn't easily identify the cause. I tested both logged in and out and found that I could perform the action logged in and quickly identified the missing condition for non logged in users|
+
 [Back to Top](#table-of-contents)
 
 ## Technologies & Tools
