@@ -18,6 +18,10 @@ class Role(models.Model):
     can be changed in admin to allow staff and
     extended team functionalities.
     """
+    user = models.ForeignKey(User,
+                             on_delete=models.CASCADE,
+                             related_name='role',
+                             null=True)
     role = models.IntegerField(choices=ROLE_CHOICES, default=1)
     title = models.CharField(max_length=200, blank=True, null=True)
     duties = models.TextField(max_length=1000, blank=True, null=True)
@@ -27,13 +31,17 @@ class Role(models.Model):
         """
         Returns the name of the user role
         """
-        return self.role
+        return f'{self.role}'
 
 
 class Address(models.Model):
     """
     Stores the users information for their address
     """
+    user = models.ForeignKey(User,
+                             on_delete=models.CASCADE,
+                             related_name='user_address',
+                             null=True)
     default_phone_number = models.CharField(max_length=22,
                                             null=True,
                                             blank=True)
@@ -57,7 +65,7 @@ class Address(models.Model):
         Returns the user phone number and
         first line of their address
         """
-        return self.default_phone_number + '' + self.default_street_address1
+        return f'{self.default_phone_number} {self.default_street_address1}'
 
 
 class Profile(models.Model):
@@ -73,11 +81,13 @@ class Profile(models.Model):
     address = models.ForeignKey(Address,
                                 on_delete=models.SET_NULL,
                                 related_name="customer_address",
-                                null=True)
+                                null=True,
+                                blank=True)
     role = models.OneToOneField(Role,
                                 on_delete=models.SET_NULL,
                                 related_name="customer_address",
-                                null=True)
+                                null=True,
+                                blank=True)
 
     class Meta:
         ordering = ['first_name']
