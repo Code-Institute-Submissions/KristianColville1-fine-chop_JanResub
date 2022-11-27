@@ -326,10 +326,124 @@ Tasks such as the README file
 
 ## Information Architecture
 ### Database
+
+For the first migrations and testing during the development phases, SQLite was the main database. The main database was switched over to Postgres on Heroku when the project was deployed
+
 ### Data Modeling
 
-[Back to Top](#table-of-contents)
+An entity relationship diagram was made using [Trevor.io](https://trevor.io/) to model the connections between the various backend data structures
 
+With the help of this tool, we can visualize the relationships between the data structures in a way that is both aesthetically beautiful and beneficial for comprehending the overall relationship between the data structures.
+
+Through Heroku's add-ons, the technology was utilized to offer a rapid method of access.
+
+We can quickly locate practically any relationship with the help of this information architecture. This is advantageous to use and work with from the perspective of a coder.
+
+![Entity Relationship Diagram]()
+
+#### Allergen Model
+
+Allergen model for food items served at FineChop
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Name| **name** |CharField|max_length=100|
+|Friendly_Name|**friendly_name**|**MessageManager**|max_length=100, null=True, blank=True|
+
+#### Category Model
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Name| **name** |CharField|max_length=254|
+|Friendly_Name|**friendly_name**|CharField|max_length=254, null=True, blank=True|
+
+
+#### FoodItem Model
+
+Abstract Model
+Abstract class created for the MenuItem Model
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Name| **name** |CharField|max_length=250, unique=True|
+|Description|**description**|TextField| none |
+|Image|**image**|ImageField|null=True, blank=True|
+|Image URL|**image_url**|URLField|max_length=1024, null=True, blank=True|
+
+#### FoodItemProductDetails Model
+
+Abstract Model
+Abstract class created for the MenuItem Model
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Product_Code| **product_code** |CharField|max_length=255, null=True, blank=True|
+|Price|**price**|CharField|max_digits=6, decimal_places=2|
+
+#### MenuItem Model
+
+Mixin Model
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Category| **category** |ForeignKey|Category,null=True, blank=True,on_delete=models.SET_NULL|
+|Allergens|**allergens**|ManyToManyField|Allergen, blank=True|
+|Status|**status**|IntegerField|choices=STATUS_CHOICES, default=1|
+|Portion Sizes|**portion_sizes**|BooleanField|default=False, null=True, blank=True|
+|Rating|**rating**|DecimalField|max_digits=6,decimal_places=2,null=True,blank=True|
+
+#### Order Model
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Order Number|**order_number**|CharField|max_length=32, null=False, editable=False|
+|Full Name|**full_name**|CharField|max_length=50, null=False, blank=False|
+|Email|**email**|EmailField|max_length=254, null=False, blank=False|
+|Phone Number|**phone_number**|CharField|max_length=20, null=False, blank=False|
+|Country|**country**|CharField|max_length=40, null=False, blank=False|
+|PostCode|**post_code**|CharField|max_length=20, null=True, blank=True|
+|Town or City|**town_or_city**|CharField|max_length=40, null=False, blank=False|
+|Street Address 1|**street_address_1**|CharField|max_length=80, null=False, blank=False|
+|Street Address 2|**street_address_2**|CharField|max_length=80, null=False, blank=False|
+|County|**county**|CharField|max_length=80, null=False, blank=False|
+|Date|**date**|DateTimeField|auto_now_add=True|
+|Delivery Cost|**delivery_cost**|DecimalField|max_digits=6,decimal_places=2,null=False,default=0|
+|Can Deliver|**can_deliver**|BooleanField|default=False, null=False, blank=False|
+|Order Total|**order_total**|DecimalField|max_digits=10,decimal_places=2,null=False,default=0|
+|Grand Total|**grand_total**|DecimalField|max_digits=10,decimal_places=2,null=False,default=0|
+|Original Cart|**original_cart**|TextField|null=False, blank=False, default=''|
+|Stripe PID|**stripe_pid**|CharField|max_length=254,null=False,blank=False,default=''|
+
+#### OrderLineItem Model
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Order|**order**|ForeignKey|Order,null=False,blank=False,on_delete=models.CASCADE,related_name='lineitems'|
+|Menu Item|**menu_item**|ForeignKey|MenuItem,null=False,blank=False,on_delete=models.CASCADE|
+|Portion Size|**portion_size**|CharField|max_length=2, null=True,blank=True|
+|Quantity|**quantity**|IntegerField|null=False, blank=False, default=0|
+|Line Item Total|**lineitem_total**|DecimalField|max_digits=6,decimal_places=2,null=False,blank=False,editable=False|
+
+#### Table Model
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Table Number|**table_number**|IntegerField|choices=TABLE_NUMBER, default=1|
+|Seating Amount|**seating_amount**|IntegerField|default=2|
+|Disabled Friendly|**disabled_friendly**|BooleanField|default=True|
+
+#### Booking Model
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Order Number|**order_number**|CharField|max_length=32, null=False, editable=False|
+|Customer|**customer**|ForeignKey|User,on_delete=models.CASCADE,related_name="booking_customer"|
+|Booked Table|**booked_table**|ForeignKey|Table, on_delete=models.CASCADE,related_name="booking_table"|
+|Guest Amount|**guest_amount**|IntegerField|default=2|
+|Date|**date**|DateField| none |
+|Time|**time**|IntegerField|choices=BOOKING_TIMES, default=1|
+
+[Back to Top](#table-of-contents)
 ## Features
 
 All the features documentation can be found [here](/FEATURES.md)
