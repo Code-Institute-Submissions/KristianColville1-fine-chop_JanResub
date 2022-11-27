@@ -50,23 +50,23 @@ class Order(models.Model):
         """
         # set location of finechop as phibsborough road Dublin
         # using latitude and longitude as the method of calculation
-        location_of_finechop = (53.3640427, -6.2719642)
-        geolocator = Nominatim(user_agent="FineChop")
-        location_of_customer = geolocator.geocode(self.street_address1)
-        distance = hs.haversine(location_of_finechop, location_of_customer)
+        # location_of_finechop = (53.3640427, -6.2719642)
+        # geolocator = Nominatim(user_agent="FineChop")
+        # location_of_customer = geolocator.geocode(self.street_address1)
+        # distance = hs.haversine(location_of_finechop, location_of_customer)
 
         self.order_total = self.lineitems.aggregate(
-            Sum('lineitem_total'))['lineitem_total__sum']
-        if distance > settings.MAX_DELIVERY_DISTANCE:
-            messages.warning("""
-            We don't currently deliver to this address, only within 15Km of
-            Phibsborough road Dublin, Sorry!""")
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        # if distance > settings.MAX_DELIVERY_DISTANCE:
+        #     messages.warning("""
+        #     We don't currently deliver to this address, only within 15Km of
+        #     Phibsborough road Dublin, Sorry!""")
 
-        else:
-            delivery_cost = settings.MINIMUM_DELIVERY_COST
-            delivery_cost += settings.DELIVERY_COST_PER_KM * distance
-            self.delivery_cost = delivery_cost
-            self.can_deliver = True
+        # else:
+        #     delivery_cost = settings.MINIMUM_DELIVERY_COST
+        #     delivery_cost += settings.DELIVERY_COST_PER_KM * distance
+        #     self.delivery_cost = delivery_cost
+        #     self.can_deliver = True
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
