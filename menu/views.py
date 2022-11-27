@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.db.models.functions import Lower
 from django.db.models import Q
 from .models import MenuItem, Category
+from .forms import MenuItemForm
 
 
 def get_menu(request):
@@ -75,3 +76,17 @@ def get_menu_item_detail(request, menu_item_id, str):
         'menu_item': menu_item,
     }
     return render(request, 'menu/menu_item_detail.html', context)
+
+
+def add_menu_item(request):
+    """
+    Add a menu item to the a food menu
+    """
+
+    form = MenuItemForm()
+    template = 'menu/add_menu_item.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
