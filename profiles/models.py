@@ -17,15 +17,16 @@ class Role(models.Model):
     Assigns a default role to the user profile
     can be changed in admin to allow staff and
     extended team functionalities.
+    Abstract class.
     """
-    user = models.ForeignKey(User,
-                             on_delete=models.CASCADE,
-                             related_name='role',
-                             null=True)
-    role = models.IntegerField(choices=ROLE_CHOICES, default=1)
+    user_role = models.IntegerField(choices=ROLE_CHOICES, default=1)
     title = models.CharField(max_length=200, blank=True, null=True)
     duties = models.TextField(max_length=1000, blank=True, null=True)
     description = models.TextField(max_length=500, blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = 'User Roles'
+        abstract = True
 
     def __str__(self):
         """
@@ -36,12 +37,9 @@ class Role(models.Model):
 
 class Address(models.Model):
     """
-    Stores the users information for their address
+    Stores the users information for their address.
+    Abstract class.
     """
-    user = models.ForeignKey(User,
-                             on_delete=models.CASCADE,
-                             related_name='user_address',
-                             null=True)
     default_phone_number = models.CharField(max_length=22,
                                             null=True,
                                             blank=True)
@@ -60,6 +58,10 @@ class Address(models.Model):
                                    null=True,
                                    blank=True)
 
+    class Meta:
+        verbose_name_plural = 'User Address'
+        abstract = True
+
     def __str__(self):
         """
         Returns the user phone number and
@@ -68,9 +70,9 @@ class Address(models.Model):
         return f'{self.default_phone_number} {self.default_street_address1}'
 
 
-class Profile(models.Model):
+class Profile(Role, Address):
     """
-    Profile model
+    Profile model Mixin
     """
     first_name = models.CharField(max_length=30, blank=True, null=True)
     last_name = models.CharField(max_length=30, blank=True, null=True)
@@ -78,16 +80,6 @@ class Profile(models.Model):
     user = models.OneToOneField(User,
                                 on_delete=models.CASCADE,
                                 related_name='profile')
-    address = models.ForeignKey(Address,
-                                on_delete=models.SET_NULL,
-                                related_name="customer_address",
-                                null=True,
-                                blank=True)
-    role = models.OneToOneField(Role,
-                                on_delete=models.SET_NULL,
-                                related_name="customer_address",
-                                null=True,
-                                blank=True)
 
     class Meta:
         ordering = ['first_name']

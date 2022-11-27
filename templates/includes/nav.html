@@ -91,6 +91,10 @@
                             </li>
                             {% if user.is_authenticated %}
                             <li>
+                                <a class="dropdown-item" href="{% url 'profile' %}"
+                                    aria-label="click here to view your profile">profile</a>
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="{% url 'account_logout' %}"
                                     aria-label="click here to sign out of FineChop">Sign
                                     Out</a>
@@ -106,7 +110,9 @@
                     </div>
                 </li>
                 <li class="nav-link mx-1">
-                    <a class="{% if grand_total > 0 %}text-orange{% endif %}"href="{% url 'view_cart' %}" aria-label="Click the cart icon to view whats in the cart for orders"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a class="{% if grand_total > 0 %}text-orange{% endif %}" href="{% url 'view_cart' %}"
+                        aria-label="Click the cart icon to view whats in the cart for orders"><i
+                            class="fa-solid fa-cart-shopping"></i></a>
                     <p class="text-white position-absolute">
                         {% if grand_total > 0 %}
                         €{{ grand_total|floatformat:2 }}
