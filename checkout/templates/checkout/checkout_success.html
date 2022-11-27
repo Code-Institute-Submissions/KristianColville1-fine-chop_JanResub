@@ -16,9 +16,108 @@
                 <strong>{{ order.email }}</strong>.</p>
         </div>
     </div>
+    <div class="row mt-2">
+        <div class="col-sm-12 col-md-6 mb-3">
+            <h3>Order Info:</h3>
+            <div>
+                <p class="mb-0">Order Number</p>
+                <p class="my-1 mx-3"><strong class="bg-orange p-2">{{ order.order_number }}</strong></p>
+                <p class="mb-0">Order Date</p>
+                <p class="mb-0 mx-3"><strong>{{ order.date }}</strong></p>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <h3>Order Details:</h3>
+            {% for food in order.lineitems.all %}
+            <div class="row">
+                <div class="col-5">{{ food.menu_item.name }}{% if item.portion_size %} - Portion:
+                    {{ food.menu_item.portion_size|upper }}{% endif %}</div>
+                <div class="col-5">
+                    <p class="small mb-0">{{ food.quantity }} @ €{{ food.menu_item.price }} each</p>
+                </div>
+            </div>
+
+            {% endfor %}
+            <div class="row mt-3">
+                <h4>Delivering To:</h4>
+                <div class="col-5">
+                    <p class="mb-0"><strong>Full Name</strong></p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0"><strong>{{ order.full_name }}</strong></p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">Address 1</p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">{{ order.street_address1 }}</p>
+                </div>
+                {% if order.street_address2 %}
+                <div class="col-5">
+                    <p class="mb-0">Address 2</p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">{{ order.street_address1 }}</p>
+                </div>
+                {% endif %}
+                {% if order.county %}
+                <div class="col-5">
+                    <p class="mb-0">County</p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">{{ order.county }}</p>
+                </div>
+                {% endif %}
+                <div class="col-5">
+                    <p class="mb-0">Town or City</p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">{{ order.town_or_city }}</p>
+                </div>
+                {% if order.postcode %}
+                <div class="col-5">
+                    <p class="mb-0">Postal Code</p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">{{ order.postcode }}</p>
+                </div>
+                {% endif %}
+                <div class="col-5">
+                    <p class="mb-0">Country</p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">{{ order.country }}</p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">Phone Number</p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">{{ order.phone_number }}</p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">Order Total</p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">€{{ order.order_total }}</p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">Delivery</p>
+                </div>
+                <div class="col-5">
+                    <p class="mb-0">€{{ order.delivery_cost }}</p>
+                </div>
+                <div class="col-5">
+                    <p><strong>Grand Total</strong></p>
+                </div>
+                <div class="col-5">
+                    <p><strong>€{{ order.grand_total }}</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-12 col-lg-7 text-right">
-            <a href="{% url 'menu' %}" class="btn btn-orange text-white rounded-0 my-2">
+            <a href="{% url 'menu' %}" class="btn btn-orange text-white border rounded-0 my-2">
                 <span class="text-uppercase">Browse the menu for the latest deals!</span>
             </a>
         </div>

@@ -33,3 +33,7 @@
     color: var(--matte-black);
     border: 1px solid var(--onyx);
 }
+
+.bg-orange {
+    background-color: var(--yellow-orange-color-wheel);
+}
