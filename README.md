@@ -4,7 +4,7 @@ Developer: Kristian Colville
 
 [Visit this website]()
 
-![Home Page](documentation/readme_folder/features/home.png)
+![Home Page](documentation/readme_folder/features/amiresponsive.png)
 
 <br>
 
@@ -656,6 +656,23 @@ Extensions:
         typing_extensions
         urllib3
         yapf
+
+- [Am I Responsive](http://ami.responsivedesign.is/) was used to generate an image showcasing the website's ability to adapt to different screen sizes at the start of this README.md file
+- [Coolors](https://coolors.co/4e5340-697268-95a3a4-b7d1da-e2e8dd) to generate color palettes and root Hex codes
+- [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) for making the site responsive and debugging the site in a browser
+- [Favicon](https://favicon.io/) for the favicon in the website
+- [Font Awesome](https://fontawesome.com/v5/search) for all icons within the website
+- [Grammarly](https://app.grammarly.com/) for grammar and spell checking
+- [Git](https://git-scm.com/) for version control within [VSCode](https://code.visualstudio.com/) to push commits to [GitHub](https://github.com/)
+- [GitHub](https://github.com/) as a remote repository for project development
+- [Google Fonts](https://fonts.google.com/) for the fonts used on the website
+- [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) for validating CSS code
+- [JShint](https://jshint.com/) for validating JavaScript code
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse) used within [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) for testing performance, accessibility, best practices, and search engine optimization
+- [VSCode](https://code.visualstudio.com/) as a local repository
+- [Wave Validator](https://wave.webaim.org/) for accessibility validation
+- [WC3 Validator](https://validator.w3.org/) for validating HTML code
+- [Wireframe](https://wireframe.cc/) was used to create wireframes for use during project development
 
 [Back to Top](#table-of-contents)
 ## Development & Deployment
