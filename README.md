@@ -4,7 +4,7 @@ Developer: Kristian Colville
 
 [Visit this website]()
 
-![Responsive Image]()
+![Home Page](documentation/readme_folder/features/home.png)
 
 <br>
 
@@ -409,7 +409,7 @@ Through Heroku's add-ons, the technology was utilized to offer a rapid method of
 
 We can quickly locate practically any relationship with the help of this information architecture. This is advantageous to use and work with from the perspective of a coder.
 
-![Entity Relationship Diagram]()
+![Entity Relationship Diagram](documentation/readme_folder/features/database.png)
 
 #### Allergen Model
 
@@ -512,6 +512,72 @@ Mixin Model
 |Guest Amount|**guest_amount**|IntegerField|default=2|
 |Date|**date**|DateField| none |
 |Time|**time**|IntegerField|choices=BOOKING_TIMES, default=1|
+
+
+#### Role
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|User Role|**user_role**|IntegerField|choices=ROLE_CHOICES, default=1|
+|Title|**title**|CharField|max_length=200, blank=True, null=True|
+|Duties|**duties**|TextField|max_length=1000, blank=True, null=True|
+|Description|**description**|TextField|(max_length=500, blank=True, null=True|
+
+#### Address
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Default Phone Number|**default_phone_address**|CharField|max_length=22,null=True,blank=True|
+|Default Street Address 1|**default_street_address1**|CharField|max_length=90,null=True,blank=True|
+|Default Street Address 2|**default_street_address2**|CharField|max_length=90,null=True,blank=True|
+|Default Town or City|**default_town_or_city**|CharField|max_length=55,null=True,blank=True|
+|Default County|**default_county**|CharField|max_length=100, null=True, blank=True|
+|Default PostCode|**default_postcode**|CharField|max_length=18, null=True, blank=True|
+|Default Country|**default_country**|CountryField|blank_label='Country',null=True,blank=True|
+
+#### Profile
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|First Name|**first_name**|CharField|max_length=30, blank=True, null=True|
+|Last Name|**last_name**|CharField|max_length=30, blank=True, null=True|
+|Email|**email**|CharField|max_length=320, unique=True|
+|User|**user**|OneToOneField|User,on_delete=models.CASCADE,related_name='profile'|
+
+#### SubscribedUsers
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Name|**name**|CharField|max_length=100|
+|Email|**email**|CharField|unique=True, max_length=100|
+|Created Date|**created_date**|DateTimeField|'Date created', default=timezone.now|
+
+#### ArticleSeries
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Title|**title**|CharField|max_length=200|
+|Subtitle|**subtitle**|CharField|max_length=200, default="", blank=True|
+|Slug|**slug**|SlugField|"Series slug",null=False,blank=False,unique=True|
+|Published|**published**|DateTimeField|"Date published", default=timezone.now|
+|Author|**author**|ForeignKey|Profile,default=1,on_delete=models.SET_DEFAULT|
+|Image|**image**|ImageField|default='default/no_image.jpg',upload_to=image_upload_to,max_length=255|
+
+#### Article
+
+| Name | Database Key | Field Type | Validation |
+|---|---|---|---|
+|Title|**title**|CharField|max_length=200|
+|Subtitle|**subtitle**|CharField|max_length=200, default="", blank=True|
+|Article Slug|**author_slug**|SlugField|"Article slug",null=False,blank=False,unique=True|
+|Content|**content**|HTMLField|blank=True, default=""|
+|Notes|**notes**|HTMLField|blank=True, default=""|
+|Published|**published**|DateTimeField|"Date published", default=timezone.now|
+|Modified|**modified**|DateTimeField|"Date modified", default=timezone.now|
+|Series|**series**|ForeignKey|ArticleSeries,default="",verbose_name="Series",on_delete=models.SET_DEFAULT|
+|Author|**author**|ForeignKey|Profile,default=1,on_delete=models.SET_DEFAULT|
+|Image|**image**|ImageField|default='default/no_image.jpg',upload_to=image_upload_to,max_length=255|
+
 
 [Back to Top](#table-of-contents)
 ## Features
@@ -914,6 +980,8 @@ Please follow these instructions if you want to set it up.
 
 ## Credits
 
+[Newsletters](https://pylessons.com/django-subscribe)
+[eCommerce Development](https://learn.codeinstitute.net/)
 ## Acknowledgments
 
 [Back to Top](#table-of-contents)
