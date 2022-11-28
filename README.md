@@ -871,30 +871,38 @@ Please follow these instructions if you want to set it up.
 5. Select API Keys and Copy the **Public Key & Secret Key**
 6. Set these environment variables in your env.py file making sure to add your env.py file to .gitignore if you have one
 
-    import os
-    os.environ["STRIPE_PUBLIC_KEY"] = "public key goes here"
-    os.environ["STRIPE_SECRET_KEY"] = "secret key goes here"
-    os.environ["STRIPE_WH_SECRET"] = "whsec... your webhook secret goes here"
+        import os
+
+        os.environ["STRIPE_PUBLIC_KEY"] = "public key goes here"
+
+        os.environ["STRIPE_SECRET_KEY"] = "secret key goes here"
+
+        os.environ["STRIPE_WH_SECRET"] = "whsec... your webhook secret goes here"
 
 7. Add the environment variables to your settings.py file in your core project directory
 
-    STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY", "")
-    STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY", "")
-    STRIPE_WH_KEY = os.getenv("STRIPE_WH_KEY", "")
+        STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY", "")
+
+        STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY", "")
+
+        STRIPE_WH_KEY = os.getenv("STRIPE_WH_KEY", "")
 
 8. Create an order/payment model to implement stripe
 9. Add the stripe_elements.js file to your template
 10. Add the client secret and public key to the template for the handler
 
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
+        {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+
+        {{ client_secret|json_script:"id_client_secret" }}
 
 11. Collect your data with your models and forms if you have any
 12. Test your stripe implementation with these default cards. only the long number matters.
 
-    No authentication: 4242424242424242
-    Authentication: 4000002500003155
-    Test Errors: 4000000000009995
+        No authentication: 4242424242424242
+
+        Authentication: 4000002500003155
+
+        Test Errors: 4000000000009995
 
 13. Add the stripe webhook handler and collect your webhook from the stripe developer page
 14. The webhook starts with 'whsec....'
