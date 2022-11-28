@@ -610,6 +610,53 @@ All the Testing documentation can be found [here](/TESTING.md)
 
 ## Technologies & Tools
 
+Extensions:
+
+        asgiref
+        boto3
+        botocore
+        certifi
+        cffi
+        chardet
+        charset-normalizer
+        crispy-bootstrap5
+        cryptography
+        defusedxml
+        dj-database-url
+        Django==3.2.16
+        django-admin-rangefilter
+        django-allauth
+        django-countries
+        django-crispy-forms
+        django-storages
+        django-tinymce
+        docutils
+        geographiclib
+        geopy
+        gunicorn
+        haversine
+        idna
+        jmespath
+        oauthlib
+        Pillow
+        psycopg2
+        pycodestyle
+        pycparser
+        PyJWT
+        python-dateutil
+        python3-openid
+        pytz
+        requests
+        requests-oauthlib
+        s3transfer
+        six
+        sqlparse
+        stripe
+        types-cryptography
+        typing_extensions
+        urllib3
+        yapf
+
 [Back to Top](#table-of-contents)
 ## Development & Deployment
 ### Version Control
@@ -981,6 +1028,7 @@ Please follow these instructions if you want to set it up.
 ## Credits
 
 [Newsletters](https://pylessons.com/django-subscribe)
+
 [eCommerce Development](https://learn.codeinstitute.net/)
 ## Acknowledgments
 

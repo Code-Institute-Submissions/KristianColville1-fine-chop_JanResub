@@ -141,4 +141,27 @@ No errors detected. I have pycodestyle installed in my workspace on VSCode and t
 
 ![Python](documentation/readme_folder/testing/python.png)
 
+
+### Responsiveness
+
+Devices tested were used with Chrome Developer Tools. Generous amount of responsiveness for devices of all sizes.
+
+        Moto G4
+        IPhone SE
+        IPhone XR
+        IPhone 12 Pro
+        Pixal 5
+        Samsung Galaxy S8+
+        Samsung Galaxy s20 Ultra
+        IPad Air
+        IPad Mini
+        Surface Pro 7
+        Surface Duo
+        Galaxy Fold
+        Samsung Galaxy A51/71
+        Nest Hub
+        Nest Hub Max
+        Asus monitor (developers monitor)
+        AOC monitor (developers monitor)
+
 [Back to Top](#table-of-contents)
