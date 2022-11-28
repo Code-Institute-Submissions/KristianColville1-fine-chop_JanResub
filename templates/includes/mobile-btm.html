@@ -18,15 +18,47 @@
             <p class="position-absolute top-100">
                 {% if grand_total %}
                 €{{ grand_total|floatformat:2 }}
-                {% else %}
-                €0.00
                 {% endif %}
             </p>
         </li>
         <li class="text-center"><a href="{% url 'menu' %}" aria-label="Click to open up the menu page"><i
                     class="fa-solid fa-map"></i></a>
         </li>
-        <li class="text-center"><a href="" aria-label="Click to open user settings"><i class="fa-solid fa-user"></i></a>
+        <li class="text-center"><a role="button" aria-label="Click to open user settings" data-bs-toggle="modal"
+                data-bs-target="#settings"><i class="fa-solid fa-user"></i></a>
         </li>
     </ul>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="settings" tabindex="-1" aria-labelledby="settings" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="exampleModalLabel">User Settings</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group mt-2" aria-labelledby="login-dropdown">
+                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <a class="btn btn-outline-dark rounded-0" href="{% url 'add_menu_item' %}"
+                            aria-label="click here to add menu items">Add Menu Item</a>
+                    {% endif %}
+                        <a class="btn btn-outline-dark rounded-0 my-1" href="{% url 'profile' %}"
+                            aria-label="click here to view your profile">profile</a>
+                        <a class="btn btn-outline-dark rounded-0 mb-1" href="{% url 'account_logout' %}"
+                            aria-label="click here to sign out of FineChop">Sign
+                            Out</a>
+                    {% else %}
+                        <a class="btn btn-outline-dark rounded-0" href="{% url 'account_login' %}"
+                            aria-label="click here to login into FineChop">Sign
+                            In</a>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-orange text-white rounded-0 border" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>

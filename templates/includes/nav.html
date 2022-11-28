@@ -16,11 +16,6 @@
         </div>
         <div class="collapse navbar-collapse mx-3" id="navbarNavAltMarkup">
             <ul class="mx-sm-1 mx-auto navbar-nav w-100 d-flex nowrap justify-content-center">
-                {% if user.is_superuser %}
-                <li class="nav-link">
-                    <a class="" href="#!">Dashboard</a>
-                </li>
-                {% else %}
                 <li class="nav-link">
                     <a class="" href="{% url 'about' %}">About</a>
                 </li>
@@ -62,7 +57,6 @@
                 <li class="nav-link">
                     <a href="#!">News</a>
                 </li>
-                {% endif %}
 
             </ul>
             <ul class="w-75 navbar-nav d-none d-lg-flex justify-content-center">
@@ -86,10 +80,13 @@
                             <i class="fa-solid fa-user"></i>
                         </a>
                         <ul class="dropdown-menu shadow mt-2" aria-labelledby="login-dropdown">
-                            <li>
-
-                            </li>
-                            {% if user.is_authenticated %}
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'add_menu_item' %}"
+                                        aria-label="click here to add menu items">Add Menu Item</a>
+                                </li>
+                                {% endif %}
                             <li>
                                 <a class="dropdown-item" href="{% url 'profile' %}"
                                     aria-label="click here to view your profile">profile</a>

@@ -31,8 +31,13 @@
                     <tr class="border">
                         <td class="p-3 w-25">
                             <a href="{% url 'item_details' food.menu_item.name food.menu_item.id %}">
+                                {% if food.menu_item.image %}
                                 <img class="img-fluid rounded" src="{{ food.menu_item.image.url }}"
-                                    style="max-height: 100px;">
+                                    style="max-height: 100px;" alt="{{ food.menu_item.name }}">
+                                {% else %}
+                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.webp"
+                                    style="max-height: 100px;" alt="{{ food.menu_item.name }}">
+                                {% endif %}
                             </a>
                         </td>
                         <td class="py-3">
@@ -47,9 +52,9 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-sm btn-orange border text-white rounded-0"
-                                                data-item_id="{{ food.food_id }}"
-                                                id="decrement-qty_{{ food.food_id }}">
+                                            <button
+                                                class="decrement-qty btn btn-sm btn-orange border text-white rounded-0"
+                                                data-item_id="{{ food.food_id }}" id="decrement-qty_{{ food.food_id }}">
                                                 <span>
                                                     <i class="fas fa-minus fa-sm"></i>
                                                 </span>
@@ -57,30 +62,26 @@
                                         </div>
                                         <input class="form-control form-control-sm qty_input" type="number"
                                             name="quantity" value="{{ food.quantity }}" min="1" max="20"
-                                            data-food_id="{{ food.food_id }}"
-                                            id="id_qty_{{ food.food_id }}">
+                                            data-food_id="{{ food.food_id }}" id="id_qty_{{ food.food_id }}">
                                         <div class="input-group-append">
-                                            <button class="increment-qty btn btn-sm btn-orange border text-white rounded-0"
-                                                data-item_id="{{ food.food_id }}"
-                                                id="increment-qty_{{ food.food_id }}">
+                                            <button
+                                                class="increment-qty btn btn-sm btn-orange border text-white rounded-0"
+                                                data-item_id="{{ food.food_id }}" id="increment-qty_{{ food.food_id }}">
                                                 <span>
                                                     <i class="fas fa-plus fa-sm"></i>
                                                 </span>
                                             </button>
                                         </div>
                                         {% if food.menu_item.portion_sizes %}
-                                        <input type="hidden" name="portion_size"
-                                            value="{{ food.portion_size }}">
+                                        <input type="hidden" name="portion_size" value="{{ food.portion_size }}">
                                         {% endif %}
                                     </div>
                                 </div>
 
                             </form>
-                                <a class="btn update-link text-info"
-                                    id="update_{{food.food_id}}"><small>Update</small></a>
-                                <a class="btn remove-item text-danger float-end"
-                                    id="remove_{{ food.food_id }}"
-                                    data-portion_size="{{ food.portion_size }}"><small>Remove</small></a>
+                            <a class="btn update-link text-info" id="update_{{food.food_id}}"><small>Update</small></a>
+                            <a class="btn remove-item text-danger float-end" id="remove_{{ food.food_id }}"
+                                data-portion_size="{{ food.portion_size }}"><small>Remove</small></a>
                         </td>
                         <td class="py-3">
                             <p class="my-0">€{{ food.menu_item.price | calc_subtotal:food.quantity }}</p>
@@ -102,7 +103,8 @@
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <a href="{% url 'checkout' %}" class="btn btn-orange text-white rounded-0 mt-xs-2 mt-md-0 btn-lg border">
+                            <a href="{% url 'checkout' %}"
+                                class="btn btn-orange text-white rounded-0 mt-xs-2 mt-md-0 btn-lg border">
                                 <span class="text-uppercase">Secure Checkout</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>
@@ -115,12 +117,12 @@
             {% else %}
             <p class="lead mb-5 w-100 text-center">Your cart is empty!</p>
             <div class="w-100 d-flex justify-content-center my-1">
-            <a href="{% url 'menu' %}" class="btn btn-orange text-white border rounded-0 btn-lg">
-                <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
-                <span class="text-uppercase">Add Food to Cart</span>
-            </a>
+                <a href="{% url 'menu' %}" class="btn btn-orange text-white border rounded-0 btn-lg">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Add Food to Cart</span>
+                </a>
             </div>
             {% endif %}
         </div>

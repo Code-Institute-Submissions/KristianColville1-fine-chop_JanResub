@@ -515,6 +515,9 @@ h1 {
     overflow-y: auto;
 }
 
+.modal {
+    background-color: var(--matte-black);
+}
 /* -------------------------------------------------------Media Queries */
 @media only screen and (max-width: 991px) {
     .navbar .nav-link {

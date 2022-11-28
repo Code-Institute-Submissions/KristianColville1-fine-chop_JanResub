@@ -10,7 +10,11 @@
     {% for food in cart_items %}
     <div class="row">
         <div class="col-3 my-1">
-            <img class="w-100" src="{{ food.menu_item.image.url }}">
+            {% if food.menu_item.image %}
+            <img class="w-100" src="{{ food.menu_item.image.url }}" alt="{{ food.menu_item.name }}">
+            {% else %}
+            <img class="w-100" src="{{ MEDIA_URL }}noimage.webp" alt="{{ food.menu_item.name }}">
+            {%%}
         </div>
         <div class="col-9">
             <p class="my-0"><strong>{{ food.menu_item.name }}</strong></p>
