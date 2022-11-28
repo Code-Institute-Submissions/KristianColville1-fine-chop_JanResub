@@ -46,7 +46,8 @@
                         </a>
                         <ul class="dropdown-menu shadow mt-2" aria-labelledby="account-dropdown">
                             <li>
-                                <a class="dropdown-item" href="{% url 'reservations' %}" aria-label="create a reservation">Book a Table</a>
+                                <a class="dropdown-item" href="{% url 'reservations' %}"
+                                    aria-label="create a reservation">Book a Table</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="#!">Buy Gift Card</a>
@@ -67,10 +68,8 @@
                             aria-expanded="false">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </a>
-                        <ul class="dropdown-menu mt-2" aria-labelledby="search-dropdown">
-                            <input class="dropdown-item form-control" type="text" name="q" placeholder="Search our site"
-                                aria-label="Search our site">
-                        </ul>
+                        <input class="dropdown-menu form-control" type="text" name="q" placeholder="Search our site"
+                            aria-label="Search our site" aria-labelledby="search-dropdown">
                     </form>
                 </li>
                 <li class="nav-link mx-1">
@@ -81,12 +80,12 @@
                         </a>
                         <ul class="dropdown-menu shadow mt-2" aria-labelledby="login-dropdown">
                             {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'add_menu_item' %}"
-                                        aria-label="click here to add menu items">Add Menu Item</a>
-                                </li>
-                                {% endif %}
+                            {% if request.user.is_superuser %}
+                            <li>
+                                <a class="dropdown-item" href="{% url 'add_menu_item' %}"
+                                    aria-label="click here to add menu items">Add Menu Item</a>
+                            </li>
+                            {% endif %}
                             <li>
                                 <a class="dropdown-item" href="{% url 'profile' %}"
                                     aria-label="click here to view your profile">profile</a>

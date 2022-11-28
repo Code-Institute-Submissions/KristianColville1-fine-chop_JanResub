@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = is_boolean
 
-# X_FRAME_OPTIONS = "SAMEORIGIN"
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "fine-chop.herokuapp.com"]
 

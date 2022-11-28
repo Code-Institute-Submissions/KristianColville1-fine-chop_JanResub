@@ -79,9 +79,11 @@
                                 </div>
 
                             </form>
-                            <a class="btn update-link text-info" id="update_{{food.food_id}}"><small>Update</small></a>
-                            <a class="btn remove-item text-danger float-end" id="remove_{{ food.food_id }}"
-                                data-portion_size="{{ food.portion_size }}"><small>Remove</small></a>
+                            <button class="btn update-link text-info"
+                                id="update_{{food.food_id}}"><small>Update</small></button>
+                            <button class="btn remove-item text-danger float-end"
+                                id="remove_{{ food.food_id }}"
+                                data-portion_size="{{ food.portion_size }}"><small>Remove</small></button>
                         </td>
                         <td class="py-3">
                             <p class="my-0">€{{ food.menu_item.price | calc_subtotal:food.quantity }}</p>
@@ -97,14 +99,14 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <a href="{% url 'menu' %}" class="btn btn-outline-dark rounded-0 btn-lg">
+                            <a href="{% url 'menu' %}" class="btn btn-outline-dark rounded-0 btn-lg" aria-label="click here to go to the food menu">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
                             <a href="{% url 'checkout' %}"
-                                class="btn btn-orange text-white rounded-0 mt-xs-2 mt-md-0 btn-lg border">
+                                class="btn btn-orange text-white rounded-0 mt-xs-2 mt-md-0 btn-lg border" aria-label="click here to go to the checkout">
                                 <span class="text-uppercase">Secure Checkout</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>

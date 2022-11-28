@@ -28,4 +28,7 @@
       "editor.defaultFormatter": "ms-python.python"
    },
    "python.formatting.provider": "yapf",
+   "cSpell.words": [
+      "recieving"
+   ],
 }
