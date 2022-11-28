@@ -48,13 +48,12 @@
         <div class="row">
             <div class="col-xs-12 col-md-7 offset-md-1 pt-5">
             <h1 class="w-100 text-center">Subscribe for the latest News and Offers</h1>
-            <form enctype="multipart/form-data" method="post" action="">
+            <form method="POST" action="{% url 'subscribe' %}">
                 {% csrf_token %}
-                {{ form|crispy }}
                 <label for="id_email_field" placeholder="Email" hidden><a class="visually-hidden-focusable"
                         href="#content">Skip to main
                         content</a></label>
-                <input type="email" name="email_field" id="id_email_field" class="w-100 shadow p-1"
+                <input type="email" name="email" id="id_email_" class="w-100 shadow p-1"
                     placeholder=" Enter your email address" required>
                 <button id="id_submit" name="submit" value="Subscribe" type="submit"
                     class="btn btn-orange rounded-0 p-1 mt-1 shadow text-white">Subscribe</button>

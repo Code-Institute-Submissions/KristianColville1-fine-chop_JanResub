@@ -1,45 +1,86 @@
 from django.shortcuts import render, redirect
-from django.http import JsonResponse
-from .models import Subscriber
-from django.core.mail import send_mail
-from django.conf import settings
-import re
+from django.core.validators import validate_email
+from .decorators import user_is_superuser
+from django.core.exceptions import ValidationError
+from profiles.models import Profile
+from django.contrib import messages
+from django.core.mail import EmailMessage
+from .models import SubscribedUsers
+from .forms import NewsletterForm
 
 
-def index(request):
+def subscribe(request):
     if request.method == 'POST':
-        post_data = request.POST.copy()
-        email = post_data.get("email", None)
-        name = post_data.get("name", None)
-        subscribedUser = Subscriber()
-        subscribedUser.email = email
-        subscribedUser.name = name
-        subscribedUser.save()
-        subject = 'FineChop Newsletter Subscription'
-        message = 'Hello ' + name + """,
+        name = request.POST.get('name_field', None)
+        email = request.POST.get('email', None)
 
-        Thanks for subscribing with us. You will now get notifications on
-        the latest offers, meals and promotions from FineChop.
-        Please do not reply on this email."""
-        email_from = settings.EMAIL_HOST_USER
-        recipient_list = [
-            email,
-        ]
-        send_mail(subject, message, email_from, recipient_list)
-        re = JsonResponse({'msg': 'Thanks. Subscribed Successfully!'})
-        return re
-    return redirect(request.META.get('HTTP_REFERER', '/'))
+        if not email:
+            messages.error(
+                request,
+                "You must type legit name and email to subscribe \
+                to a Newsletter"
+            )
+            return redirect("/")
+
+        if Profile.objects.filter(email=email).first():
+            messages.error(
+                request,
+                f"Found registered user with associated {email} email. \
+                    You must login to subscribe or unsubscribe."
+            )
+            return redirect(request.META.get("HTTP_REFERER", "/"))
+
+        subscribe_user = SubscribedUsers.objects.filter(email=email).first()
+        if subscribe_user:
+            messages.error(request,
+                           f"{email} email address is already subscriber.")
+            return redirect(request.META.get("HTTP_REFERER", "/"))
+
+        try:
+            validate_email(email)
+        except ValidationError as e:
+            messages.error(request, e.messages[0])
+            return redirect("/")
+
+        subscribe_model_instance = SubscribedUsers()
+        subscribe_model_instance.name = name
+        subscribe_model_instance.email = email
+        subscribe_model_instance.save()
+        messages.success(
+            request,
+            f'{email} email was successfully subscribed to our newsletter!')
+        return redirect(request.META.get("HTTP_REFERER", "/"))
 
 
-def validate_email(request):
-    email = request.POST.get("email", None)
-    if email is None:
-        re = JsonResponse({'msg': 'Email is required.'})
-    elif Subscriber.objects.filter(email=email):
-        re = JsonResponse({'msg': 'Your already subscribed'})
-    elif not re.match(r"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$",
-                      email):
-        re = JsonResponse({'msg': 'Invalid Email Address'})
-    else:
-        re = JsonResponse({'msg': ''})
-    return redirect(request.META.get('HTTP_REFERER', '/'), re)
+@user_is_superuser
+def newsletter(request):
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data.get('subject')
+            receivers = form.cleaned_data.get('receivers').split(',')
+            email_message = form.cleaned_data.get('message')
+
+            mail = EmailMessage(subject,
+                                email_message,
+                                f"PyLessons <{request.user.email}>",
+                                bcc=receivers)
+            mail.content_subtype = 'html'
+
+            if mail.send():
+                messages.success(request, "Email sent succesfully")
+            else:
+                messages.error(request, "There was an error sending email")
+
+        else:
+            for error in list(form.errors.values()):
+                messages.error(request, error)
+
+        return redirect('/')
+
+    form = NewsletterForm()
+    form.fields['receivers'].initial = ','.join(
+        [active.email for active in SubscribedUsers.objects.all()])
+    return render(request=request,
+                  template_name='main/newsletter.html',
+                  context={'form': form})
