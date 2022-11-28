@@ -283,6 +283,54 @@ The restaurant business is highly competitive and the strategy trade-off for **F
 
 ## Web Marketing
 
+Web Marketing focus:
+
+- SEO
+- Social Media
+- Email Marketing
+- Content Marketing
+
+
+### SEO
+
+Large focus on this aspect as optimizing the website is important for excellent SEO. Keyword phrases have been used to target specific users results instead of generic keywords.
+To benefit from this Googles Keyword Planner was used to help focus and import organic search results which can help reduce the advertising budget and instead expend more resources elsewhere.
+
+- We published content that is highly relevant for the goals at FineChop
+- This business model is competitive and having keyword phrases helps us stand out. We have researched the best keyword phrases with the help of Googles Keyword Planner.
+- We have implemented a section for content marketing that allows us to take the lead on the newest trends
+- The webpages are malleable and we can adust content to fit our needs
+- A robots.txt file has been added to help search engines crawl the website and index it
+- The website is highly accessible and scores high on all lighthouse testing for accessibility
+
+### Social Media
+
+#### Facebook
+
+In order for the store to reach clients, Facebook is necessary. Our research shows that FineChop has a large following among Facebook users. Facebook has widespread usage among consumers who can make online purchases and order food online.
+
+![Facebook](documentation/marketing/facebook.png)
+
+#### Instagram
+
+In terms of brand visibility, Instagram marketing is fantastic. 83% of users admit that this social network aids in their research of new goods and services. Even better, customers have higher faith in the firms that are promoted on Instagram. 74% of people think Instagram-posted brands are relevant, and 78% think they're popular.
+
+![Facebook](documentation/marketing/instagram.png)
+
+#### Twitter
+
+Twitter advertising may assist you in a number of ways, including audience growth, product promotion, website traffic growth, and more. You have the option of promoting both your account and certain tweets to increase engagement and campaign visibility.
+
+![Facebook](documentation/marketing/twitter_profile.png)
+
+### Email Marketing
+
+We have implemented a email subscription on the home page to get the latest deals and offers to our audience. Having this functionality allows us to target our most loyal of customers and this helps us with our ambitions for growth. We can use this functionality to help us identity the click through rate and how our campaigns are going, what works & what doesn't.
+
+### Content Marketing
+
+We have added a news section to our website so we can post updates/news/offers we're promoting. This is important because it allows us to lead the way and can help us identify if our campaigns are working. We can discuss and engage with our audience to help us increase brand reach.
+
 [Back to Top](#table-of-contents)
 
 ## Agile Methodology
