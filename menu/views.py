@@ -101,3 +101,31 @@ def add_menu_item(request):
     }
 
     return render(request, template, context)
+
+
+def edit_menu_item(request, menu_item_id):
+    """
+    Edit a food item on the a food menu
+    """
+    menu_item = get_object_or_404(MenuItem, pk=menu_item_id)
+    if request.method == 'POST':
+        form = MenuItemForm(request.POST, request.FILES, instance=menu_item)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('menu_item_detail', args=[menu_item.id]))
+        else:
+            messages.error(
+                request,
+                'Failed to update menu item. Please ensure the form is valid.')
+    else:
+        form = MenuItemForm(instance=menu_item)
+        messages.info(request, f'You are editing {menu_item.name}')
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
+        'product': menu_item,
+    }
+
+    return render(request, template, context)

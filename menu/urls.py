@@ -7,4 +7,5 @@ urlpatterns = [
          views.get_menu_item_detail,
          name='item_details'),
     path('add/', views.add_menu_item, name='add_menu_item'),
+    path('edit/', views.edit_menu_item, name='edit_menu_item'),
 ]
