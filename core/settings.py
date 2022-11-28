@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = is_boolean
 
-X_FRAME_OPTIONS = "SAMEORIGIN"
+# X_FRAME_OPTIONS = "SAMEORIGIN"
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "fine-chop.herokuapp.com"]
 
@@ -68,6 +68,8 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     "storages",
     'rangefilter',
+    'django.contrib.sitemaps',
+    'tinymce',
 ]
 
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -268,3 +270,50 @@ STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+
+TINYMCE_DEFAULT_CONFIG = {
+    'custom_undo_redo_levels':
+    100,
+    'selector':
+    'textarea',
+    "menubar":
+    "file edit view insert format tools table help",
+    'plugins':
+    'link image preview codesample contextmenu table code lists fullscreen',
+    'toolbar1':
+    'undo redo | backcolor casechange permanentpen formatpainter removeformat formatselect fontselect fontsizeselect',
+    'toolbar2':
+    'bold italic underline blockquote | alignleft aligncenter alignright alignjustify '
+    '| bullist numlist | outdent indent | table | link image | codesample | preview code | tiny_mce_wiris_formulaEditor tiny_mce_wiris_formulaEditorChemistry',
+    'contextmenu':
+    'formats | link image',
+    'block_formats':
+    'Paragraph=p; Header 1=h1; Header 2=h2',
+    'fontsize_formats':
+    "8pt 10pt 12pt 14pt 16pt 18pt",
+    'content_style':
+    "body { font-family: Arial; background: white; color: black; font-size: 12pt}",
+    'codesample_languages': [
+        {
+            'text': 'Python',
+            'value': 'python'
+        },
+        {
+            'text': 'HTML/XML',
+            'value': 'markup'
+        },
+    ],
+    'image_class_list': [{
+        'title': 'Fluid',
+        'value': 'img-fluid',
+        'style': {}
+    }],
+    'width':
+    'auto',
+    "height":
+    "600px",
+    'image_caption':
+    True,
+    "images_upload_url":
+    "upload_image",
+}
