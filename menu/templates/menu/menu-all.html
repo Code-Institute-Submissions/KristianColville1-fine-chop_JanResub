@@ -60,11 +60,11 @@
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 card-container">
                     <div class="card h-100 border-0 overflow-hidden">
                         {% if food.image %}
-                        <a href="{% url 'item_details' food.name food.id %}">
+                        <a href="{% url 'item_details' food.id %}">
                             <img class="card-img-top img-fluid" src="{{ food.image.url }}" alt="{{ food.name }}">
                         </a>
-                        {% elif food.image == '' %}
-                        <a href="{% url 'item_details' food.name food.id %}">
+                        {% else %}
+                        <a href="{% url 'item_details' food.id %}">
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.webp" alt="{{ food.name }}">
                         </a>
                         {% endif %}
@@ -88,6 +88,15 @@
                                         5</small>
                                     {% else %}
                                     <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                    {% if request.user.is_superuser %}
+                                        <p class="ml-3 w-100 bg-black text-white text-center">
+                                            <a class="text-warning px-3"
+                                                href="{% url 'edit_menu_item' food.id %}">Edit</a>
+                                            |
+                                            <a class="text-danger px-3"
+                                                href="{% url 'delete_menu_item' food.id %}">Delete</a>
+                                        </p>
                                     {% endif %}
                                 </div>
                             </div>

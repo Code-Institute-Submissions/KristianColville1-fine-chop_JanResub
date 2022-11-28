@@ -65,7 +65,7 @@ def get_menu(request):
     return render(request, 'menu/menu-all.html', context)
 
 
-def get_menu_item_detail(request, menu_item_id, str):
+def get_menu_item_detail(request, menu_item_id):
     """
     Renders a specific menu item for viewing
     """
@@ -113,7 +113,7 @@ def edit_menu_item(request, menu_item_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated product!')
-            return redirect(reverse('menu_item_detail', args=[menu_item.id]))
+            return redirect(reverse('item_details', args=[menu_item.id]))
         else:
             messages.error(
                 request,
@@ -122,10 +122,20 @@ def edit_menu_item(request, menu_item_id):
         form = MenuItemForm(instance=menu_item)
         messages.info(request, f'You are editing {menu_item.name}')
 
-    template = 'products/edit_product.html'
+    template = 'menu/edit_menu_item.html'
     context = {
         'form': form,
-        'product': menu_item,
+        'menu_item': menu_item,
     }
 
     return render(request, template, context)
+
+
+def delete_menu_item(request, menu_item_id):
+    """
+    Edit a food item on the a food menu
+    """
+    menu_item = get_object_or_404(MenuItem, pk=menu_item_id)
+    menu_item.delete()
+    messages.success(request, 'Menu item deleted!')
+    return redirect(reverse('menu'))
