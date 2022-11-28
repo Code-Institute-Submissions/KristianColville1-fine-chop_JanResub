@@ -22,7 +22,7 @@ class StripeWH_Handler:
         """
         their_email = order.email
         subject = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            'reservations/confirmation_emails/booking_confirmation_subject.txt',
             {'order': order})
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt', {

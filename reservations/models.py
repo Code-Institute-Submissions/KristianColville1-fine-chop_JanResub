@@ -90,3 +90,24 @@ class Booking(models.Model):
 
     def __str__(self):
         return self.order_number
+
+
+class GiftCard(models.Model):
+    """
+    Gift card model
+    """
+    uuid = models.UUIDField(primary_key=False,
+                            default=uuid.uuid4,
+                            editable=False,
+                            unique=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    value = models.DecimalField(max_digits=6, decimal_places=2)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('-created', )
+        verbose_name_plural = 'Gift cards'
+
+    def __str__(self):
+        return "Gift Card: " + str(self.uuid) + " Value: " + str(self.price)

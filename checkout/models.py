@@ -109,3 +109,17 @@ class OrderLineItem(models.Model):
         return f"""
 Menu Item Code {self.menu_item.product_code} on order {self.order.order_number}
 """
+
+
+class OrderGiftCard(models.Model):
+    """
+    Order Gift Card Model
+    """
+    order = models.ForeignKey(Order,
+                              null=False,
+                              blank=False,
+                              on_delete=models.CASCADE,
+                              related_name='gift_cards')
+
+    def __str__(self):
+        return str(self.order)

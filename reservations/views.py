@@ -21,9 +21,10 @@ def create_booking(request):
                          f'Booking created! email sent to {user_email}')
         their_email = user_email
         subject = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_subject.txt')
+            'reservations/confirmation_emails/booking_confirmation_subject.txt'
+        )
         body = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_body.txt')
+            'reservations/confirmation_emails/booking_confirmation.txt')
 
         send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [their_email])
         form.save()

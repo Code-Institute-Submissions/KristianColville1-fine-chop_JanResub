@@ -1,2 +1,9 @@
 Hi Thank you for your reservation.
-We will be in touch shortly to confirm your details.
+
+
+We will contact you in due course to discuss this reservation and finalise any
+details we need from you.
+
+Thanks again!
+
+Please do not reply to this email address this is an automated email.
