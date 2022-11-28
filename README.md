@@ -294,7 +294,7 @@ Web Marketing focus:
 ### SEO
 
 Large focus on this aspect as optimizing the website is important for excellent SEO. Keyword phrases have been used to target specific users results instead of generic keywords.
-To benefit from this Googles Keyword Planner was used to help focus and import organic search results which can help reduce the advertising budget and instead expend more resources elsewhere.
+To benefit from this Googles Keyword Planner was used to help focus and increase organic search results which can help reduce the advertising budget and instead expend more resources elsewhere.
 
 - We published content that is highly relevant for the goals at FineChop
 - This business model is competitive and having keyword phrases helps us stand out. We have researched the best keyword phrases with the help of Googles Keyword Planner.
@@ -325,7 +325,7 @@ Twitter advertising may assist you in a number of ways, including audience growt
 
 ### Email Marketing
 
-We have implemented a email subscription on the home page to get the latest deals and offers to our audience. Having this functionality allows us to target our most loyal of customers and this helps us with our ambitions for growth. We can use this functionality to help us identity the click through rate and how our campaigns are going, what works & what doesn't.
+We have implemented a email subscription on the home page to get the latest deals and offers to our audience. Having this functionality allows us to target our most loyal of customers and this helps us with our ambitions for growth. We can use this functionality to help us identify the click through rate and how our campaigns are going, what works & what doesn't.
 
 ### Content Marketing
 
@@ -536,7 +536,7 @@ All the Testing documentation can be found [here](/TESTING.md)
 |[#12](https://github.com/KristianColville1/fine-chop/issues/10)|Widget to display itself for creating general newsletter|Type Error at /admin/newsletter/message/add/ because too many positional arguments given in admin| Removed apps for the newsletter, imperavi and widget |
 |[#13](https://github.com/KristianColville1/fine-chop/issues/13)|Home page should load when deployed|Getting internal 500 server error| Reset virtual environment and removed unused imports before deploying project again and this fixed the issue |
 |[#48](https://github.com/KristianColville1/fine-chop/issues/48)|static files to load properly|Not loading static files|Fixed any links by removing / from urls and added static root url and this seemed to fix the problem. I identified it as a static file issue from looking at the heroku logs for the deployment |
-|[#49](https://github.com/KristianColville1/fine-chop/issues/49)|Images to slide over the next image with ease| I added a min height for the body element in css and manipulated the z axis of my project contents to display on top of the darker overlay behind for the home page |
+|[#49](https://github.com/KristianColville1/fine-chop/issues/49)|Images to slide over the next image with ease|Every time a new image is displayed there is a flicker| I added a min height for the body element in css and manipulated the z axis of my project contents to display on top of the darker overlay behind for the home page |
 |[#50](https://github.com/KristianColville1/fine-chop/issues/50)|Expected Heroku to automatically store static and media files on AWS S3 Bucket|Prevents storage to S3 bucket|Removed whitenoise and django heroku from the extensions and reloaded my requirements.txt file and this fixed the static files loading on heroku|
 |[#56](https://github.com/KristianColville1/fine-chop/issues/56)|when a user who is not logged in purchases an order they can move on to checkout success|users not logged in will experience a 500 server error|Checked the log files and could see the server was getting 301s from stripe but couldn't easily identify the cause. I tested both logged in and out and found that I could perform the action logged in and quickly identified the missing condition for non logged in users|
 
@@ -852,6 +852,55 @@ Open a separate tab and navigate to the S3 dashboard and then to your bucket and
 
 [Back to Top](#table-of-contents)
 ### Stripe
+
+What is Stripe?
+
+*We bring together everything that's required to build websites and apps that accept payments and send payouts globally. Stripe's products power payments for online and in-person retailers, subscriptions businesses, software platforms and marketplaces, and everything in between.* - Stripe
+
+Stripe was used so we could set up a method of payment for users to purchase items from the food menu's at FineChop
+
+Please follow these instructions if you want to set it up.
+
+1. Install stripe
+
+    pip3 install stripe
+
+2. Register an account at Stripe
+3. Go to the developers page
+4. Over on the left side of the screen on desktop you'll see a tab for API Keys
+5. Select API Keys and Copy the **Public Key & Secret Key**
+6. Set these environment variables in your env.py file making sure to add your env.py file to .gitignore if you have one
+
+    import os
+    os.environ["STRIPE_PUBLIC_KEY"] = "public key goes here"
+    os.environ["STRIPE_SECRET_KEY"] = "secret key goes here"
+    os.environ["STRIPE_WH_SECRET"] = "whsec... your webhook secret goes here"
+
+7. Add the environment variables to your settings.py file in your core project directory
+
+    STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY", "")
+    STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY", "")
+    STRIPE_WH_KEY = os.getenv("STRIPE_WH_KEY", "")
+
+8. Create an order/payment model to implement stripe
+9. Add the stripe_elements.js file to your template
+10. Add the client secret and public key to the template for the handler
+
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+
+11. Collect your data with your models and forms if you have any
+12. Test your stripe implementation with these default cards. only the long number matters.
+
+    No authentication: 4242424242424242
+    Authentication: 4000002500003155
+    Test Errors: 4000000000009995
+
+13. Add the stripe webhook handler and collect your webhook from the stripe developer page
+14. The webhook starts with 'whsec....'
+15. Add urls for the webhooks and paths for redirects for your own urls
+16. Add your domain to the webhook set up on Stripe.
+17. As of writing Stripe have removed the testing of webhooks you will need to add your domain.
 
 [Back to Top](#table-of-contents)
 
