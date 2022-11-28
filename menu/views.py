@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from django.db.models import Q
 from .models import MenuItem, Category
@@ -78,10 +79,14 @@ def get_menu_item_detail(request, menu_item_id):
     return render(request, 'menu/menu_item_detail.html', context)
 
 
+@login_required
 def add_menu_item(request):
     """
     Add a menu item to the a food menu
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Only admin staff can do that!!!!')
+        return redirect(reverse('home'))
     if request.method == 'POST':
         form = MenuItemForm(request.POST, request.FILES)
         if form.is_valid():
@@ -103,10 +108,14 @@ def add_menu_item(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_menu_item(request, menu_item_id):
     """
     Edit a food item on the a food menu
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Only admin staff can do that!!!!')
+        return redirect(reverse('home'))
     menu_item = get_object_or_404(MenuItem, pk=menu_item_id)
     if request.method == 'POST':
         form = MenuItemForm(request.POST, request.FILES, instance=menu_item)
@@ -131,10 +140,14 @@ def edit_menu_item(request, menu_item_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_menu_item(request, menu_item_id):
     """
     Edit a food item on the a food menu
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Only admin staff can do that!!!!')
+        return redirect(reverse('home'))
     menu_item = get_object_or_404(MenuItem, pk=menu_item_id)
     menu_item.delete()
     messages.success(request, 'Menu item deleted!')
