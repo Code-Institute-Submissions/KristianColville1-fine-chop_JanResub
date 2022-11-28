@@ -217,9 +217,31 @@ User roles:
 
 ## Design
 ### Color Scheme
+
+These colors were used in the design of this eCommerce web application.
+
+The colors range from a soft orange/yellow to a darker rose ebony. The color orange was chosen primarily because of it's association with the food industry and it's ability to make you think food. It's intuitive color designing. The darker side of the palette helps build a sort of authority and compliments the lighter oranges excellent. Using Bootstraps default info classes on text and buttons works excellent in contrasting the orange colors I have chosen for my website. For the darker contrasting I used Matte Black and Onyx to provide an appealing shade of black where it suited the most.
+
+
+![Color Palette](static/img/design/color-palette.png)
+
+
 ### Typography
+
+On the website, Google Fonts were applied. The typeface used was Roboto. I chose this font because it is googles default font and is the most readable font on all devices.
+
+
+[Roboto font, created by Christian Robertson](https://en.wikipedia.org/wiki/Roboto)
+
+Based on research into the types of fonts used by websites I chose this font for the major reason that it is neutral its so easy on the eyes and I felt this was important. I tested multiple fonts and found this one to really be the winner. I also like Times New Roman but it felt out of place when I tried to implement it.
+
 ### Structure
 #### Wireframes
+
+Wireframes were created using [lucidchart](lucidchart.com). With the help of this application I was able to create a structure and flow according to my needs. It helped me to design a better UI for users.
+One of the things I wanted to implement was an easy to use UI and that's especially the case on smaller screens. I kept inline with the law of 3s and 5s in order to increase the visual appeal. On smaller screens I implemented a mobile nav that displays intuitive icons for the user of the mobile to easily click on. 
+
+![structure](static/img/design/structure.png)
 
 [Back to Top](#table-of-contents)
 
