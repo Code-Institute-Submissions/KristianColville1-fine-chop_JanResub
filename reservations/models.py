@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 """Reservations Models for booking tables at FineChop"""
 
 # Choice fields
@@ -54,13 +55,17 @@ class Booking(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
     customer = models.ForeignKey(User,
                                  on_delete=models.CASCADE,
-                                 related_name="booking_customer")
+                                 related_name="booking_customer", null=True)
     booked_table = models.ForeignKey(Table,
                                      on_delete=models.CASCADE,
-                                     related_name="booking_table")
-    guest_amount = models.IntegerField(default=2)
-    date = models.DateField()
+                                     related_name="booking_table", null=True)
+    guest_amount = models.IntegerField(
+        default=2, validators=[MinValueValidator(1),
+                               MaxValueValidator(16)])
+    date = models.DateField(null=True, blank=True)
     time = models.IntegerField(choices=BOOKING_TIMES, default=1)
+    email = models.EmailField(max_length=254, blank=False, null=True)
+    phone_number = models.CharField(max_length=22, blank=False, null=True)
 
     class Meta:
         """

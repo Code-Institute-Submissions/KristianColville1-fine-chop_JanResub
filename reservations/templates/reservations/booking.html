@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'reservations/css/reservations.css' %}">
+{% endblock %}
+{% block head_title %} Reservations {% endblock head_title %}
+{% block content %}
+<div class="container mt-5 bg-light">
+    <div class="row mt-5">
+        <div class="col">
+            <h2 class="">Create a booking</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-5">
+            <h4 class="mx-2">Your details</h4>
+            <form action="{% url 'reservations' %}" id="booking-form" method="POST">
+                {% csrf_token %}
+                <div>
+                    {{form|crispy}}
+                </div>
+                <button type="submit" class="btn btn-orange text-white rounded-0 w-100 mb-2 border">Update
+                    Information</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+{% block extra_js %}
+<script src="{% static 'reservations/js/reservations.js' %}"></script>
+{% endblock extra_js%}
