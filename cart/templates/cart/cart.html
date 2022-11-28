@@ -30,7 +30,7 @@
                     {% for food in cart_items %}
                     <tr class="border">
                         <td class="p-3 w-25">
-                            <a href="{% url 'item_details' food.menu_item.name food.menu_item.id %}">
+                            <a href="{% url 'item_details' food.menu_item.id %}">
                                 {% if food.menu_item.image %}
                                 <img class="img-fluid rounded" src="{{ food.menu_item.image.url }}"
                                     style="max-height: 100px;" alt="{{ food.menu_item.name }}">
