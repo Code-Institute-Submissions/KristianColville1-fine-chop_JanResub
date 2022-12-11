@@ -72,48 +72,20 @@ INSTALLED_APPS = [
     'tinymce',
 ]
 
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+SITE_ID = 1
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_AUTHENTICATION = "username_email"
-ACCOUNT_USERNAME_MIN_LENGTH = 5
-ACCOUNT_SIGNUP_REDIRECT_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = "/"
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
 
 SOCIALACCOUNT_AUTO_SIGNUP = True
 SOCIALACCOUNT_QUERY_EMAIL = ACCOUNT_EMAIL_REQUIRED
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
-
-SITE_ID = 1
-
-SOCIALACCOUNT_PROVIDERS = {
-    'facebook': {
-        'METHOD':
-        'oauth2',
-        'SDK_URL':
-        '//connect.facebook.net/{locale}/sdk.js',
-        'SCOPE': ['email', 'public_profile'],
-        'AUTH_PARAMS': {
-            'auth_type': 'reauthenticate'
-        },
-        'INIT_PARAMS': {
-            'cookie': True
-        },
-        'FIELDS': [
-            'id', 'first_name', 'last_name', 'middle_name', 'name',
-            'name_format', 'picture', 'short_name'
-        ],
-        'EXCHANGE_TOKEN':
-        True,
-        'LOCALE_FUNC':
-        'path.to.callable',
-        'VERIFIED_EMAIL':
-        False,
-        'VERSION':
-        'v13.0',
-    }
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -166,26 +138,6 @@ AUTHENTICATION_BACKENDS = (
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_LOGIN')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-
-if DEBUG is True:
-    # Database
-    # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
-    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -316,3 +268,27 @@ TINYMCE_DEFAULT_CONFIG = {
     "images_upload_url":
     "upload_image",
 }
+
+if DEBUG is True:
+    # Database
+    # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'finechop@example.com'
+else:
+    DATABASES = {
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    }
+
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+    EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

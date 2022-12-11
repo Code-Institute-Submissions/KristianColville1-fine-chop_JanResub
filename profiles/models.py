@@ -89,13 +89,11 @@ class Profile(Role, Address):
 
 
 @receiver(post_save, sender=User)
-def create_profile(sender, instance, created, **kwargs):
+def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
-    Creates a profile for a user on sign up to connect everything
-    together.
+    Create or update the user profile
     """
     if created:
-        user_profile = Profile(user=instance)
-        user_profile.save()
-        user_profile.email = instance.email
-        user_profile.save()
+        Profile.objects.create(user=instance)
+    # Existing users: just save the profile
+    instance.userprofile.save()
