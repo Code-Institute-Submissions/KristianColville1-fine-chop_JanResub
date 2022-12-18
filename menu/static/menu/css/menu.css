@@ -56,6 +56,16 @@
     max-height: 400px;
 }
 
+.fa-circle-info {
+    color: var(--yellow-orange-color-wheel);
+    font-size: 20px;
+}
+
+.all-menu-form-update {
+    position: absolute;
+    bottom: 0;
+}
+
 label {
     color: var(--matte-black);
     display: inline !important;

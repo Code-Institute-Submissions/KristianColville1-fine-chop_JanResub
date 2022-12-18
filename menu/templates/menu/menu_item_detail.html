@@ -50,21 +50,21 @@
                         {% endif %}
                         <div class="col-12">
                             <p class="mt-3"><strong>Quantity:</strong></p>
-                            <div class="form-group w-50">
-                                <div class="input-group">
+                            <div class="form-group d-flex justify-content-center">
+                                <div class="input-group w-50">
                                     <div class="input-group-prepend">
-                                        <button class="decrement-qty btn btn-orange border text-white rounded-0"
+                                        <button class="decrement-qty btn btn-orange text-white rounded"
                                             data-item_id="{{ menu_item.id }}" id="decrement-qty_{{ menu_item.id }}">
                                             <span class="icon">
                                                 <i class="fas fa-minus"></i>
                                             </span>
                                         </button>
                                     </div>
-                                    <input class="form-control qty_input" type="number" name="quantity" value="1"
+                                    <input class="form-control qty_input border-0 text-center" type="number" name="quantity" value="1"
                                         min="1" max="20" data-item_id="{{ menu_item.id }}"
                                         id="id_qty_{{ menu_item.id }}">
                                     <div class="input-group-prepend">
-                                        <button class="increment-qty btn btn-orange border text-white rounded-0"
+                                        <button class="increment-qty btn btn-orange text-white rounded"
                                             data-item_id="{{ menu_item.id }}" id="increment-qty_{{ menu_item.id }}">
                                             <span class="icon">
                                                 <i class="fas fa-plus"></i>
@@ -75,8 +75,8 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
-                            <a href="{% url 'menu' %}" class="btn btn-outline-dark  shadow mt-5">
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <a href="{% url 'menu' %}" class="btn btn-outline-dark  shadow mt-5 mx-2">
                                 <i class="fas fa-chevron-left"></i>
                                 <span class="text-uppercase">Add more Food</span>
                             </a>

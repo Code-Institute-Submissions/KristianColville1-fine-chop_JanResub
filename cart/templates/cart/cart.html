@@ -16,7 +16,7 @@
         <div class="col">
             {% if cart_items %}
             <div class="table-responsive rounded">
-                <table class="table table-sm table-borderless">
+                <table class="table table-md table-borderless">
                     <thead class="text-black">
                         <tr>
                             <th scope="col">Menu Info</th>
@@ -50,22 +50,22 @@
                             <form class="form update-form" method="POST" action="{% url 'update_cart' food.food_id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
-                                    <div class="input-group">
+                                    <div class="input-group input-group-{{ food.food_id }]" style="min-width: 150px;">
                                         <div class="input-group-prepend">
                                             <button
-                                                class="decrement-qty btn btn-sm btn-orange border text-white rounded-0"
+                                                class="decrement-qty btn btn-sm btn-orange text-white rounded"
                                                 data-item_id="{{ food.food_id }}" id="decrement-qty_{{ food.food_id }}">
                                                 <span>
                                                     <i class="fas fa-minus fa-sm"></i>
                                                 </span>
                                             </button>
                                         </div>
-                                        <input class="form-control form-control-sm qty_input" type="number"
+                                        <input class="form-control form-control-sm qty_input text-center border-0" type="number"
                                             name="quantity" value="{{ food.quantity }}" min="1" max="20"
                                             data-food_id="{{ food.food_id }}" id="id_qty_{{ food.food_id }}">
                                         <div class="input-group-append">
                                             <button
-                                                class="increment-qty btn btn-sm btn-orange border text-white rounded-0"
+                                                class="increment-qty btn btn-sm btn-orange text-white rounded"
                                                 data-item_id="{{ food.food_id }}" id="increment-qty_{{ food.food_id }}">
                                                 <span>
                                                     <i class="fas fa-plus fa-sm"></i>
@@ -78,12 +78,13 @@
                                     </div>
                                 </div>
 
+                                <a class="update-link text-info mt-1"
+                                    id="update_{{food.food_id}}" role="button" aria-label="Update food item in
+                                    cart"><small>Update</small></a>
+                                <a class="remove-item text-danger float-end mt-1"
+                                    id="remove_{{ food.food_id }}"
+                                    data-portion_size="{{ food.portion_size }}" role="button" aria-label="remove food item from cart"><small>Remove</small></a>
                             </form>
-                            <button class="btn update-link text-info"
-                                id="update_{{food.food_id}}"><small>Update</small></button>
-                            <button class="btn remove-item text-danger float-end"
-                                id="remove_{{ food.food_id }}"
-                                data-portion_size="{{ food.portion_size }}"><small>Remove</small></button>
                         </td>
                         <td class="py-3">
                             <p class="my-0">€{{ food.menu_item.price | calc_subtotal:food.quantity }}</p>
@@ -99,14 +100,16 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <a href="{% url 'menu' %}" class="btn btn-outline-dark rounded-0 btn-lg" aria-label="click here to go to the food menu">
+                            <a href="{% url 'menu' %}" class="btn btn-outline-dark rounded-0 btn-lg"
+                                aria-label="click here to go to the food menu">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
                             <a href="{% url 'checkout' %}"
-                                class="btn btn-orange text-white rounded-0 mt-xs-2 mt-md-0 btn-lg border" aria-label="click here to go to the checkout">
+                                class="btn btn-orange text-white rounded-0 mt-xs-2 mt-md-0 btn-lg border"
+                                aria-label="click here to go to the checkout">
                                 <span class="text-uppercase">Secure Checkout</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>

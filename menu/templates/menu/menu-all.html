@@ -21,8 +21,8 @@
                     </span>
                     {% endif %}
                     <span class="text-white">
-                    {{ menu_items|length }} Food Items {% if search_term %} found for
-                    <strong>"{{ search_term }}"</strong>{% endif %}</span>
+                        {{ menu_items|length }} Food Items {% if search_term %} found for
+                        <strong>"{{ search_term }}"</strong>{% endif %}</span>
                 </p>
                 <div class="dropdown">
                     <button class="btn text-info dropdown-toggle" type="button" id="sorting-dropdown"
@@ -30,23 +30,24 @@
                         Sort By
                     </button>
                     <ul class="dropdown-menu bg-white" aria-labelledby="sorting-dropdown">
-                        <li><a href="{% url 'menu' %}?category={{is_category}}&sort=price&direction=asc" class="dropdown-item"
-                                aria-label="Sort food items by price low to high">Price (low to high)</a></li>
+                        <li><a href="{% url 'menu' %}?category={{is_category}}&sort=price&direction=asc"
+                                class="dropdown-item" aria-label="Sort food items by price low to high">Price (low to
+                                high)</a></li>
                         <li><a href="{% url 'menu' %}?category={{is_category}}&sort=price&direction=desc"
-                                class="dropdown-item"
-                                aria-label="Sort food items by price high to low">price (high to low)</a></li>
+                                class="dropdown-item" aria-label="Sort food items by price high to low">price (high to
+                                low)</a></li>
                         <li><a href="{% url 'menu' %}?category={{is_category}}&sort=rating&direction=asc"
-                                class="dropdown-item"
-                                aria-label="Sort food items by rating low to high">Rating (low to high)</a></li>
+                                class="dropdown-item" aria-label="Sort food items by rating low to high">Rating (low to
+                                high)</a></li>
                         <li><a href="{% url 'menu' %}?category={{is_category}}&sort=rating&direction=desc"
-                                class="dropdown-item"
-                                aria-label="Sort food items by rating high to low">Rating (high to low)</a></li>
+                                class="dropdown-item" aria-label="Sort food items by rating high to low">Rating (high to
+                                low)</a></li>
                         <li><a href="{% url 'menu' %}?category={{is_category}}&sort=name&direction=asc"
-                                class="dropdown-item"
-                                aria-label="Sort food items by name from A to Z">Name (A-Z)</a></li>
+                                class="dropdown-item" aria-label="Sort food items by name from A to Z">Name (A-Z)</a>
+                        </li>
                         <li><a href="{% url 'menu' %}?category={{is_category}}&sort=name&direction=desc"
-                                class="dropdown-item"
-                                aria-label="Sort food items by name from Z to A">Name (Z-A)</a></li>
+                                class="dropdown-item" aria-label="Sort food items by name from Z to A">Name (Z-A)</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -60,8 +61,10 @@
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 card-container">
                     <div class="card h-100 border-0 overflow-hidden">
                         {% if food.image %}
-                        <a href="{% url 'item_details' food.id %}">
-                            <img class="card-img-top img-fluid" src="{{ food.image.url }}" alt="{{ food.name }}">
+                        <a href="{% url 'item_details' food.id %}" class="position-relative">
+                            <img class="food-image card-img-top img-fluid" src="{{ food.image.url }}" alt="{{ food.name }}"
+                                style="max-height: 300px;">
+                            <i class="fa-solid fa-circle-info position-absolute top-0 end-0 m-3"></i>
                         </a>
                         {% else %}
                         <a href="{% url 'item_details' food.id %}">
@@ -69,13 +72,13 @@
                         </a>
                         {% endif %}
                         <div class="card-body pb-0 overflow-hidden">
-                            
+
                         </div>
                         <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
-                                <div class="col">
-                                    <p class="mb-0">{{ food.name }}</p>
-                                    <p class="lead fs-4 mb-0 text-left font-weight-bold">€{{ food.price }}</p>
+                                <div class="col-6">
+                                    <p class="mb-0 food-name">{{ food.name }}</p>
+                                    <p class="lead fs-6 mb-0 text-left font-weight-bold">€{{ food.price }}</p>
                                     {% if food.category %}
                                     <p class="small mt-1 mb-0">
                                         <a class="text-muted" href="{% url 'menu' %}?category={{ food.category.name }}">
@@ -84,21 +87,59 @@
                                     </p>
                                     {% endif %}
                                     {% if food.rating %}
-                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ food.rating }} /
+                                    <small class="text-muted food-rating"><i class="fas fa-star mr-1"></i>{{ food.rating }} /
                                         5</small>
                                     {% else %}
                                     <small class="text-muted">No Rating</small>
                                     {% endif %}
-                                    {% if request.user.is_superuser %}
-                                        <p class="ml-3 w-100 bg-black text-white text-center">
-                                            <a class="text-warning px-3"
-                                                href="{% url 'edit_menu_item' food.id %}">Edit</a>
-                                            |
-                                            <a class="text-danger px-3"
-                                                href="{% url 'delete_menu_item' food.id %}">Delete</a>
-                                        </p>
-                                    {% endif %}
                                 </div>
+
+                                <div class="col-6 position-relative">
+                                    {% if request.user.is_superuser %}
+                                    <p class="ml-3 mt-3 p-1 w-100 bg-black rounded text-white text-center">
+                                        <a class="btn-outline-warning p-1 rounded"
+                                            href="{% url 'edit_menu_item' food.id %}">Edit</a>
+                                        |
+                                        <a class="btn-outline-danger p-1 rounded"
+                                            href="{% url 'delete_menu_item' food.id %}">Delete</a>
+                                    </p>
+                                    {% else %}
+                                    <form class="form all-menu-form-update w-75" action="{% url 'add_to_cart' food.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <button class="decrement-qty btn btn-orange rounded text-white btn-sm" data-item_id="{{ food.id }}"
+                                                        id="decrement-qty_{{ food.id }}">
+                                                        <span class="icon">
+                                                            <i class="fas fa-minus"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <input class="form-control qty_input btn-sm text-center border-0" type="number"
+                                                    name="quantity"
+                                                    value="1" min="1" max="20" data-item_id="{{ food.id }}"
+                                                    id="id_qty_{{ food.id }}">
+                                                <div class="input-group-prepend">
+                                                    <button
+                                                        class="increment-qty btn btn-orange rounded text-white
+                                                        btn-sm"
+                                                        data-item_id="{{ food.id }}" id="increment-qty_{{ food.id }}">
+                                                        <span class="icon">
+                                                            <i class="fas fa-plus"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit"
+                                            class="btn btn-outline-dark shadow-sm border text-uppercase float-end mt-3"
+                                            value="Add">Add<i class="fas fa-chevron-right"></i></button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                        
+                                    </form>
+
+                                {% endif %}</div>
                             </div>
                         </div>
                     </div>
@@ -133,7 +174,9 @@
         <i class="fas fa-arrow-up my-auto fs-3"></i>
     </a>
 </div>
+<div class="modal-menu-pop-up"></div>
 {% endblock content %}
 {% block extra_js %}
 <script src="{% static 'menu/js/food-menu.js' %}"></script>
+<script src="{% static 'menu/js/quantity-input.js' %}"></script>
 {% endblock extra_js %}
