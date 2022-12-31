@@ -54,36 +54,36 @@
                                         <div class="input-group-prepend">
                                             <button
                                                 class="decrement-qty btn btn-sm btn-orange text-white rounded"
-                                                data-item_id="{{ food.food_id }}" id="decrement-qty_{{ food.food_id }}">
-                                                <span>
-                                                    <i class="fas fa-minus fa-sm"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <input class="form-control form-control-sm qty_input text-center border-0" type="number"
-                                            name="quantity" value="{{ food.quantity }}" min="1" max="20"
-                                            data-food_id="{{ food.food_id }}" id="id_qty_{{ food.food_id }}">
-                                        <div class="input-group-append">
-                                            <button
-                                                class="increment-qty btn btn-sm btn-orange text-white rounded"
-                                                data-item_id="{{ food.food_id }}" id="increment-qty_{{ food.food_id }}">
-                                                <span>
-                                                    <i class="fas fa-plus fa-sm"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                        {% if food.menu_item.portion_sizes %}
-                                        <input type="hidden" name="portion_size" value="{{ food.portion_size }}">
-                                        {% endif %}
+                                                data-item_id="{{ food.food_id }}"
+                                        id="decrement-qty_{{ food.food_id }}">
+                                        <span>
+                                            <i class="fas fa-minus fa-sm"></i>
+                                        </span>
+                                        </button>
+                                    </div>
+
+                                    <input class="form-control form-control-sm qty_input text-center border-0"
+                                        type="number" name="quantity" value="{{ food.quantity }}" min="1" max="20"
+                                        data-food_id="{{ food.food_id }}" id="id_qty_{{ food.food_id }}">
+                                    <div class="input-group-append">
+                                        <button class="increment-qty btn btn-sm btn-orange text-white rounded"
+                                            data-item_id="{{ food.food_id }}" id="increment-qty_{{ food.food_id }}">
+                                            <span>
+                                                <i class="fas fa-plus fa-sm"></i>
+                                            </span>
+                                        </button>
                                     </div>
                                 </div>
+                                {% if food.menu_item.portion_sizes %}
+                                <input type="hidden" name="portion_size" value="{{ food.portion_size }}">
+                                {% endif %}
 
-                                <a class="update-link text-info mt-1"
-                                    id="update_{{food.food_id}}" role="button" aria-label="Update food item in
-                                    cart"><small>Update</small></a>
-                                <a class="remove-item text-danger float-end mt-1"
-                                    id="remove_{{ food.food_id }}"
-                                    data-portion_size="{{ food.portion_size }}" role="button" aria-label="remove food item from cart"><small>Remove</small></a>
+                                <button class="btn update-link text-info mt-1" id="update_{{food.food_id}}"
+                                    aria-label="Update food item in
+                                    cart"><small>Update</small></button>
+                                <button class="btn remove-item text-danger float-end mt-1" id="remove_{{ food.food_id }}"
+                                    data-portion_size="{{ food.portion_size }}"
+                                    aria-label="remove food item from cart"><small>Remove</small></button>
                             </form>
                         </td>
                         <td class="py-3">
