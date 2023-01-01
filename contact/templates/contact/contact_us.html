@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block extra_css%}
+<link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
+{% endblock extra_css%}
+{% block head_title %}Contact Us{% endblock head_title %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row mt-5">
+        <div class="col-sm-12 col-md-6 offset-md-3 p-1 rounded">
+            <h1 class="text-center">Contact Us</h1>
+            <form action="">
+                {% csrf_token %}
+                {{ contact_form|crispy }}
+                <button type="submit" class="btn btn-orange text-white float-end">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
