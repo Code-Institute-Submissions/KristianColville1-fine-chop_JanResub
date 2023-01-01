@@ -1,0 +1,12 @@
+Hi {{form.name}},
+
+We got your message:
+
+{{form.comment}}
+
+Please do not reply to this email. We will be in contact.
+
+Kind regards,
+
+Kristian Colville
+FineChop
