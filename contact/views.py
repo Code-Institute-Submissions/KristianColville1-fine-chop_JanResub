@@ -1,11 +1,17 @@
 from django.shortcuts import render
+from .forms import ContactUsForm
 
 
 def contact_us(request):
     """
     Contact us page
     """
-    return render(request, 'contact/contact_us.html')
+    # if request.method == 'POST':
+        
+    context = {
+        'contact_form': ContactUsForm
+    }
+    return render(request, 'contact/contact_us.html', context)
 
 
 def careers(request):
