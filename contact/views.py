@@ -35,7 +35,7 @@ def contact_us(request):
                 {'form': form})
             send_mail(subject, body, settings.DEFAULT_FROM_EMAIL,
                       [their_email])
-            return render(redirect(''))
+            return redirect('/')
         else:
             messages.error(request, ('There was an error with your form. '
                                      'Please double check your information.'))
