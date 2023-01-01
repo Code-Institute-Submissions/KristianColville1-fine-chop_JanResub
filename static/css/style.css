@@ -308,10 +308,6 @@ header {
     border-left: 1px solid var(--onyx);
 }
 
-.border-right {
-    border-right: 1px solid var(--onyx);
-}
-
 .btn-orange {
     background-color: var(--yellow-orange-color-wheel);
     font-size: 20px;
@@ -524,8 +520,7 @@ h1 {
         margin-left: 10px;
     }
 
-    .border-left,
-    .border-right {
+    .border-left {
         border: none;
     }
 
@@ -541,6 +536,9 @@ h1 {
 @media only screen and (max-width: 768px){
     .border-left {
         margin-top: 90px;
+    }
+    .margin-for-mobile {
+        margin-bottom: 90px;
     }
 }
 
@@ -563,6 +561,7 @@ h1 {
     .border-left {
         margin-top: 45px;
     }
+    
     .btn-orange {
         width: 100%;
     }
