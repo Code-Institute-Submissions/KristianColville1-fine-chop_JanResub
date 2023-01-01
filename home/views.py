@@ -19,11 +19,21 @@ def privacy_policy(request):
     """
     Privacy Policy page
     """
-    return render(request, 'home/privacy_policy.html')
+    lines = [
+        line.strip()
+        for line in open('home/static/home/txt/privacy_policy.txt')
+    ]
+    context = {'content': lines}
+    return render(request, 'home/privacy_policy.html', context)
 
 
 def terms_and_conditions(request):
     """
     Terms & conditions page
     """
-    return render(request, 'home/terms_and_conditions.html')
+    lines = [
+        line.strip()
+        for line in open('home/static/home/txt/terms-and-conditions.txt')
+    ]
+    context = {'content': lines}
+    return render(request, 'home/terms_and_conditions.html', context)
