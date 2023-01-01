@@ -26,8 +26,8 @@ class UserQuery(models.Model):
         Overrides the original save method to set the user query number
         if it hasn't been set already.
         """
-        if not self.order_number:
-            self.order_number = self._generate_order_number()
+        if not self.user_query_number:
+            self.user_query_number = self._generate_user_query_number()
         super().save(*args, **kwargs)
 
     def __str__(self):
