@@ -64,7 +64,8 @@ class JobApplicationForm(forms.ModelForm):
             'last_name': 'Last Name',
             'email': 'Email',
             'contact_number': 'Contact Number',
-            'message': 'Message',
+            'message':
+            'Why should we hire you? Please talk about your experience',
             'resume': 'Resume',
         }
         self.fields['first_name'].widget.attrs['autofocus'] = True

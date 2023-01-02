@@ -84,7 +84,7 @@ class JobApplication(models.Model):
     email = models.CharField(max_length=320, unique=False)
     contact_number = models.IntegerField(unique=False)
     message = models.TextField()
-    resume = models.FileField(upload_to='static/resumes/',
+    resume = models.FileField(upload_to='resumes/',
                               validators=[file_size])
     application_number = models.CharField(max_length=100,
                                           null=False,
