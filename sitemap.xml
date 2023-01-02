@@ -9,877 +9,142 @@
 
 <url>
   <loc>https://fine-chop.herokuapp.com/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://fine-chop.herokuapp.com/about/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-chop.herokuapp.com/contact_us/</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-chop.herokuapp.com/contact_us/careers/</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fine-chop.herokuapp.com/menu/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-chop.herokuapp.com/accounts/login/?next=/reservations/</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fine-chop.herokuapp.com/accounts/login/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fine-chop.herokuapp.com/cart/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=starters</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://fine-chop.herokuapp.com/privacy_policy/</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=mains</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=noodles</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=rices</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=wok</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=soups</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=vegan</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=salads</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=sides</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=drinks</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://fine-chop.herokuapp.com/terms_and_condition/</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fine-chop.herokuapp.com/menu/?category=All&amp;sort=price&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fine-chop.herokuapp.com/menu/?category=All&amp;sort=price&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fine-chop.herokuapp.com/menu/?category=All&amp;sort=rating&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fine-chop.herokuapp.com/menu/?category=All&amp;sort=rating&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fine-chop.herokuapp.com/menu/?category=All&amp;sort=name&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fine-chop.herokuapp.com/menu/?category=All&amp;sort=name&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/1/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <loc>https://fine-chop.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Freservations%2F</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/2/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <loc>https://fine-chop.herokuapp.com/accounts/facebook/login/?process=login&amp;next=%2Freservations%2F</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/3/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <loc>https://fine-chop.herokuapp.com/accounts/instagram/login/?process=login&amp;next=%2Freservations%2F</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/4/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <loc>https://fine-chop.herokuapp.com/accounts/twitter/login/?process=login&amp;next=%2Freservations%2F</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/5/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/6/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/7/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/8/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/9/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/10/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/11/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/12/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/13/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/14/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/15/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/16/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/17/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/18/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/19/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/20/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/21/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/22/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/23/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/24/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/25/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/26/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/27/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/28/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/29/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/30/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/31/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/32/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/33/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/34/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/35/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/36/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/37/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/38/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/39/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/40/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/41/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/42/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/43/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/44/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/45/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/46/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/47/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/48/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/49/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/50/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/51/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/52/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/53/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/54/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/55/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/56/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/57/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/58/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/59/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/60/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/61/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/62/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/63/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/64/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/65/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/66/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/67/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/68/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/69/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/70/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/71/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/72/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/73/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/74/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/75/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/76/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/77/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/78/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/79/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/80/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/81/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/82/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/83/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/84/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/85/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/86/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/87/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/88/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/accounts/google/login/?process=login</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/accounts/facebook/login/?process=login</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/accounts/instagram/login/?process=login</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/accounts/twitter/login/?process=login</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/accounts/signup/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <loc>https://fine-chop.herokuapp.com/accounts/signup/?next=%2Freservations%2F</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fine-chop.herokuapp.com/accounts/password/reset/</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=starters&amp;sort=price&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://fine-chop.herokuapp.com/accounts/google/login/?process=login</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=starters&amp;sort=price&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://fine-chop.herokuapp.com/accounts/facebook/login/?process=login</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=starters&amp;sort=rating&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://fine-chop.herokuapp.com/accounts/instagram/login/?process=login</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=starters&amp;sort=rating&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://fine-chop.herokuapp.com/accounts/twitter/login/?process=login</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=starters&amp;sort=name&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://fine-chop.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=starters&amp;sort=name&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=mains&amp;sort=price&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=mains&amp;sort=price&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=mains&amp;sort=rating&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=mains&amp;sort=rating&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=mains&amp;sort=name&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=mains&amp;sort=name&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=noodles&amp;sort=price&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=noodles&amp;sort=price&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=noodles&amp;sort=rating&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=noodles&amp;sort=rating&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=noodles&amp;sort=name&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=noodles&amp;sort=name&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=rices&amp;sort=price&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=rices&amp;sort=price&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=rices&amp;sort=rating&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=rices&amp;sort=rating&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=rices&amp;sort=name&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=rices&amp;sort=name&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=wok&amp;sort=price&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=wok&amp;sort=price&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=wok&amp;sort=rating&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=wok&amp;sort=rating&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=wok&amp;sort=name&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=wok&amp;sort=name&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=soups&amp;sort=price&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=soups&amp;sort=price&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=soups&amp;sort=rating&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=soups&amp;sort=rating&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=soups&amp;sort=name&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=soups&amp;sort=name&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=vegan&amp;sort=price&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=vegan&amp;sort=price&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=vegan&amp;sort=rating&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=vegan&amp;sort=rating&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=vegan&amp;sort=name&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=vegan&amp;sort=name&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=salads&amp;sort=price&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=salads&amp;sort=price&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=salads&amp;sort=rating&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=salads&amp;sort=rating&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=salads&amp;sort=name&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=salads&amp;sort=name&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=sides&amp;sort=price&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=sides&amp;sort=price&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=sides&amp;sort=rating&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=sides&amp;sort=rating&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=sides&amp;sort=name&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=sides&amp;sort=name&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=drinks&amp;sort=price&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=drinks&amp;sort=price&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=drinks&amp;sort=rating&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=drinks&amp;sort=rating&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=drinks&amp;sort=name&amp;direction=asc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://fine-chop.herokuapp.com/menu/?category=drinks&amp;sort=name&amp;direction=desc</loc>
-  <lastmod>2022-11-28T06:13:34+00:00</lastmod>
+  <loc>https://fine-chop.herokuapp.com/accounts/login/?next=%2Freservations%2F</loc>
+  <lastmod>2023-01-02T18:41:07+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 

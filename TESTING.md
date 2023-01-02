@@ -23,30 +23,12 @@ Using the method of acceptance testing by using multiple users to test different
 |---|Icons visible|Clearly indicate icons|y|---|
 |---|FeedBack provided| loads |y|---|
 |---|Images fade and repeat with no flicker| Images are repeating correctly |y|---|
-|Google Sign Up|---|---|---|---|
-|---| Load page | The page should load without errors |y|Fixed|
+|Google Login |---|---|---|---|
+|---| Load page | The page should load without errors |y|Client ID and Key added successfully|
 |---|Click on sign up button|Redirected to sign in|y|---|
 |---|Verification notice |Email delivered|y|---|
 |---|Buttons|Clicking produces result|y|---|
-|---|FeedBack provided| loads |y|---|
-|FaceBook|---|---|---|---|
-|---| Load page | Currently Broken |n| I had all four login options but I reset the database|
-|---|Click on sign up button| Currently Broken|n|---|
-|---|Verification notice | Currently Broken|n|---|
-|---|Buttons| Currently Broken|n|---|
-|---|FeedBack provided| Currently Broken |n|---|
-|Instagram|---|---|---|---|
-|---| Load page | Currently Broken |n| I had all four login options but I reset the database|
-|---|Click on sign up button| Currently Broken|n|---|
-|---|Verification notice | Currently Broken|n|---|
-|---|Buttons| Currently Broken|n|---|
-|---|FeedBack provided| Currently Broken |n|---|
-|Twitter|---|---|---|---|
-|---| Load page | Currently Broken |n| I had all four login options but I reset the database|
-|---|Click on sign up button| Currently Broken|n|---|
-|---|Verification notice | Currently Broken|n|---|
-|---|Buttons| Currently Broken|n|---|
-|---|FeedBack provided| Currently Broken |n|---|
+|---|FeedBack provided| loads correctly |y|---|
 |Sign Up|---|---|---|---|
 |---|Click on sign up button|Redirected to sign up|y|---|
 |---|Entering Details|Inputs fields should work |y|---|
@@ -69,7 +51,7 @@ Using the method of acceptance testing by using multiple users to test different
 |---|Buttons, Links|Clicking produces action|y|---|
 |---|Icons visible|Clearly indicate icons|y|---|
 |---|---|---|---|---|
-|Menu|---|---|---|---|
+|Menu Item|---|---|---|---|
 |---|Entering Details|Inputs fields should work |y|---|
 |---|Buttons, Links|Clicking produces action|y|---|
 |---|FeedBack provided| loads |y|---|
@@ -98,6 +80,11 @@ Using the method of acceptance testing by using multiple users to test different
 |---|Warning |message pops up providing feedback |y|---|
 |---|Info|message pops up providing feedback |y|---|
 |---|Error|message pops up providing feedback |y|---|
+|Contact|---|---|---|---|
+|---| Alerts | Users are provided with feedback after interactions |y|---|
+|---|Sending contact form| forms open and are handled correctly |y|---|
+|---|Links opening and Post methods | handles correctly and submits properly |y|---|
+|---|Career form submits | file is uploaded to S3 and accessible from admin view for staff users |y|---|
 |Search|---|---|---|---|
 |---| Load page | The page should load without errors |y|---|
 |---|Entering Details|Inputs fields should work |y|---|
@@ -107,6 +94,10 @@ Using the method of acceptance testing by using multiple users to test different
 |---| Load page | The page should load without errors |y|---|
 |---|Entering Details|Inputs fields should work |y|---|
 |---|Buttons, Links|Clicking produces action|y|---|
+|---|Icons visible|Clearly indicate icons|y| Intuitive |
+|Footer|---|---|---|---|
+|---| Link Names | The page should load without errors and all links have discernible names or imply meaning |y|Intuitive|
+|---|Links Opening|All external links open as expected in new tab and internal links open within the same tab |y|---|
 |---|Icons visible|Clearly indicate icons|y| Intuitive |
 
 <br>

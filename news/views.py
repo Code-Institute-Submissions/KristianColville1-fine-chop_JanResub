@@ -16,12 +16,11 @@ def subscribe(request):
         if not email:
             messages.error(
                 request, "You must type legit name and email to subscribe \
-                to a Newsletter"                                )
+                to a Newsletter")
             return redirect("/")
 
         if Profile.objects.filter(email=email).first():
-            messages.error(
-                request, "Your already registered with us!")
+            messages.error(request, "Your already registered with us!")
             return redirect(request.META.get("HTTP_REFERER", "/"))
 
         subscribe_user = SubscribedUsers.objects.filter(email=email).first()
@@ -111,7 +110,7 @@ def newsletter(request):
     return render(request=request,
                   template_name='main/newsletter.html',
                   context={'form': form})
-    
+
 
 def news(request):
     return render(request, 'news/news.html')
