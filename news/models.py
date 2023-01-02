@@ -4,24 +4,46 @@ from profiles.models import Profile
 from django.template.defaultfilters import slugify
 from tinymce.models import HTMLField
 import os
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 class SubscribedUsers(models.Model):
     """
     SubscribedUsers Model
     """
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, default='no username')
     email = models.EmailField(unique=True, max_length=100)
     created_date = models.DateTimeField('Date created', default=timezone.now)
 
+    class Meta:
+        verbose_name_plural = 'Subscribed Users'
+
     def __str__(self):
         return self.email
+
+
+class Newsletter(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    subject = models.CharField(max_length=150)
+    contents = models.TextField()
+
+    def __str__(self):
+        return self.subject + " " + self.created_at.strftime("%B %d, %Y")
+
+    def save(self):
+        subscribers = SubscribedUsers.objects.all()
+        for sub in subscribers:
+            send_mail(self.subject, self.contents, settings.DEFAULT_FROM_EMAIL,
+                      [sub.email])
 
 
 class ArticleSeries(models.Model):
     """
     Newsletter series. If the newsletter is part of a collection.
     """
+
     def image_upload_to(self, instance=None):
         if instance:
             return os.path.join("ArticleSeries", slugify(self.slug), instance)
@@ -53,6 +75,7 @@ class Article(models.Model):
     """
     Newsletter to be posted as article* on website.
     """
+
     def image_upload_to(self, instance=None):
         if instance:
             return os.path.join("ArticleSeries", slugify(self.series.slug),

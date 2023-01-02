@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SubscribedUsers, Article, ArticleSeries
+from .models import SubscribedUsers, Newsletter, Article, ArticleSeries
 
 
 class SubscribedUsersAdmin(admin.ModelAdmin):
@@ -8,6 +8,16 @@ class SubscribedUsersAdmin(admin.ModelAdmin):
     """
     list_display = ('email', 'name', 'created_date')
 
+
+@admin.register(Newsletter)
+class NewsLetterAdmin(admin.ModelAdmin):
+    """
+    Allows staff to send subscribers newsletters
+    """
+    fields = [
+        'subject',
+        'contents',
+    ]
 
 class ArticleSeriesAdmin(admin.ModelAdmin):
     """

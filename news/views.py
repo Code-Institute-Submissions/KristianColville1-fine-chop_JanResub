@@ -11,7 +11,6 @@ from .forms import NewsletterForm
 
 def subscribe(request):
     if request.method == 'POST':
-        name = request.POST.get('name_field', None)
         email = request.POST.get('email', None)
 
         if not email:
@@ -38,7 +37,6 @@ def subscribe(request):
             return redirect("/")
 
         subscribe_model_instance = SubscribedUsers()
-        subscribe_model_instance.name = name
         subscribe_model_instance.email = email
         subscribe_model_instance.save()
         messages.success(
@@ -48,7 +46,7 @@ def subscribe(request):
 
 
 @user_is_superuser
-def newsletter(request):
+def news(request):
     if request.method == 'POST':
         form = NewsletterForm(request.POST)
         if form.is_valid():
@@ -63,7 +61,7 @@ def newsletter(request):
             mail.content_subtype = 'html'
 
             if mail.send():
-                messages.success(request, "Email sent succesfully")
+                messages.success(request, "Email sent successfully")
             else:
                 messages.error(request, "There was an error sending email")
 
