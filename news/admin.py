@@ -19,6 +19,7 @@ class NewsLetterAdmin(admin.ModelAdmin):
         'contents',
     ]
 
+
 class ArticleSeriesAdmin(admin.ModelAdmin):
     """
     Series of Newsletters

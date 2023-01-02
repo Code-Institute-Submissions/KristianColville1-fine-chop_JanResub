@@ -16,7 +16,7 @@ def subscribe(request):
         if not email:
             messages.error(
                 request, "You must type legit name and email to subscribe \
-                to a Newsletter")
+                to a Newsletter"                                )
             return redirect("/")
 
         if Profile.objects.filter(email=email).first():
@@ -77,3 +77,41 @@ def news(request):
     return render(request=request,
                   template_name='main/newsletter.html',
                   context={'form': form})
+
+
+@user_is_superuser
+def newsletter(request):
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data.get('subject')
+            receivers = form.cleaned_data.get('receivers').split(',')
+            email_message = form.cleaned_data.get('message')
+
+            mail = EmailMessage(subject,
+                                email_message,
+                                f"FineChop <{request.user.email}>",
+                                bcc=receivers)
+            mail.content_subtype = 'html'
+
+            if mail.send():
+                messages.success(request, "Email sent successfully")
+            else:
+                messages.error(request, "There was an error sending email")
+
+        else:
+            for error in list(form.errors.values()):
+                messages.error(request, error)
+
+        return redirect('/')
+
+    form = NewsletterForm()
+    form.fields['receivers'].initial = ','.join(
+        [active.email for active in SubscribedUsers.objects.all()])
+    return render(request=request,
+                  template_name='main/newsletter.html',
+                  context={'form': form})
+    
+
+def news(request):
+    return render(request, 'news/news.html')

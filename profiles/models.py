@@ -76,7 +76,6 @@ class Profile(Role, Address):
     """
     first_name = models.CharField(max_length=30, blank=True, null=True)
     last_name = models.CharField(max_length=30, blank=True, null=True)
-    email = models.CharField(max_length=320, unique=True)
     user = models.OneToOneField(User,
                                 on_delete=models.CASCADE,
                                 related_name='profile')
