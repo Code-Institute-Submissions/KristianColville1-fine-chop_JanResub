@@ -23,9 +23,9 @@ def contact_us(request):
         if contact_form.is_valid():
             form = contact_form.save()
             pid = form.user_query_number
-            messages.info(request, ('Thanks for for your query'
+            messages.info(request, ('Thanks for for your query '
                                     'Please check your email.'
-                                    f'Your query number is {pid}'))
+                                    f' Your query number is {pid}'))
             their_email = form.email
             subject = render_to_string(
                 'contact/confirmation_emails/confirmation_email_subject.txt',

@@ -1,5 +1,8 @@
 import uuid
 from django.db import models
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 
 
 class UserQuery(models.Model):
@@ -14,6 +17,9 @@ class UserQuery(models.Model):
                                          blank=False,
                                          default='')
     is_open = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name_plural = 'User Queries'
 
     def _generate_user_query_number(self):
         """
@@ -32,3 +38,38 @@ class UserQuery(models.Model):
 
     def __str__(self):
         return self.user_query_number
+
+
+class QueryResponse(models.Model):
+    """
+    Query Response class allows super users to reply to user query.
+    """
+    ticket = models.OneToOneField(
+        UserQuery,
+        on_delete=models.CASCADE,
+        related_name='user_query_response'
+    )
+    reply = models.TextField()
+    resolved = models.BooleanField(default=False)
+
+    def _send_reply_to_email(self):
+        """
+        Private method sends users a reply to their email
+        """
+        their_email = self.ticket.email
+        subject = 'Noreply - Query: ' + self.ticket.user_query_number
+        body = self.reply
+
+        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [their_email])
+
+    def save(self, *args, **kwargs):
+        """
+        Overrides the original save method to send a reply to the user
+        if it hasn't been set already and sent.
+        """
+        if self.resolved is False:
+            self._send_reply_to_email()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.reply
