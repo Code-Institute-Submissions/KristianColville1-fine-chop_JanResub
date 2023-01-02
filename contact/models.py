@@ -94,7 +94,7 @@ class JobApplication(models.Model):
 
     class Meta:
         verbose_name_plural = 'Job Applications'
-        ordering = ['created_on']
+        ordering = ['-created_on']
 
     def _generate_application_number(self):
         """

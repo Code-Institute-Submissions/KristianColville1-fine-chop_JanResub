@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'home',
     'profiles',
     'contact',
-    'email_subscriptions',
+    'news',
     'menu',
     'reservations',
     'cart',

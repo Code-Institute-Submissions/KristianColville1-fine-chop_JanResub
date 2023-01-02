@@ -16,18 +16,13 @@ def subscribe(request):
 
         if not email:
             messages.error(
-                request,
-                "You must type legit name and email to subscribe \
-                to a Newsletter"
-            )
+                request, "You must type legit name and email to subscribe \
+                to a Newsletter")
             return redirect("/")
 
         if Profile.objects.filter(email=email).first():
             messages.error(
-                request,
-                f"Found registered user with associated {email} email. \
-                    You must login to subscribe or unsubscribe."
-            )
+                request, "Your already registered with us!")
             return redirect(request.META.get("HTTP_REFERER", "/"))
 
         subscribe_user = SubscribedUsers.objects.filter(email=email).first()
@@ -63,7 +58,7 @@ def newsletter(request):
 
             mail = EmailMessage(subject,
                                 email_message,
-                                f"PyLessons <{request.user.email}>",
+                                f"FineChop <{request.user.email}>",
                                 bcc=receivers)
             mail.content_subtype = 'html'
 
